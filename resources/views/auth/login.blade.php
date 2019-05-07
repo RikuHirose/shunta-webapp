@@ -8,6 +8,9 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+                    <div class="mx-auto" style="width: 320px;">
+                        <a href="/auth/login/facebook" class="btn btn-primary" role="button">FaceBookでLogin</a>
+                      </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

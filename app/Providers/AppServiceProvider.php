@@ -18,6 +18,18 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\UserRepositoryInterface::class,
             \App\Repositories\Eloquent\UserRepository::class
         );
+
+        // SocialProvider
+        $this->app->bind(
+            \App\Repositories\SocialProviderRepositoryInterface::class,
+            \App\Repositories\Eloquent\SocialProviderRepository::class
+        );
+
+        // Profile
+        $this->app->bind(
+            \App\Repositories\ProfileRepositoryInterface::class,
+            \App\Repositories\Eloquent\ProfileRepository::class
+        );
     }
 
     /**

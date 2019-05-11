@@ -11,5 +11,28 @@ const mix = require('laravel-mix');
  |
  */
 
+// Added webpackConfig settings
+mix.webpackConfig({
+  module: {
+    rules: [
+      { // JavaScript Prettier Setting
+        test: /\.js$/,
+        loader: 'prettier-loader',
+        options: { // Prettier Options https://prettier.io/docs/en/options.html
+          singleQuote: true,
+          semi: false
+        }
+      },
+      { // Sass Prettier Setting
+        test: /\.scss$/,
+        loader: 'prettier-loader',
+        options: {
+          parser: "postcss"
+        }
+      },
+    ]
+  }
+})
+
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')

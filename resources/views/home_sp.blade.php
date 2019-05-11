@@ -1,6 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.user.app')
 
 @section('content')
-for sp
- {{ $users }}
+
+  <div class="row">
+    <div style="max-width: 100%;">
+      <p>for spsssssssss</p>
+    </div>
+  </div>
 @endsection

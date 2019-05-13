@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-interface ProfileRepositoryInterface
+interface ImageRepositoryInterface
 {
-
 }

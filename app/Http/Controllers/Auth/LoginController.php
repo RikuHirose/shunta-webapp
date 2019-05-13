@@ -44,13 +44,13 @@ class LoginController extends Controller
      *
      * @return Response
      */
-    public function authenticate(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
+    // public function authenticate(Request $request)
+    // {
+    //     $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
-            // 認証に成功した
-            return response()->json(['success' => 'Authorized'], 200);
-        }
-    }
+    //     if (Auth::attempt($credentials)) {
+    //         // 認証に成功した
+    //         return response()->json(['success' => 'Authorized'], 200);
+    //     }
+    // }
 }

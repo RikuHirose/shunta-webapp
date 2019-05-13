@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
-use App\Models\Profile;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -67,13 +67,10 @@ class RegisterController extends Controller
     {
         $user = User::firstOrCreate(
             [
+                'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]
-        );
-
-        $profile = Profile::firstOrCreate(
-            ['user_id' => $user->id, 'name' => $data['name']]
         );
 
         return $user;

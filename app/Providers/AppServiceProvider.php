@@ -25,10 +25,28 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Eloquent\SocialProviderRepository::class
         );
 
-        // Profile
+        // Images
         $this->app->bind(
-            \App\Repositories\ProfileRepositoryInterface::class,
-            \App\Repositories\Eloquent\ProfileRepository::class
+            \App\Repositories\ImageRepositoryInterface::class,
+            \App\Repositories\Eloquent\ImageRepository::class
+        );
+
+        // Categories
+        $this->app->bind(
+            \App\Repositories\CategoryRepositoryInterface::class,
+            \App\Repositories\Eloquent\CategoryRepository::class
+        );
+
+        // Restaurants
+        $this->app->bind(
+            \App\Repositories\RestaurantRepositoryInterface::class,
+            \App\Repositories\Eloquent\RestaurantRepository::class
+        );
+
+        // Favorites
+        $this->app->bind(
+            \App\Repositories\FavoriteRepositoryInterface::class,
+            \App\Repositories\Eloquent\FavoriteRepository::class
         );
     }
 
@@ -40,5 +58,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bind('App\Services\UserService');
+        $this->app->bind('App\Services\ImageService');
+        $this->app->bind('App\Services\CategoryService');
+        $this->app->bind('App\Services\RestaurantService');
+        $this->app->bind('App\Services\FavoriteService');
     }
 }

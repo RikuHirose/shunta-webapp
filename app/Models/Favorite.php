@@ -4,15 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Profile extends Model
+class Favorite extends Model
 {
 
-    protected $table = 'profile';
+    protected $table = 'favorites';
 
     protected $fillable = [
         'user_id',
-        'name',
-        'img_url',
+        'restaurant_id',
     ];
 
 
@@ -20,5 +19,10 @@ class Profile extends Model
     public function user()
     {
         return $this->belongsTo(\App\Models\User::class, 'user_id', 'id');
+    }
+
+    public function restaurant()
+    {
+        return $this->hasMany(\App\Models\Restaurant::class, 'restaurant_id', 'id');
     }
 }

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 
 use Socialite;
 use App\Models\User;
-use App\Models\Profile;
 use App\Models\SocialProvider;
 use App\Repositories\SocialProviderRepositoryInterface;
 
@@ -46,10 +45,10 @@ class SocialController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback($provider)
+    public function handleProviderCallback($providerName)
     {
         try{
-            $socialUser = Socialite::driver($provider)->user();
+            $socialUser = Socialite::driver($providerName)->user();
 
         } catch(Exception $e){
             return redirect("/");
@@ -60,9 +59,13 @@ class SocialController extends Controller
 
         if(!$provider) {
 
+            // $socialUser->avatar_original
+
             $user = User::firstOrCreate(
                 [
+                    'name' => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
+                    // 'image_id' => 1,
                 ]
             );
 
@@ -70,18 +73,12 @@ class SocialController extends Controller
                 [
                     'user_id'     => $user->id,
                     'provider_id' => $socialUser->getId(),
-                    'provider'    => $provider
+                    'provider'    => $providerName
                 ]
             );
 
-            Profile::firstOrCreate(
-                ['user_id' => $user->id, 'name' => $socialUser->getName(),'img_url' => $socialUser->avatar_original]
-            );
-
         } else {
-            // $user = User::firstOrCreate(
-            //     ['email' => $user->getEmail(), 'name' => $user->getName(), 'facebook_id' => $user->getId()]
-            // );
+
             $user = User::where(
                 ['id' => $provider->user_id]
             )->first();

@@ -11,16 +11,52 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'auth', 'middleware' => ['guest']], function ()
 {
   Route::get('login/{provider}', 'Auth\SocialController@redirectToProvider');
   Route::get('{provider}/callback', 'Auth\SocialController@handleProviderCallback');
+
+
 });
+
+Route::group(['prefix' => 'auth', 'middleware' => ['auth']], function ()
+{
+
+  // Route::group(['prefix' => 'restaurants/{lesson}/', 'as' => 'lesson.'], function () {
+  //     // review
+  //     Route::get('review', 'User\LessonController@getReview')->name('review.get');
+  //     Route::post('review', 'User\LessonController@postReview')->name('review.post');
+
+  //     // favorite
+  //     Route::post('favorite', 'User\FavoriteController@postFavorite')->name('favorite.post');
+  //     Route::post('delete/favorite', 'User\FavoriteController@deleteFavorite');
+
+  // });
+
+  // Route::group(['prefix' => 'user/', 'as' => 'user.'], function () {
+  //     Route::get('/{user}', 'User\UserController@show')->name('show');
+  //     Route::get('/{user}/reviewed', 'User\UserController@showReviewed')->name('show.reviewed');
+  //     Route::get('/{user}/history', 'User\UserController@showHistory')->name('show.history');
+
+  //     Route::get('setting/{user}', 'User\UserController@getSetting')->name('setting.get');
+  //     Route::post('setting/{user}', 'User\UserController@postSetting')->name('setting.post');
+  // });
+});
+
+Route::get('/', 'User\IndexController@index')->name('index');
+
+// restaurants
+Route::resource('restaurants', 'User\RestaurantController', ['only' => ['index', 'show']]);
+Route::get('/q', 'User\RestaurantController@index')->name('lesson.search.restaurants');
+
+
+// footer Cpntact
+// Route::get('/contact', 'User\ContactController@getContact')->name('get.Contact');
+// Route::post('/contact/check', 'User\ContactController@postContactCheck')->name('post.contact.check');
+// Route::post('/contact/submit', 'User\ContactController@postContactSubmit')->name('post.contact.submit');
+
+// Route::get('/term', 'User\FooterController@getTerm')->name('term');
+// Route::get('/privacy', 'User\FooterController@getPrivacy')->name('privacy');

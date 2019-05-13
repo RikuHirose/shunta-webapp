@@ -10,7 +10,7 @@ class Restaurant extends Model
     protected $table = 'restaurants';
 
     protected $fillable = [
-        'name'
+        'name',
         'description',
         'category_id',
         'price_zone',

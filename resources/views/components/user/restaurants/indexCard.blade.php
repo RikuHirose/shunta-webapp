@@ -7,7 +7,7 @@
   <div class="col-md-5 mt-3 mb-3">
     <div>
         <h2 class="c-res-index-card__ttl">
-          <a href="" class="c-res-index-card__ttl--link">{{ $restaurant->name }}</a>
+          <a href="{{ route('restaurants.show', [$restaurant->id]) }}" class="c-res-index-card__ttl--link">{{ $restaurant->name }}</a>
         </h2>
     </div>
 
@@ -25,7 +25,9 @@
     </div>
 
     <div class="text-center">
-      <button type="button" class="w-100 m-btn" btn-type="primary">詳しく見る</button>
+      <a href="{{ route('restaurants.show', [$restaurant->id]) }}" type="button" class="w-100 m-btn" btn-type="primary">
+        詳しく見る
+      </a>
     </div>
   </div>
 

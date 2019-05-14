@@ -53,4 +53,15 @@ class RestaurantController extends Controller
             ]
         );
     }
+
+    public function show(Restaurant $restaurant)
+    {
+        $restaurant->load('category', 'restaurantImages.image');
+
+        return view('pages.restaurant.show',
+            [
+                'restaurant' => $restaurant
+            ]
+        );
+    }
 }

@@ -45,6 +45,8 @@ class RestaurantController extends Controller
             $restaurants = $this->restaurantRepository->getAllRestaurants();
         }
 
+        $restaurants->load('category', 'restaurantImages.image');
+
         return view('pages.restaurant.index',
             [
                 'restaurants' => $restaurants

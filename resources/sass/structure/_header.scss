@@ -1,0 +1,29 @@
+#header {
+  width: 100%;
+  min-height: 80px;
+
+  .m-header {
+    &--wrap {
+      padding: 22px 0;
+    }
+    &-logo{
+      &__sizing {
+        height: 27px;
+        width: 133px;
+      }
+    }
+
+    &-list {
+      &--link {
+        color: #333333;
+        text-decoration: none;
+      }
+      &__avatar {
+        border-radius: 30px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+}

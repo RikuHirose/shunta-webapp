@@ -1,28 +1,29 @@
 <header id="header" class="">
     <!-- <div class="container-fluid"> -->
-    <div class="container">
+    <div class="m-header container">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <div class="row">
+                <div class="row m-header--wrap">
                     <div class="col-md-3">
-                        <div class="float-left">
+                        <div class="float-left m-header-logo">
                             <a href="/" class="">
-                                {{ config('app.name', 'Laravel') }}
+                                <img src="http://rlx.jp/img/logo.png?1510128432" class="m-header-logo__sizing">
                             </a>
                         </div>
                     </div>
 
                     <div class="col-md-9">
-                        <nav class="float-right">
+                        <nav class="float-right m-header-list">
                             @guest
-                                <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                <a class="" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="pl-3 m-header-list--link" href="">{{ config('app.name', 'Laravel') }}とは</a>
+                                <a class="pl-3 m-header-list--link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="pl-3 m-header-list--link" href="{{ route('register') }}">{{ __('Register') }}</a>
 
                             @else
 
                                 <div id="dropdown" class="dropdown">
                                     <div class="dropdown-toggle " type="" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="{{ asset('/static/user/images/user.png') }}" class="avatar">
+                                        <img src="{{ $currentUser->image->url }}" class="m-header-list__avatar">
                                     </div>
                                     <ul class="dropdown-menu nav-lists dbmenu" aria-labelledby="dropdownMenu1">
                                         <li><a href="">マイページ</a></li>

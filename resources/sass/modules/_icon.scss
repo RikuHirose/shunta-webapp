@@ -1,0 +1,58 @@
+/* ----------------------------------------------------------------------------
+ * icon from fontawesome
+ * ------------------------------------------------------------------------- */
+.fa {
+
+  &-location{
+    color: #666666;
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-map-marker-alt;
+      font-weight: 600;
+      color: #666666;
+    }
+    span {
+      font-size: 10px;
+    }
+  }
+
+  &-eat {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-utensils;
+      font-weight: 600;
+    }
+  }
+
+  &-lunch {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-sun;
+      font-weight: 600;
+    }
+  }
+
+  &-dinner {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-moon;
+      font-weight: 600;
+    }
+  }
+  &-star-yellow {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-star-yellow;
+      font-weight: 600;
+      color: $c-yellow;
+    }
+  }
+  &-star-gray {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-star-white;
+      font-weight: 600;
+      color: $c-gray;
+    }
+  }
+}

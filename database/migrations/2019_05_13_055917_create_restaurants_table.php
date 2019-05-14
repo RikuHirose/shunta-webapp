@@ -18,9 +18,11 @@ class CreateRestaurantsTable extends Migration
             $table->bigInteger('category_id')->unsigned()->index();
 
             $table->string('name')->nullable();
+            $table->string('description_title')->nullable();
             $table->string('description')->nullable();
             // （価格帯）
-            $table->string('price_zone')->nullable();
+            $table->string('lunch_price_zone')->nullable();
+            $table->string('dinner_price_zone')->nullable();
 
             $table->string('address')->nullable();
             $table->string('nearest_station')->nullable();
@@ -44,7 +46,9 @@ class CreateRestaurantsTable extends Migration
             $table->decimal('ig_url')->nullable();
             $table->decimal('tel')->nullable();
 
-            $table->string('remarks（その他、備考欄）')->nullable();
+            $table->string('remarks')->nullable();
+            // adminからの5段階評価
+            $table->unsignedInteger('admin_evaluate')->default(0);
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();

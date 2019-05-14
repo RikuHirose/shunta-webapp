@@ -11,6 +11,7 @@ class Restaurant extends Model
 
     protected $fillable = [
         'name',
+        'description_title',
         'description',
         'category_id',
         'price_zone',
@@ -33,10 +34,14 @@ class Restaurant extends Model
 
 
     // Relations
-
     public function category()
     {
         return $this->belongsTo(\App\Models\Category::class, 'category_id', 'id');
+    }
+
+    public function restaurantImages()
+    {
+        return $this->hasMany(\App\Models\RestaurantImage::class, 'restaurant_id', 'id');
     }
 
 }

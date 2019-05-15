@@ -17,7 +17,7 @@
     </span>
   </div>
 </div>
-<div>
+<div class="mt-2 mb-2">
     <span class="fa-location">
       <span>
         {{ $restaurant->nearest_station }}徒歩{{ $restaurant->nearest_station_minutes }}分

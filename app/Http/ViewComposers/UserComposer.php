@@ -10,7 +10,13 @@ class UserComposer
 
     public function __construct()
     {
-        $this->user = \Auth::user()->load('image');
+        $currentUser = \Auth::user();
+
+        if (is_null($currentUser)) {
+            $this->user = $currentUser;
+        } else {
+            $this->user = $currentUser->load('image');
+        }
     }
 
     /**

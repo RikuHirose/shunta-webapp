@@ -10949,7 +10949,7 @@ a.text-dark:focus {
 
 .c-res-index-card--desc {
   padding: 8px 0;
-  min-height: 155px;
+  min-height: 144px;
 }
 
 .c-res-index-card--desc-ttl {
@@ -10959,7 +10959,7 @@ a.text-dark:focus {
 
 .c-res-index-card--desc-p {
   font-size: 12px;
-  height: 40px;
+  height: 56px;
   overflow: hidden;
   position: relative;
 }
@@ -10967,9 +10967,8 @@ a.text-dark:focus {
 .c-res-index-card--desc-p::after {
   content: "...";
   position: absolute;
-  top: 73px;
-  left: 80px;
-  background-color: #C0C0C0;
+  top: 35px;
+  left: 230px;
 }
 
 /* ============================================================================

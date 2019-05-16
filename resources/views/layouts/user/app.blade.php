@@ -32,6 +32,8 @@
                 @include('shared.user.frame')
             </main>
         @endif
+
+        <modals-container />
     </div>
 </body>
 </html>

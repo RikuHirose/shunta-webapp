@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\Image;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -65,13 +66,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $user_image = Image::firstOrCreate(
+            [
+                'url' => 'https://graph.facebook.com/v3.0/2395858777303516/picture?width=1920',
+            ]
+        );
+
         $user = User::firstOrCreate(
             [
-                'name' => $data['name'],
-                'email' => $data['email'],
+                'image_id' => $user_image->id,
+                'name'     => $data['name'],
+                'email'    => $data['email'],
                 'password' => Hash::make($data['password']),
             ]
         );
+
 
         return $user;
     }

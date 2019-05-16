@@ -1,9 +1,6 @@
 /* ----------------------------------------------------------------------------
  * Button
  * ------------------------------------------------------------------------- */
-/* ------------------------------------
- * General
- * --------------------------------- */
 .m-btn,
 .m-btnS,
 .m-btnL {
@@ -54,6 +51,17 @@
     }
      &:active {
       background: $c-btn-negative-press;
+    }
+  }
+
+  // ネガティブ
+  &[btn-type="facebook"] {
+    border-color: $facebook_color;
+    color: $c-white;
+    background: $facebook_color;
+    &:hover {
+      border-color: $facebook_color;
+      background: $facebook_color;
     }
   }
 

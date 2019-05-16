@@ -15,10 +15,7 @@
                     <div class="col-md-9">
                         <nav class="float-right m-header-list">
                             @guest
-                                <a class="pl-3 m-header-list--link" href="">{{ config('app.name', 'Laravel') }}とは</a>
-                                <a class="pl-3 m-header-list--link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                <a class="pl-3 m-header-list--link" href="{{ route('register') }}">{{ __('Register') }}</a>
-
+                                <header-right-list></header-right-list>
                             @else
 
                                 <div id="dropdown" class="dropdown">

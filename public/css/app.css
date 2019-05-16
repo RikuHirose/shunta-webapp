@@ -10979,10 +10979,6 @@ a.text-dark:focus {
  * Button
  * ------------------------------------------------------------------------- */
 
-/* ------------------------------------
- * General
- * --------------------------------- */
-
 .m-btn,
 .m-btnS,
 .m-btnL {
@@ -11062,6 +11058,21 @@ a.text-dark:focus {
 .m-btnS[btn-type=negative]:active,
 .m-btnL[btn-type=negative]:active {
   background: #232323;
+}
+
+.m-btn[btn-type=facebook],
+.m-btnS[btn-type=facebook],
+.m-btnL[btn-type=facebook] {
+  border-color: #3b5998;
+  color: #fff;
+  background: #3b5998;
+}
+
+.m-btn[btn-type=facebook]:hover,
+.m-btnS[btn-type=facebook]:hover,
+.m-btnL[btn-type=facebook]:hover {
+  border-color: #3b5998;
+  background: #3b5998;
 }
 
 .m-btn[disabled],
@@ -11220,6 +11231,41 @@ a.m-btn {
 .m-breadcrumb li {
   display: inline-block;
   font-size: 11px;
+}
+
+/* ----------------------------------------------------------------------------
+ * Modal
+ * ------------------------------------------------------------------------- */
+
+.m-modal__header {
+  background-color: #F0F0F0;
+  border-bottom: 1px solid #DEDEDE;
+  padding-top: 10px;
+}
+
+.m-modal__header__ttl {
+  font-size: 16px;
+  text-align: center;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.m-modal__header__close-btn {
+  background-color: #F0F0F0;
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+}
+
+.m-modal__content {
+  padding: 24px;
+}
+
+.m-modal__content .social-content {
+  margin-bottom: 60px;
 }
 
 /* ============================================================================

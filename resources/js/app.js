@@ -7,6 +7,11 @@
 require('./bootstrap')
 
 import Vue from 'vue'
+import VModal from 'vue-js-modal'
+
+Vue.prototype.$axios = window.axios
+
+Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,7 +24,7 @@ import Vue from 'vue'
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default)
+Vue.component('header-right-list', require('./components/headerRightList.vue').default)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

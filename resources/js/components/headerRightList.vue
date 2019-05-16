@@ -14,8 +14,8 @@
 
 <script>
 import LoginModal from './modal/loginModal.vue'
+import RegisterModal from './modal/registerModal.vue'
 export default {
-
   data (){
     return {
     }
@@ -26,17 +26,17 @@ export default {
   methods: {
     showLoginModal () {
       this.$modal.show(LoginModal, {
-        title: ' ログイン'
+        title: 'ログイン'
       }, {
         height: 'auto',
         width: '340'
       })
     },
     showRegisterModal () {
-      this.$modal.show(LoginModal, {
-        text: 'This text is passed as a property'
+      this.$modal.show(RegisterModal, {
+        title: '会員登録'
       }, {
-        height: '400',
+        height: 'auto',
         width: '400'
       })
     }

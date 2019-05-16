@@ -17,10 +17,18 @@
           class="m-btn w-100 mb-3"
           href="/auth/login/facebook"
           btn-type="facebook">
-          Facebookでログインする
+          Facebookで登録する
         </a>
       </div>
       <div class="mail-content">
+        <div class="m-frmTextbox">
+          <label>お名前</label>
+          <input
+            v-model="name"
+            class="form-control"
+            type="text"
+            required>
+        </div>
         <div class="m-frmTextbox">
           <label>メールアドレス</label>
           <input
@@ -38,11 +46,19 @@
             required>
         </div>
         <div class="m-frmTextbox">
+          <label>パスワード</label>
+          <input
+            v-model="password_confirmation"
+            type="password"
+            class="form-control"
+            required>
+        </div>
+        <div class="m-frmTextbox">
           <button
             class="form-control m-btnS"
             type="submit"
             btn-type="primary"
-            @click="postLogin()">
+            @click="postRegister()">
             {{ title }}する
           </button>
         </div>
@@ -57,19 +73,23 @@ export default {
   },
   data (){
     return {
+      name: '',
       email: '',
       password: '',
+      password_confirmation: '',
     }
   },
   created () {
   },
 
   methods: {
-    postLogin () {
+    postRegister () {
       this.$axios
-        .post('/login', {
+        .post('/register', {
+          name: this.name,
           email: this.email,
           password: this.password,
+          password_confirmation: this.password_confirmation,
         })
         .then(() => {
           window.location.href = '/'

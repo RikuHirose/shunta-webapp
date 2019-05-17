@@ -1,3 +1,7 @@
+// responsive
+$breakpoint-tablet: 980px;
+$breakpoint-mobile: 640px;
+
 @mixin max-screen($break-point) {
   @media screen and (max-width: $break-point) {
     @content;

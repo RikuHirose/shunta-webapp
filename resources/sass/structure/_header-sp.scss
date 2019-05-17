@@ -1,0 +1,12 @@
+@include max-screen($breakpoint-mobile) {
+  #header {
+    .m-header {
+      &--wrap {
+      }
+      &-logo{
+        &__sizing {
+        }
+      }
+    }
+  }
+}

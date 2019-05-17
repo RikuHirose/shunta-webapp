@@ -21,7 +21,7 @@ class ViewSwitchCreator
      *
      * @var array
      */
-    private $excluded_folder = ['layouts', 'shared'];
+    private $excluded_folder = ['layouts'];
 
     /**
      * ビュー名の接尾語

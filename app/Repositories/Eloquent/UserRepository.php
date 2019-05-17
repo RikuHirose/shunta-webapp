@@ -16,4 +16,16 @@ class UserRepository implements UserRepositoryInterface
         $this->user = $user;
     }
 
+    public function getBlankModel()
+    {
+        return new User();
+    }
+
+    public function update($user, $input)
+    {
+      $user->fill($input)->save();
+
+      return $user;
+    }
+
 }

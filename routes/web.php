@@ -22,7 +22,7 @@ Route::group(['prefix' => 'auth', 'middleware' => ['guest']], function ()
 
 });
 
-Route::group(['prefix' => 'auth', 'middleware' => ['auth']], function ()
+Route::group(['middleware' => ['auth']], function ()
 {
 
   // Route::group(['prefix' => 'restaurants/{lesson}/', 'as' => 'lesson.'], function () {
@@ -36,14 +36,17 @@ Route::group(['prefix' => 'auth', 'middleware' => ['auth']], function ()
 
   // });
 
-  // Route::group(['prefix' => 'user/', 'as' => 'user.'], function () {
-  //     Route::get('/{user}', 'User\UserController@show')->name('show');
+  Route::group(['prefix' => 'mypage/', 'as' => 'mypage.'], function () {
+      Route::get('/', 'User\UserController@show')->name('show');
+      Route::get('/edit', 'User\UserController@edit')->name('edit');
+      Route::post('/update', 'User\UserController@update')->name('update');
+
   //     Route::get('/{user}/reviewed', 'User\UserController@showReviewed')->name('show.reviewed');
   //     Route::get('/{user}/history', 'User\UserController@showHistory')->name('show.history');
 
   //     Route::get('setting/{user}', 'User\UserController@getSetting')->name('setting.get');
   //     Route::post('setting/{user}', 'User\UserController@postSetting')->name('setting.post');
-  // });
+  });
 });
 
 Route::get('/', 'User\IndexController@index')->name('index');

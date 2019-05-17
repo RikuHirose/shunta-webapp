@@ -23,7 +23,7 @@
                                         <img src="{{ $currentUser->image->url }}" class="m-header-list__avatar">
                                     </div>
                                     <ul class="dropdown-menu nav-lists dbmenu" aria-labelledby="dropdownMenu1">
-                                        <li><a href="">マイページ</a></li>
+                                        <li><a href="{{ route('mypage.show') }}">マイページ</a></li>
                                         <li><a href="">Setting</a></li>
                                         <li>
                                             <a class="" href="{{ route('logout') }}"

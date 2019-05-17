@@ -25,6 +25,7 @@ Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('header-right-list', require('./components/headerRightList.vue').default)
+Vue.component('update-user-image', require('./components/user/updateUserImage.vue').default)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

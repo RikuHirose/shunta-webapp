@@ -32,6 +32,8 @@
 @import "./structure/content";
 @import "./structure/sidebar";
 
+@import "./structure/header-sp";
+
 /* ============================================================================
  * components
  * ========================================================================= */
@@ -52,6 +54,7 @@
  * pages
  * ========================================================================= */
 @import "./pages/restaurants/index";
+@import "./pages/restaurants/index-sp";
 @import "./pages/restaurants/show";
 
 .navbar-laravel {

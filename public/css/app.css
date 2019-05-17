@@ -10994,6 +10994,12 @@ a.text-dark:focus {
   background: #293162;
 }
 
+.m-btn a,
+.m-btnS a,
+.m-btnL a {
+  color: #fff;
+}
+
 .m-btn:hover,
 .m-btnS:hover,
 .m-btnL:hover {
@@ -11278,6 +11284,20 @@ a.m-btn {
 
 .p-res-index__nav a {
   color: #555555;
+}
+
+/* ----------------------------------------------------------------------------
+ * page restaurants index sp
+ * ------------------------------------------------------------------------- */
+
+@media screen and (max-width: 640px) {
+  .c-res-index-card--desc {
+    min-height: 96px;
+  }
+
+  .c-res-index-card--desc-p {
+    height: 40px;
+  }
 }
 
 .navbar-laravel {

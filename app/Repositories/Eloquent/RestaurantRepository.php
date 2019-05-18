@@ -57,4 +57,13 @@ class RestaurantRepository implements RestaurantRepositoryInterface
 
       return $models;
     }
+
+    public function getRestaurantsbyIds($restaurantIds)
+    {
+      $restaurants = $this->restaurant
+        ->whereIn('id', $restaurantIds)
+        ->get();
+
+      return $restaurants;
+    }
 }

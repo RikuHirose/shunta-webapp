@@ -15,10 +15,14 @@
       </div>
       <!-- content -->
       <div class="col-md-10">
-          {{ $currentUser }}
-        <a href="{{ route('mypage.edit') }}" type="button" class="w-100 m-btn" btn-type="primary">
-          修正する
-        </a>
+        @isset($message)
+          {{ $message }}
+        @endisset
+
+        @isset($restaurants)
+          {{ $restaurants }}
+        @endisset
+
       </div>
     </div>
   </div>

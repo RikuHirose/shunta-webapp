@@ -26,6 +26,7 @@ Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 
 Vue.component('header-right-list', require('./components/headerRightList.vue').default)
 Vue.component('update-user-image', require('./components/user/updateUserImage.vue').default)
+Vue.component('favorite-restaurant', require('./components/restaurants/favoriteRestaurant.vue').default)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

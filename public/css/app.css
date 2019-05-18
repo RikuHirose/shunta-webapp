@@ -11185,6 +11185,20 @@ a.m-btn {
   color: #DEDEDE;
 }
 
+.fa-heart-red::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F004";
+  font-weight: 600;
+  color: #ff9393;
+}
+
+.fa-heart-gray::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F004";
+  font-weight: 600;
+  color: #DEDEDE;
+}
+
 /* ----------------------------------------------------------------------------
  * Form
  * ------------------------------------------------------------------------- */

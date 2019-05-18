@@ -42,7 +42,7 @@
   &-star-yellow {
     &::before {
       font-family: $_fontawesome;
-      content: $_fa-star-yellow;
+      content: $_fa-star;
       font-weight: 600;
       color: $c-yellow;
     }
@@ -50,7 +50,23 @@
   &-star-gray {
     &::before {
       font-family: $_fontawesome;
-      content: $_fa-star-white;
+      content: $_fa-star;
+      font-weight: 600;
+      color: $c-gray;
+    }
+  }
+  &-heart-red {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-heart;
+      font-weight: 600;
+      color: #ff9393;
+    }
+  }
+  &-heart-gray {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-heart;
       font-weight: 600;
       color: $c-gray;
     }

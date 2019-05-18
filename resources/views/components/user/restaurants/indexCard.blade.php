@@ -11,6 +11,13 @@
         </h2>
     </div>
 
+    @isset($currentUser)
+      <favorite-restaurant
+          :restaurant="{{json_encode($restaurant)}}"
+          :current-user="{{json_encode($currentUser)}}"
+          :default-favorited="{{ json_encode(\App\Helpers\Production\FavoriteHelper::defaultFavorited($restaurant, $currentUser)) }}"></favorite-restaurant>
+    @endisset
+
     <div style="">
       @include('components.user.restaurants.info', ['restaurant' => $restaurant])
     </div>

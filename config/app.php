@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ViewCreatorServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
-
+        App\Providers\HelperServiceProvider::class,
     ],
 
     /*

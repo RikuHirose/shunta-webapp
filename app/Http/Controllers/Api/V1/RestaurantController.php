@@ -16,7 +16,7 @@ use App\Repositories\ImageRepositoryInterface;
 use App\Models\Category;
 use App\Models\Restaurant;
 
-class UserController extends Controller
+class RestaurantController extends Controller
 {
     protected $userService;
     protected $userRepository;
@@ -43,28 +43,4 @@ class UserController extends Controller
         $this->imageRepository      = $imageRepository;
     }
 
-    public function changeImage(Request $request)
-    {
-        $input = array();
-
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $image_url = $this->imageRepository->uploadImage($request->file('image'));
-
-            if (!isset($input['url'])) {
-                array_set($input, 'url', $image_url);
-            }
-
-            $image = $this->imageRepository->create($input);
-            dd($image);
-
-            $input = array();
-            if (!isset($input['image_id'])) {
-                array_set($input, 'image_id', $image_id);
-            }
-
-            $user = $this->userRepository->update(\Auth::user(), $input);
-
-        }
-
-    }
 }

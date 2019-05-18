@@ -55,4 +55,13 @@ class FavoriteRepository implements FavoriteRepositoryInterface
         return $favorite;
     }
 
+    public function getFavoritedRestaurantIds($currentUser)
+    {
+        $restaurantIds = $this->favorite
+            ->where('user_id', $currentUser['id'])
+            ->pluck('restaurant_id');
+
+        return $restaurantIds;
+    }
+
 }

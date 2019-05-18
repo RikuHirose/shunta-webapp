@@ -11,6 +11,7 @@ use App\Services\UserService;
 use App\Repositories\UserRepositoryInterface;
 use App\Repositories\RestaurantRepositoryInterface;
 use App\Repositories\CategoryRepositoryInterface;
+use App\Repositories\FavoriteRepositoryInterface;
 
 use App\Models\Category;
 use App\Models\Restaurant;
@@ -21,6 +22,7 @@ class UserController extends Controller
     protected $userRepository;
     protected $restaurantRepository;
     protected $categoryRepository;
+    protected $favoriteRepository;
     /**
      * Create a new controller instance.
      *
@@ -30,13 +32,15 @@ class UserController extends Controller
         UserService $userService,
         UserRepositoryInterface $userRepository,
         RestaurantRepositoryInterface $restaurantRepository,
-        CategoryRepositoryInterface $categoryRepository
+        CategoryRepositoryInterface $categoryRepository,
+        FavoriteRepositoryInterface $favoriteRepository
     )
     {
         $this->userService          = $userService;
         $this->userRepository       = $userRepository;
         $this->restaurantRepository = $restaurantRepository;
         $this->categoryRepository   = $categoryRepository;
+        $this->favoriteRepository   = $favoriteRepository;
     }
 
     public function show()
@@ -64,5 +68,29 @@ class UserController extends Controller
             [
             ]
         );
+    }
+
+    public function showFavorited()
+    {
+        $restaurantIds = $this->favoriteRepository->getFavoritedRestaurantIds(\Auth::user());
+
+        if ($restaurantIds->isEmpty()) {
+
+            return view('pages.user.showFavorited',
+                [
+                    'message' => 'お気に入りに追加されたお店はまだありません'
+                ]
+            );
+
+        } else {
+            $restaurants = $this->restaurantRepository->getRestaurantsbyIds($restaurantIds);
+            $restaurants->load('category', 'restaurantImages.image');
+
+            return view('pages.user.showFavorited',
+                [
+                    'restaurants' => $restaurants
+                ]
+            );
+        }
     }
 }

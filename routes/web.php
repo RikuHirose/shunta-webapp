@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth']], function ()
       Route::get('/edit', 'User\UserController@edit')->name('edit');
       Route::post('/update', 'User\UserController@update')->name('update');
 
+      Route::get('/favorited', 'User\UserController@showFavorited')->name('favorited');
   //     Route::get('/{user}/reviewed', 'User\UserController@showReviewed')->name('show.reviewed');
   //     Route::get('/{user}/history', 'User\UserController@showHistory')->name('show.history');
 

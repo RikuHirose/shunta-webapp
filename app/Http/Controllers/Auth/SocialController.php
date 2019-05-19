@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Socialite;
 use App\Models\User;
+use App\Models\Image;
 use App\Models\SocialProvider;
 use App\Repositories\SocialProviderRepositoryInterface;
 
@@ -59,13 +60,17 @@ class SocialController extends Controller
 
         if(!$provider) {
 
-            // $socialUser->avatar_original
+          $user_image = Image::firstOrCreate(
+              [
+                  'url' => $socialUser->avatar_original
+              ]
+          );
 
             $user = User::firstOrCreate(
                 [
                     'name' => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
-                    // 'image_id' => 1,
+                    'image_id' => $user_image->id,
                 ]
             );
 

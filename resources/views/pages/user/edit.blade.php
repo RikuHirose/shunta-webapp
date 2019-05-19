@@ -13,9 +13,6 @@
       @include('components.user.sidebar.users.show')
       <!-- content -->
       <div class="col-md-10">
-          <update-user-image
-            :current-user="{{json_encode($currentUser)}}"></update-user-image>
-
           <form action="{{ route('mypage.update') }}" method="POST">
             @csrf
             <div class="m-frmTextbox">

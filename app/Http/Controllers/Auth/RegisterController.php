@@ -66,9 +66,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $domain = url('/');
         $user_image = Image::firstOrCreate(
             [
-                'url' => 'https://graph.facebook.com/v3.0/2395858777303516/picture?width=1920',
+                'url' => $domain.'/images/user.svg'
             ]
         );
 

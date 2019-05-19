@@ -1,4 +1,4 @@
-<div>
+<div class="col-md-2">
   <form action="/q" accept-charset="UTF-8" method="get">
     <div class="form-group m-frmTextbox">
       <label for="" >Email address</label>

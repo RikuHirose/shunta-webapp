@@ -10,9 +10,7 @@
 
     <div class="row">
       <!-- sidebar -->
-      <div class="col-md-2">
-          @include('components.user.sidebar.restaurants.show')
-      </div>
+      @include('components.user.sidebar.restaurants.show')
       <!-- content -->
       <div class="col-md-10">
           <?php var_dump($restaurant); ?>

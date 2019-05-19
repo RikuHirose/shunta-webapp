@@ -20,9 +20,7 @@
 
     <div class="row">
       <!-- sidebar -->
-      <div class="col-md-2">
-          @include('components.user.sidebar.restaurants.index')
-      </div>
+      @include('components.user.sidebar.restaurants.index')
       <!-- content -->
       <div class="col-md-10">
           @each('components.user.restaurants.indexCard', $restaurants, 'restaurant')

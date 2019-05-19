@@ -12,8 +12,9 @@ For Laradock, read →　https://note.mu/n_oshiumi01/n/n2b4c81ab127e
 3. Run `npm install`
 4. Run `php artisan key:generate`
 5. Run `php artisan migrate`
-6. Run `php artisan db:seed`
-7. Run `php artisan admin:install`
+6. Run `php artisan admin:install`
+7. Run `php artisan db:seed`
+
 
 ## Start server
 

@@ -83,7 +83,11 @@ class RestaurantController extends Controller
         $grid = new Grid(new Restaurant);
 
         $grid->id('Id');
-        $grid->category_id('Category id');
+
+        $grid->category('カテゴリ')->display(function ($category) {
+            return $category['name'];
+        });
+
         $grid->name('Name');
         $grid->description_title('Description title');
         $grid->description('Description');
@@ -183,13 +187,14 @@ class RestaurantController extends Controller
         $form->text('opening_hours', 'Opening hours');
         $form->text('regular_holiday', 'Regular holiday');
         $form->number('seating_capacity', 'Seating capacity');
-        $form->decimal('hp_url', 'Hp url');
-        $form->decimal('fb_url', 'Fb url');
-        $form->decimal('tw_url', 'Tw url');
-        $form->decimal('ig_url', 'Ig url');
-        $form->decimal('tel', 'Tel');
+        $form->url('hp_url', 'Hp url');
+        $form->url('fb_url', 'Fb url');
+        $form->url('tw_url', 'Tw url');
+        $form->url('ig_url', 'Ig url');
+        $form->mobile('tel', 'Tel');
         $form->text('remarks', 'Remarks');
-        $form->slider('admin_evaluate')->options(['max' => 5, 'min' => 0, 'step' => 1, 'postfix' => 'Admin evaluate(0~5)']);
+        $form->number('admin_evaluate', 'admin_evaluate(0~5)')->min(0)->max(5);
+
 
         return $form;
     }

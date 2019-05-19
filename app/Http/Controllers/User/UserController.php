@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\UserRequest;
@@ -92,5 +93,29 @@ class UserController extends Controller
                 ]
             );
         }
+    }
+
+    public function editPassword()
+    {
+        return view('pages.user.editPassword',
+            [
+            ]
+        );
+    }
+
+    public function updatePassword(UserRequest $request)
+    {
+        $input = array();
+
+        if (!isset($input['password'])) {
+          array_set($input, 'password', Hash::make($request->input('password')));
+        }
+
+        $user = $this->userRepository->update(\Auth::user(), $input);
+
+        return view('pages.user.editPassword',
+            [
+            ]
+        );
     }
 }

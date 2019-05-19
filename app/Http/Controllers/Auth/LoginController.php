@@ -37,20 +37,20 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    /**
-     * 認証を処理する
-     *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return Response
-     */
-    public function authenticate(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-        dd($credentials);
-        if (Auth::attempt($credentials)) {
-            // 認証に成功した
-            return response()->json(['success' => 'Authorized'], 200);
-        }
-    }
+    // /**
+    //  * 認証を処理する
+    //  *
+    //  * @param  \Illuminate\Http\Request $request
+    //  *
+    //  * @return Response
+    //  */
+    // public function authenticate(Request $request)
+    // {
+    //     $credentials = $request->only('email', 'password');
+    //     dd($credentials);
+    //     if (Auth::attempt($credentials)) {
+    //         // 認証に成功した
+    //         return response()->json(['success' => 'Authorized'], 200);
+    //     }
+    // }
 }

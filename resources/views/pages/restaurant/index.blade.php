@@ -4,7 +4,9 @@
 
   <div class="p-res-index">
     <div class="row mb-2">
-      <div class="col-md-6">@include('components.user.breadcrumb')</div>
+      <div class="col-md-6">
+        {{ Breadcrumbs::render('restaurants') }}
+      </div>
       <div class="col-md-6"></div>
       <div class="col-md-6"></div>
       <div class="col-md-6">

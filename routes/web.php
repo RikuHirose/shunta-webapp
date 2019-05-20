@@ -58,7 +58,7 @@ Route::get('/', 'User\IndexController@index')->name('index');
 
 // restaurants
 Route::resource('restaurants', 'User\RestaurantController', ['only' => ['index', 'show']]);
-Route::get('/q', 'User\RestaurantController@index')->name('lesson.search.restaurants');
+Route::get('/q', 'User\RestaurantController@index')->name('restaurants.search');
 
 
 // footer Cpntact

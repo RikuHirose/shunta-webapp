@@ -3,17 +3,42 @@
 namespace App\Repositories\Eloquent;
 use App\Repositories\RestaurantRepositoryInterface;
 use App\Models\Restaurant;
+use App\Repositories\CategoryRepositoryInterface;
 
 class RestaurantRepository implements RestaurantRepositoryInterface
 {
     protected $restaurant;
+    protected $categoryRepository;
 
     /**
     * @param object $restaurant
     */
-    public function __construct(Restaurant $restaurant)
+    public function __construct(
+      Restaurant $restaurant,
+      CategoryRepositoryInterface $categoryRepository
+    )
     {
         $this->restaurant = $restaurant;
+        $this->categoryRepository = $categoryRepository;
+    }
+
+    public function getBlankModel()
+    {
+        return new Restaurant();
+    }
+
+    public function all()
+    {
+      $restaurant = $this->restaurant->all();
+
+      return $restaurant;
+    }
+
+    public function firstOrCreate($input)
+    {
+      $restaurant = $this->restaurant->firstOrCreate($input);
+
+      return $restaurant;
     }
 
     public function lessonsByBreadCrumbSearch($q)
@@ -28,32 +53,33 @@ class RestaurantRepository implements RestaurantRepositoryInterface
         return $models;
     }
 
-    public function restaurantsByTopSearch($q)
+    public function restaurantsByTopSearch($word)
     {
-      // $models = $this->restaurant;
+      $models = $this->restaurant;
 
-      // if(isset($q['name'])) {
-      //     $restaurant_name  = $q['name'];
-      //     $models = $models->when($restaurant_name, function ($query) use ($restaurant_name) {
-      //         return $query->where('name', 'like', "%{$restaurant_name}%");
-      //     });
-      // }
+      $category_id = $this->categoryRepository->findCategoryId($word);
 
-      // if(isset($q['year'])) {
-      //     $year              = $q['year'];
-      //     $models = $models->when($year, function ($query) use ($year) {
-      //         return $query->where('year', $year);
-      //     });
-      // }
+      if(!is_null($category_id)) {
+        $models = $models->when($category_id, function ($query) use ($category_id) {
+            return $query->where('category_id', $category_id);
+        });
+      }
 
-      // $models = $models->get();
+      if(isset($word)) {
+        $restaurant_name = $word;
+        $models = $models->when($restaurant_name, function ($query) use ($restaurant_name) {
+            return $query->orWhere('name', 'like', "%{$restaurant_name}%");
+        });
+      }
 
-      return $models;
-    }
+      if(isset($word)) {
+        $description = $word;
+        $models = $models->when($description, function ($query) use ($description) {
+            return $query->orWhere('description', 'like', "%{$description}%");
+        });
+      }
 
-    public function getAllRestaurants() {
-
-      $models = $this->restaurant->all();
+      $models = $models->get();
 
       return $models;
     }
@@ -65,5 +91,17 @@ class RestaurantRepository implements RestaurantRepositoryInterface
         ->get();
 
       return $restaurants;
+    }
+
+    public function searchRestaurants($input)
+    {
+        $name = $input['name'];
+
+        $restaurants = $this->restaurant
+        ->where('name', 'like', "%{$name}%")
+        ->orWhere('description', 'like', "%{$name}%")
+        ->get();
+
+        return $restaurants;
     }
 }

@@ -8,6 +8,8 @@ use App\Services\UserService;
 use App\Repositories\RestaurantRepositoryInterface;
 use App\Repositories\CategoryRepositoryInterface;
 
+use App\Http\Requests\SearchRequest;
+
 use App\Models\Category;
 use App\Models\Restaurant;
 
@@ -33,23 +35,27 @@ class RestaurantController extends Controller
     }
 
 
-    public function index(Request $request)
+    public function index(SearchRequest $request)
     {
         $q = \Request::query();
 
-         if(isset($q['q'])) {
-            $q['q'] = htmlspecialchars($q['q'], ENT_QUOTES, "UTF-8" );
-            $restaurants = $this->restaurantRepository->restaurantsByTopSearch($q['q']);
+        if(isset($q['word'])) {
+            $q['word'] = htmlspecialchars($q['word'], ENT_QUOTES, "UTF-8" );
+            $restaurants = $this->restaurantRepository->restaurantsByTopSearch($q['word']);
 
         } else {
-            $restaurants = $this->restaurantRepository->getAllRestaurants();
+            $restaurants = $this->restaurantRepository->all();
         }
+
+        if ($restaurants->isEmpty()) { $message = 'まだレストランはありません'; }
+        if (!$restaurants->isEmpty()) { $message = ''; }
 
         $restaurants->load('category', 'restaurantImages.image');
 
         return view('pages.restaurant.index',
             [
-                'restaurants' => $restaurants
+                'restaurants' => $restaurants,
+                'message'     => $message
             ]
         );
     }

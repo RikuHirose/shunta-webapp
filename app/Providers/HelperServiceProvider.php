@@ -7,6 +7,16 @@ use Illuminate\Support\ServiceProvider;
 class HelperServiceProvider extends ServiceProvider
 {
     /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
      * Register services.
      *
      * @return void
@@ -22,15 +32,10 @@ class HelperServiceProvider extends ServiceProvider
             \App\Helpers\FavoriteHelperInterface::class,
             \App\Helpers\Production\FavoriteHelper::class
         );
-    }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
+        $this->app->singleton(
+            \App\Helpers\CategoryHelperInterface::class,
+            \App\Helpers\Production\CategoryHelper::class
+        );
     }
 }

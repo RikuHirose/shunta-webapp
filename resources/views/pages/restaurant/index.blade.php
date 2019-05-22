@@ -25,7 +25,11 @@
       @include('components.user.sidebar.restaurants.index')
       <!-- content -->
       <div class="col-md-10">
-          @each('components.user.restaurants.indexCard', $restaurants, 'restaurant')
+        @isset($message)
+          {{ $message }}
+        @endisset
+
+        @each('components.user.restaurants.indexCard', $restaurants, 'restaurant')
       </div>
     </div>
   </div>

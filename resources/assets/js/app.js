@@ -12,7 +12,6 @@ import VModal from 'vue-js-modal'
 Vue.prototype.$axios = window.axios
 
 Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
-
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,6 +26,10 @@ Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 Vue.component('header-right-list', require('./components/headerRightList.vue').default)
 Vue.component('update-user-image', require('./components/user/updateUserImage.vue').default)
 Vue.component('favorite-restaurant', require('./components/restaurants/favoriteRestaurant.vue').default)
+Vue.component('search-restaurants', require('./components/restaurants/searchRestaurants.vue').default)
+
+// Vue.component('search-restaurants-suggestion', require('./components/input/searchRestaurantsSuggestion.vue').default)
+// Vue.component('search-restaurants-select', require('./components/input/searchRestaurantsSelect.vue').default)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

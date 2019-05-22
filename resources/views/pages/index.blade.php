@@ -9,7 +9,9 @@
 
     <div class="row">
         <div class="col-md-12">
-            @include('components.user.restaurants.searchForm')
+            <div class="mx-auto" style="width: 64%;">
+                <search-restaurants></search-restaurants>
+            </div>
         </div>
     </div>
 @endsection

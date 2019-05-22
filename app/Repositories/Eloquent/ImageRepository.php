@@ -19,7 +19,7 @@ class ImageRepository implements ImageRepositoryInterface
 
     public function getBlankModel()
     {
-        return new User();
+        return new Image();
     }
 
     public function create($input)

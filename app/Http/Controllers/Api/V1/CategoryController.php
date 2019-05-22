@@ -5,24 +5,22 @@ namespace App\Http\Controllers\Api\V1;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Http\Requests\RestaurantRequest;
+use App\Http\Requests\CategoryRequest;
 
 use App\Services\UserService;
 use App\Repositories\UserRepositoryInterface;
 use App\Repositories\RestaurantRepositoryInterface;
 use App\Repositories\CategoryRepositoryInterface;
-use App\Repositories\ImageRepositoryInterface;
 
 use App\Models\Category;
 use App\Models\Restaurant;
 
-class RestaurantController extends Controller
+class CategoryController extends Controller
 {
     protected $userService;
     protected $userRepository;
     protected $restaurantRepository;
     protected $categoryRepository;
-    protected $imageRepository;
     /**
      * Create a new controller instance.
      *
@@ -32,47 +30,46 @@ class RestaurantController extends Controller
         UserService $userService,
         UserRepositoryInterface $userRepository,
         RestaurantRepositoryInterface $restaurantRepository,
-        CategoryRepositoryInterface $categoryRepository,
-        ImageRepositoryInterface $imageRepository
+        CategoryRepositoryInterface $categoryRepository
     )
     {
         $this->userService          = $userService;
         $this->userRepository       = $userRepository;
         $this->restaurantRepository = $restaurantRepository;
         $this->categoryRepository   = $categoryRepository;
-        $this->imageRepository      = $imageRepository;
     }
 
-    public function popular(RestaurantRequest $request)
+    public function popular(CategoryRequest $request)
     {
-        $input = $request->only($this->restaurantRepository->getBlankModel()->getFillable());
+        $input = $request->only($this->categoryRepository->getBlankModel()->getFillable());
 
-        $restaurants = $this->restaurantRepository->all();
+        $categories = $this->categoryRepository->all();
 
-        if (empty($restaurants)) {
+        if (empty($categories)) {
             return redirect()->back()->withErrors(trans('admin.errors.general.save_failed'));
         }
 
-        return response()->json(['restaurants' => $restaurants]);
+        return response()->json(['categories' => $categories]);
     }
 
-    public function suggest(RestaurantRequest $request)
+    public function suggest(CategoryRequest $request)
     {
-        $input = $request->only($this->restaurantRepository->getBlankModel()->getFillable());
+        $input = $request->only($this->categoryRepository->getBlankModel()->getFillable());
         $name = $request->get('name');
 
         if (!isset($input['name'])) {
           array_set($input, 'name', $name);
         }
 
-        $restaurants = $this->restaurantRepository->searchRestaurants($input);
+        $categories = $this->categoryRepository->searchCategories($input);
 
 
-        if (empty($restaurants)) {
+        if (empty($categories)) {
             return redirect()->back()->withErrors(trans('admin.errors.general.save_failed'));
         }
 
-        return response()->json(['restaurants' => $restaurants]);
+        return response()->json(['categories' => $categories]);
     }
+
 
 }

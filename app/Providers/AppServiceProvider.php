@@ -57,10 +57,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->bind('App\Services\UserService');
-        $this->app->bind('App\Services\ImageService');
-        $this->app->bind('App\Services\CategoryService');
-        $this->app->bind('App\Services\RestaurantService');
-        $this->app->bind('App\Services\FavoriteService');
     }
 }

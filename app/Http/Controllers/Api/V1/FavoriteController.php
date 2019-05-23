@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\UserRequest;
 
-use App\Services\UserService;
 use App\Repositories\UserRepositoryInterface;
 use App\Repositories\RestaurantRepositoryInterface;
 use App\Repositories\CategoryRepositoryInterface;
@@ -19,7 +18,6 @@ use App\Models\Restaurant;
 
 class FavoriteController extends Controller
 {
-    protected $userService;
     protected $userRepository;
     protected $restaurantRepository;
     protected $categoryRepository;
@@ -31,7 +29,6 @@ class FavoriteController extends Controller
      * @return void
      */
     public function __construct(
-        UserService $userService,
         UserRepositoryInterface $userRepository,
         RestaurantRepositoryInterface $restaurantRepository,
         CategoryRepositoryInterface $categoryRepository,

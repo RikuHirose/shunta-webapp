@@ -179,6 +179,7 @@ return [
         App\Providers\ViewCreatorServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
+        App\Providers\ServiceServiceProvider::class,
     ],
 
     /*
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'CategoryHelper' => \App\Facades\CategoryHelper::class,
+        'UrlHelper' => \App\Facades\UrlHelper::class,
     ],
 
 ];

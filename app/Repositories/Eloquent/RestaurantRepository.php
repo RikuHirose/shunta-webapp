@@ -53,26 +53,28 @@ class RestaurantRepository implements RestaurantRepositoryInterface
         return $models;
     }
 
-    public function restaurantsByTopSearch($word)
+    public function restaurantsByTopSearch($word, $high_price, $low_price)
     {
       $models = $this->restaurant;
 
-      $category_id = $this->categoryRepository->findCategoryId($word);
+      if (!is_null($word)) {
+        $category_id = $this->categoryRepository->findCategoryId($word);
 
-      if(!is_null($category_id)) {
-        $models = $models->when($category_id, function ($query) use ($category_id) {
-            return $query->where('category_id', $category_id);
-        });
+        if(!is_null($category_id)) {
+          $models = $models->when($category_id, function ($query) use ($category_id) {
+              return $query->where('category_id', $category_id);
+          });
+        }
       }
 
-      if(isset($word)) {
+      if(!is_null($word)) {
         $restaurant_name = $word;
         $models = $models->when($restaurant_name, function ($query) use ($restaurant_name) {
             return $query->orWhere('name', 'like', "%{$restaurant_name}%");
         });
       }
 
-      if(isset($word)) {
+      if(!is_null($word)) {
         $description = $word;
         $models = $models->when($description, function ($query) use ($description) {
             return $query->orWhere('description', 'like', "%{$description}%");

@@ -4,7 +4,8 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Services\UserService;
+use App\Services\UserServiceInterface;
+use App\Services\RestaurantServiceInterface;
 use App\Repositories\RestaurantRepositoryInterface;
 use App\Repositories\CategoryRepositoryInterface;
 
@@ -16,6 +17,7 @@ use App\Models\Restaurant;
 class RestaurantController extends Controller
 {
     protected $userService;
+    protected $restaurantService;
     protected $restaurantRepository;
     protected $categoryRepository;
     /**
@@ -24,33 +26,28 @@ class RestaurantController extends Controller
      * @return void
      */
     public function __construct(
-        UserService $userService,
+        UserServiceInterface $userService,
+        RestaurantServiceInterface $restaurantService,
         RestaurantRepositoryInterface $restaurantRepository,
         CategoryRepositoryInterface $categoryRepository
     )
     {
-        $this->userService      = $userService;
+        $this->userService          = $userService;
+        $this->restaurantService    = $restaurantService;
         $this->restaurantRepository = $restaurantRepository;
-        $this->categoryRepository = $categoryRepository;
+        $this->categoryRepository   = $categoryRepository;
     }
 
 
     public function index(SearchRequest $request)
     {
-        $q = \Request::query();
+        $parameter = \Request::query();
 
-        if(isset($q['word'])) {
-            $q['word'] = htmlspecialchars($q['word'], ENT_QUOTES, "UTF-8" );
-            $restaurants = $this->restaurantRepository->restaurantsByTopSearch($q['word']);
-
-        } else {
-            $restaurants = $this->restaurantRepository->all();
-        }
+        $restaurants = $this->restaurantService->getRestaurantsByParameter($parameter);
+        $restaurants->load('category', 'restaurantImages.image');
 
         if ($restaurants->isEmpty()) { $message = 'まだレストランはありません'; }
         if (!$restaurants->isEmpty()) { $message = ''; }
-
-        $restaurants->load('category', 'restaurantImages.image');
 
         return view('pages.restaurant.index',
             [

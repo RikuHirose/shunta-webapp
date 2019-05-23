@@ -37,5 +37,10 @@ class HelperServiceProvider extends ServiceProvider
             \App\Helpers\CategoryHelperInterface::class,
             \App\Helpers\Production\CategoryHelper::class
         );
+
+        $this->app->singleton(
+            \App\Helpers\UrlHelperInterface::class,
+            \App\Helpers\Production\UrlHelper::class
+        );
     }
 }

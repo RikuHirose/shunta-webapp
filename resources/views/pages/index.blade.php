@@ -10,7 +10,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="mx-auto" style="width: 64%;">
-                <search-restaurants></search-restaurants>
+                <search-restaurants
+                :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}" />
             </div>
         </div>
     </div>

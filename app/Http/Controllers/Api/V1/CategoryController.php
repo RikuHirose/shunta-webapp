@@ -30,7 +30,6 @@ class CategoryController extends Controller
         CategoryRepositoryInterface $categoryRepository
     )
     {
-        $this->userService          = $userService;
         $this->userRepository       = $userRepository;
         $this->restaurantRepository = $restaurantRepository;
         $this->categoryRepository   = $categoryRepository;

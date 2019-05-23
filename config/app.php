@@ -232,7 +232,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'CategoryHelper' => \App\Facades\CategoryHelper::class,
+        'FavoriteHelper' => \App\Facades\FavoriteHelper::class,
         'UrlHelper' => \App\Facades\UrlHelper::class,
+        'FormHelper' => \App\Facades\FormHelper::class,
     ],
 
 ];

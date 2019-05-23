@@ -15,7 +15,7 @@
       <favorite-restaurant
           :restaurant="{{json_encode($restaurant)}}"
           :current-user="{{json_encode($currentUser)}}"
-          :default-favorited="{{ json_encode(\App\Helpers\Production\FavoriteHelper::defaultFavorited($restaurant, $currentUser)) }}"></favorite-restaurant>
+          :default-favorited="{{ json_encode(FavoriteHelper::defaultFavorited($restaurant, $currentUser)) }}"></favorite-restaurant>
     @endisset
 
     <div style="">

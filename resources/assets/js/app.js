@@ -24,13 +24,26 @@ Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('header-right-list', require('./components/headerRightList.vue').default)
-Vue.component('update-user-image', require('./components/user/updateUserImage.vue').default)
+
+/* ============================================================================
+ * input
+ * ========================================================================= */
+Vue.component('search-restaurants-select', require('./components/input/searchRestaurantsSelect.vue').default)
+Vue.component('search-restaurants-suggest', require('./components/input/searchRestaurantsSuggest.vue').default)
+/* ============================================================================
+ * modal
+ * ========================================================================= */
+
+/* ============================================================================
+ * restaurants
+ * ========================================================================= */
 Vue.component('favorite-restaurant', require('./components/restaurants/favoriteRestaurant.vue').default)
 Vue.component('search-restaurants', require('./components/restaurants/searchRestaurants.vue').default)
 
-// Vue.component('search-restaurants-suggestion', require('./components/input/searchRestaurantsSuggestion.vue').default)
-// Vue.component('search-restaurants-select', require('./components/input/searchRestaurantsSelect.vue').default)
-
+/* ============================================================================
+ * user
+ * ========================================================================= */
+Vue.component('update-user-image', require('./components/user/updateUserImage.vue').default)
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

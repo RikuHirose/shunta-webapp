@@ -17,14 +17,12 @@ class FavoriteHelper implements FavoriteHelperInterface
         $this->favoriteRepository = $favoriteRepository;
     }
 
-    public static function defaultFavorited($restaurant, $currentUser)
+    public function defaultFavorited($restaurant, $currentUser)
     {
-        $favorite = new Favorite();
+        $favorite = new Favorite;
 
-        $favorite = $favorite->where('user_id', $currentUser['id'])
+        return $favorite->where('user_id', $currentUser['id'])
             ->where('restaurant_id', $restaurant['id'])
             ->exists();
-
-        return $favorite;
     }
 }

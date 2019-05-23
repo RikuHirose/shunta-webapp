@@ -42,5 +42,10 @@ class HelperServiceProvider extends ServiceProvider
             \App\Helpers\UrlHelperInterface::class,
             \App\Helpers\Production\UrlHelper::class
         );
+
+        $this->app->singleton(
+            \App\Helpers\FormHelperInterface::class,
+            \App\Helpers\Production\FormHelper::class
+        );
     }
 }

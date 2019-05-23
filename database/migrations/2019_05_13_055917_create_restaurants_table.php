@@ -21,8 +21,8 @@ class CreateRestaurantsTable extends Migration
             $table->string('description_title')->nullable();
             $table->string('description')->nullable();
             // （価格帯）
-            $table->string('lunch_price_zone')->nullable();
-            $table->string('dinner_price_zone')->nullable();
+            $table->unsignedInteger('lunch_price_zone')->nullable();
+            $table->unsignedInteger('dinner_price_zone')->nullable();
 
             $table->string('address')->nullable();
             $table->string('nearest_station')->nullable();

@@ -36,7 +36,6 @@ class FavoriteController extends Controller
         FavoriteRepositoryInterface $favoriteRepository
     )
     {
-        $this->userService          = $userService;
         $this->userRepository       = $userRepository;
         $this->restaurantRepository = $restaurantRepository;
         $this->categoryRepository   = $categoryRepository;

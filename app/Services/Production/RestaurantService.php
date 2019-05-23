@@ -20,12 +20,11 @@ class RestaurantService implements RestaurantServiceInterface
   {
 
     if(isset($parameter)) {
-        $word       = isset($parameter['word']) ? e($parameter['word']) : null;
-        $high_price = isset($parameter['high_price']) ? e($parameter['high_price']) : null;
-        $low_price  = isset($parameter['low_price']) ? e($parameter['low_price']) : null;
+        $word              = isset($parameter['word']) ? e($parameter['word']) : null;
+        $budget            = isset($parameter['budget']) ? e($parameter['budget']) : null;
+        $budget_meal_type  = isset($parameter['budget_meal_type']) ? e($parameter['budget_meal_type']) : null;
 
-        // ?? lunch or dinnerかparameterから判定する
-        $restaurants = $this->restaurantRepository->restaurantsByTopSearch($word, $high_price, $low_price);
+        $restaurants = $this->restaurantRepository->restaurantsByTopSearch($word, $budget, $budget_meal_type);
 
     } else {
         $restaurants = $this->restaurantRepository->all();

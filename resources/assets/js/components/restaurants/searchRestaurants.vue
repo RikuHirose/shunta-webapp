@@ -18,16 +18,25 @@
         <button
           type="button"
           class="m-btn"
+          @click="openObsessedBar()">
+          こだわり条件
+        </button>
+      </div>
+      <div>
+        <button
+          type="button"
+          class="m-btn"
+          :disabled="isButtonDisabled"
           @click="searchRestaurants()">
           検索
         </button>
       </div>
     </div>
-    <!-- suggest -->
+    <!-- SuggestBar -->
     <div
-      v-if="isOpen"
+      v-if="isOpenSuggestBar"
       class="suggest-field-overlay"
-      @click="close()">
+      @click="closeSuggestBar()">
       <div
         class="suggest-field">
         <div class="category-list list">
@@ -56,16 +65,69 @@
         </div>
       </div>
     </div>
+    <!-- Obsesed Bar -->
+    <div
+      v-if="isOpenObsessedBar"
+      class="suggest-field-overlay"
+      @click="closeObsessedBar()">
+      <div
+        class="suggest-field">
+        <p>カテゴリ・店名・キーワードを選択してください</p>
+        <table class="w-100">
+          <tr>
+            <th>予算</th>
+            <td style="display: flex;">
+              <ul style="display: flex;">
+                <li class="meal-type__item">
+                  <input
+                    v-model="budget_meal_type"
+                    type="radio"
+                    value="1">
+                  <label
+                    class="meal-type__label meal-type__label--lunch" />
+                </li>
+                <li class="meal-type__item">
+                  <input
+                    v-model="budget_meal_type"
+                    type="radio"
+                    value="2">
+                  <label
+                    class="meal-type__label meal-type__label--dinner" />
+                </li>
+              </ul>
+              <div>
+                <label>
+                  <select
+                    v-model="budget"
+                    class="form-control">
+                    <option
+                      disabled
+                      value="">未選択</option>
+                    <option
+                      v-for="(price, index) in priceList"
+                      :key="index"
+                      :value="price"> ~ {{ price }}円</option>
+                  </select>
+                </label>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
   props: {
+    priceList: {required: true, type: Array},
   },
   data (){
     return {
       inputWord: '',
-      isOpen: false,
+      isButtonDisabled: false,
+      isOpenSuggestBar: false,
+      isOpenObsessedBar: false,
       category_name: '',
       category_title: '',
       restaurant_title: '',
@@ -73,6 +135,10 @@ export default {
       popularCategories: [],
       popularRestaurants: [],
       restaurants: [],
+      budget_meal_type: '',
+      max_budget: '',
+      budget: '',
+      opening_hours: ''
     }
   },
   created () {
@@ -83,10 +149,16 @@ export default {
   },
   methods: {
     openSuggestBar (){
-      this.isOpen = true
+      this.isOpenSuggestBar = true
     },
-    close (){
-      this.isOpen = false
+    closeSuggestBar (){
+      this.isOpenSuggestBar = false
+    },
+    openObsessedBar (){
+      this.isOpenObsessedBar = true
+    },
+    closeObsessedBar (){
+      // this.isOpenObsessedBar = false
     },
     addInputWard (name) {
       this.inputWord = name
@@ -153,8 +225,13 @@ export default {
         })
     },
     searchRestaurants () {
-      let url = `/q?word=${this.inputWord}`
-      window.location.href = url
+      if (this.inputWord) {
+        this.isButtonDisabled = true
+
+        let url = `/q?word=${this.inputWord}&budget_meal_type=${this.budget_meal_type}&budget=${this.budget}`
+
+        window.location.href = url
+      }
     }
   }
 }

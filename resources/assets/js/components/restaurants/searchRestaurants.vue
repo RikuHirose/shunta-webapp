@@ -36,7 +36,7 @@
     <div
       v-if="isOpenSuggestBar"
       class="suggest-field-overlay"
-      @click="closeSuggestBar()">
+      @click.self="closeSuggestBar()">
       <div
         class="suggest-field">
         <div class="category-list list">
@@ -69,7 +69,7 @@
     <div
       v-if="isOpenObsessedBar"
       class="suggest-field-overlay"
-      @click="closeObsessedBar()">
+      @click.self="closeObsessedBar()">
       <div
         class="suggest-field">
         <p>カテゴリ・店名・キーワードを選択してください</p>
@@ -158,7 +158,7 @@ export default {
       this.isOpenObsessedBar = true
     },
     closeObsessedBar (){
-      // this.isOpenObsessedBar = false
+      this.isOpenObsessedBar = false
     },
     addInputWard (name) {
       this.inputWord = name
@@ -251,22 +251,20 @@ export default {
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
   padding: 16px;
-  // position: absolute;
   width: 100%;
   height: 200px;
   box-sizing: border-box;
-  top: 100%;
-  right: 1px;
-  left: 0;
   border-top: 1px solid #d5d5d8;
   display: flex;
   flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
 
   &-overlay {
-    // display: flex;
-    // align-items: center;
-    // justify-content: left;
-    // position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: fixed;
     // background: rgba(0, 0, 0, 0.5);
     z-index: 30;
     top: 0;

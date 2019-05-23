@@ -2541,7 +2541,8 @@ __webpack_require__.r(__webpack_exports__);
     openObsessedBar: function openObsessedBar() {
       this.isOpenObsessedBar = true;
     },
-    closeObsessedBar: function closeObsessedBar() {// this.isOpenObsessedBar = false
+    closeObsessedBar: function closeObsessedBar() {
+      this.isOpenObsessedBar = false;
     },
     addInputWard: function addInputWard(name) {
       this.inputWord = name;
@@ -7144,7 +7145,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".search-field__input[data-v-4fd8a00e] {\n  vertical-align: middle;\n  height: 24px;\n  line-height: 24px;\n  width: 100%;\n}\n.list[data-v-4fd8a00e] {\n  flex: 1 0 0%;\n  width: 50%;\n}\n.suggest-field[data-v-4fd8a00e] {\n  background: #fff;\n  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);\n  padding: 16px;\n  width: 100%;\n  height: 200px;\n  box-sizing: border-box;\n  top: 100%;\n  right: 1px;\n  left: 0;\n  border-top: 1px solid #d5d5d8;\n  display: flex;\n  flex-wrap: wrap;\n}\n.suggest-field-overlay[data-v-4fd8a00e] {\n  z-index: 30;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n.tag[data-v-4fd8a00e] {\n  padding: 8px;\n  background-color: #f4f4f5;\n  color: #4a4a4b;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  display: inline-block;\n  max-width: calc(100% + 8px);\n  box-sizing: border-box;\n  border: 0;\n  border-radius: 2px;\n  cursor: pointer;\n  font-size: 0.923em;\n  line-height: 0.923em;\n  outline: none;\n  text-align: left;\n  text-decoration: none;\n  vertical-align: middle;\n  transition: all 0.3s ease-out;\n}\n.category-list[data-v-4fd8a00e] {\n  padding-right: 8px;\n}\n.restaurant-list[data-v-4fd8a00e] {\n  padding-left: 8px;\n  border-left: 1px dotted #d5d5d8;\n}\n.cp_iptxt[data-v-4fd8a00e] {\n  position: relative;\n}\n.cp_iptxt input[type=text][data-v-4fd8a00e] {\n  font: 15px/24px sans-serif;\n  box-sizing: border-box;\n  width: 100%;\n  padding: 0.3em;\n  padding-left: 40px;\n  letter-spacing: 1px;\n  border: 0;\n}\n.cp_iptxt input[type=text][data-v-4fd8a00e]:focus {\n  outline: none;\n}\n.cp_iptxt input[type=text][data-v-4fd8a00e]:focus::after {\n  outline: none;\n}\n.cp_iptxt i[data-v-4fd8a00e] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  padding: 9px 5px;\n  transition: 0.3s;\n  color: #aaaaaa;\n}\n.cp_iptxt[data-v-4fd8a00e]::after {\n  display: block;\n  width: 100%;\n  height: 4px;\n  margin-top: -1px;\n  content: \"\";\n  border-width: 0 1px 1px 1px;\n  border-style: solid;\n  border-color: #da3c41;\n}", ""]);
+exports.push([module.i, ".search-field__input[data-v-4fd8a00e] {\n  vertical-align: middle;\n  height: 24px;\n  line-height: 24px;\n  width: 100%;\n}\n.list[data-v-4fd8a00e] {\n  flex: 1 0 0%;\n  width: 50%;\n}\n.suggest-field[data-v-4fd8a00e] {\n  background: #fff;\n  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);\n  padding: 16px;\n  width: 100%;\n  height: 200px;\n  box-sizing: border-box;\n  border-top: 1px solid #d5d5d8;\n  display: flex;\n  flex-wrap: wrap;\n  width: 50%;\n  margin: 0 auto;\n}\n.suggest-field-overlay[data-v-4fd8a00e] {\n  display: flex;\n  align-items: center;\n  justify-content: left;\n  position: fixed;\n  z-index: 30;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n.tag[data-v-4fd8a00e] {\n  padding: 8px;\n  background-color: #f4f4f5;\n  color: #4a4a4b;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  display: inline-block;\n  max-width: calc(100% + 8px);\n  box-sizing: border-box;\n  border: 0;\n  border-radius: 2px;\n  cursor: pointer;\n  font-size: 0.923em;\n  line-height: 0.923em;\n  outline: none;\n  text-align: left;\n  text-decoration: none;\n  vertical-align: middle;\n  transition: all 0.3s ease-out;\n}\n.category-list[data-v-4fd8a00e] {\n  padding-right: 8px;\n}\n.restaurant-list[data-v-4fd8a00e] {\n  padding-left: 8px;\n  border-left: 1px dotted #d5d5d8;\n}\n.cp_iptxt[data-v-4fd8a00e] {\n  position: relative;\n}\n.cp_iptxt input[type=text][data-v-4fd8a00e] {\n  font: 15px/24px sans-serif;\n  box-sizing: border-box;\n  width: 100%;\n  padding: 0.3em;\n  padding-left: 40px;\n  letter-spacing: 1px;\n  border: 0;\n}\n.cp_iptxt input[type=text][data-v-4fd8a00e]:focus {\n  outline: none;\n}\n.cp_iptxt input[type=text][data-v-4fd8a00e]:focus::after {\n  outline: none;\n}\n.cp_iptxt i[data-v-4fd8a00e] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  padding: 9px 5px;\n  transition: 0.3s;\n  color: #aaaaaa;\n}\n.cp_iptxt[data-v-4fd8a00e]::after {\n  display: block;\n  width: 100%;\n  height: 4px;\n  margin-top: -1px;\n  content: \"\";\n  border-width: 0 1px 1px 1px;\n  border-style: solid;\n  border-color: #da3c41;\n}", ""]);
 
 // exports
 
@@ -39497,6 +39498,9 @@ var render = function() {
             staticClass: "suggest-field-overlay",
             on: {
               click: function($event) {
+                if ($event.target !== $event.currentTarget) {
+                  return null
+                }
                 return _vm.closeSuggestBar()
               }
             }
@@ -39578,6 +39582,9 @@ var render = function() {
             staticClass: "suggest-field-overlay",
             on: {
               click: function($event) {
+                if ($event.target !== $event.currentTarget) {
+                  return null
+                }
                 return _vm.closeObsessedBar()
               }
             }

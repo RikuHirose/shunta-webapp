@@ -45,6 +45,7 @@
 @import "./modules/button";
 @import "./modules/icon";
 @import "./modules/form";
+@import "./modules/search";
 @import "./modules/tag";
 @import "./modules/breadcrumb";
 @import "./modules/modal";
@@ -53,6 +54,7 @@
  /* ============================================================================
  * pages
  * ========================================================================= */
+@import "./pages/index";
 @import "./pages/restaurants/index";
 @import "./pages/restaurants/index-sp";
 @import "./pages/restaurants/show";

@@ -29,7 +29,12 @@
             @include('shared.user.header')
 
             <main class="">
-                @include('shared.user.frame')
+
+                @if( isset($noContainer) && $noContainer == true )
+                    @yield('content')
+                @else
+                    @include('shared.user.frame')
+                @endif
             </main>
         @endif
 

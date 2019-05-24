@@ -1,32 +1,34 @@
 <template>
-  <div>
+  <div class="m-search">
     <div
       style="
       display: flex;
       width: 100%;">
       <div
-        class="cp_iptxt"
+        class="m-search__input"
         @click="openSuggestBar()">
         <input
           v-model="inputWord"
           type="text"
-          placeholer="カテゴリ・店名・キーワード"
+          placeholder="カテゴリ・店名・キーワード"
           @input="onInput">
-        <i class="fa-eat" />
+        <i
+          class="fa-eat" />
       </div>
       <div>
         <button
           type="button"
           class="m-btn"
+          btn-type="search-obsessed"
           @click="openObsessedBar()">
-          こだわり条件
+          <span class="mr-3">こだわり条件</span>
         </button>
       </div>
       <div>
         <button
           type="button"
           class="m-btn"
-          :disabled="isButtonDisabled"
+          :disabled="!isInputed"
           @click="searchRestaurants()">
           検索
         </button>
@@ -35,30 +37,34 @@
     <!-- SuggestBar -->
     <div
       v-if="isOpenSuggestBar"
-      class="suggest-field-overlay"
+      class="m-search__suggest-overlay"
       @click.self="closeSuggestBar()">
       <div
-        class="suggest-field">
-        <div class="category-list list">
-          <span>{{ category_title }}</span>
-          <ul
-            v-for="(category, index) in categories"
-            :key="index">
+        class="m-search__suggest">
+        <div class="m-search__suggest__category-list m-search__suggest__list">
+          <span class="fa-eat">
+            <span class="ml-2">{{ category_title }}</span>
+          </span>
+          <ul class="mt-2">
             <li
-              class="tag"
-              @click="addInputWard(category.name)">
+              v-for="(category, index) in categories"
+              :key="index"
+              class="m-search__suggest__tag"
+              @click="addInputWord(category.name)">
               {{ category.name }}
             </li>
           </ul>
         </div>
-        <div class="restaurant-list list">
-          <span>{{ restaurant_title }}</span>
-          <ul
-            v-for="(restaurant, index) in restaurants"
-            :key="index">
+        <div class="m-search__suggest__restaurant-list m-search__suggest__list">
+          <span class="fa-restaurant">
+            <span class="ml-2">{{ restaurant_title }}</span>
+          </span>
+          <ul class="mt-2">
             <li
-              class="tag"
-              @click="addInputWard(restaurant.name)">
+              v-for="(restaurant, index) in restaurants"
+              :key="index"
+              class="m-search__suggest__tag"
+              @click="addInputWord(restaurant.name)">
               {{ restaurant.name }}
             </li>
           </ul>
@@ -68,33 +74,44 @@
     <!-- Obsesed Bar -->
     <div
       v-if="isOpenObsessedBar"
-      class="suggest-field-overlay"
+      class="m-search__suggest-overlay"
       @click.self="closeObsessedBar()">
       <div
-        class="suggest-field">
-        <p>カテゴリ・店名・キーワードを選択してください</p>
+        class="m-search__suggest">
+        <p
+          v-if="!isInputed"
+          class="m-search__suggest--caution">
+          カテゴリ・店名・キーワードを選択してください
+        </p>
         <table class="w-100">
           <tr>
-            <th>予算</th>
+            <th class="fa-yen">
+              予算
+            </th>
             <td style="display: flex;">
-              <ul style="display: flex;">
-                <li class="meal-type__item">
-                  <input
-                    v-model="budget_meal_type"
-                    type="radio"
-                    value="1">
-                  <label
-                    class="meal-type__label meal-type__label--lunch" />
-                </li>
-                <li class="meal-type__item">
-                  <input
-                    v-model="budget_meal_type"
-                    type="radio"
-                    value="2">
-                  <label
-                    class="meal-type__label meal-type__label--dinner" />
-                </li>
-              </ul>
+              <div class="switch-budget-type mr-3">
+                <input
+                  id="on"
+                  v-model="budget_meal_type"
+                  type="radio"
+                  value="1"
+                  :checked="true">
+                <label
+                  for="on"
+                  class="switch-on">
+                  <span class="fa-lunch" />
+                </label>
+                <input
+                  id="off"
+                  v-model="budget_meal_type"
+                  type="radio"
+                  value="0">
+                <label
+                  for="off"
+                  class="switch-off">
+                  <span class="fa-dinner" />
+                </label>
+              </div>
               <div>
                 <label>
                   <select
@@ -125,7 +142,7 @@ export default {
   data (){
     return {
       inputWord: '',
-      isButtonDisabled: false,
+      isInputed: false,
       isOpenSuggestBar: false,
       isOpenObsessedBar: false,
       category_name: '',
@@ -160,18 +177,21 @@ export default {
     closeObsessedBar (){
       this.isOpenObsessedBar = false
     },
-    addInputWard (name) {
+    addInputWord (name) {
       this.inputWord = name
+      this.isInputed = true
     },
     onInput: function() {
       if (this.inputWord) {
         this.fetchCategories()
         this.fetchRestaurants()
+        this.isInputed = true
       }
 
       if (!this.inputWord) {
         this.categories = this.popularCategories
         this.restaurants = this.popularRestaurants
+        this.isInputed = false
       }
     },
     fetchPopularCategories () {
@@ -226,8 +246,6 @@ export default {
     },
     searchRestaurants () {
       if (this.inputWord) {
-        this.isButtonDisabled = true
-
         let url = `/q?word=${this.inputWord}&budget_meal_type=${this.budget_meal_type}&budget=${this.budget}`
 
         window.location.href = url
@@ -237,104 +255,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.search-field__input {
-  vertical-align: middle;
-  height: 24px;
-  line-height: 24px;
-  width: 100%;
-}
-.list {
-  flex: 1 0 0%;
-  width: 50%;
-}
-.suggest-field {
-  background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
-  padding: 16px;
-  width: 100%;
-  height: 200px;
-  box-sizing: border-box;
-  border-top: 1px solid #d5d5d8;
-  display: flex;
-  flex-wrap: wrap;
-  width: 50%;
-  margin: 0 auto;
-
-  &-overlay {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    position: fixed;
-    // background: rgba(0, 0, 0, 0.5);
-    z-index: 30;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-.tag {
-  padding: 8px;
-  background-color: #f4f4f5;
-  color: #4a4a4b;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: inline-block;
-  max-width: calc(100% + 8px);
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 2px;
-  cursor: pointer;
-  font-size: .923em;
-  line-height: .923em;
-  outline: none;
-  text-align: left;
-  text-decoration: none;
-  vertical-align: middle;
-  transition: all .3s ease-out;
-}
-.category-list {
-  padding-right: 8px;
-}
-.restaurant-list {
-  padding-left: 8px;
-  border-left: 1px dotted #d5d5d8;
-}
-.cp_iptxt {
-  position: relative;
-}
-.cp_iptxt input[type='text'] {
-  font: 15px/24px sans-serif;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.3em;
-  padding-left: 40px;
-  letter-spacing: 1px;
-  border: 0;
-}
-.cp_iptxt input[type='text']:focus {
-  outline: none;
-}
-.cp_iptxt input[type='text']:focus::after {
-  outline: none;
-}
-.cp_iptxt i {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 9px 5px;
-  transition: 0.3s;
-  color: #aaaaaa;
-}
-.cp_iptxt::after {
-  display: block;
-  width: 100%;
-  height: 4px;
-  margin-top: -1px;
-  content: '';
-  border-width: 0 1px 1px 1px;
-  border-style: solid;
-  border-color: #da3c41;
-}
 </style>

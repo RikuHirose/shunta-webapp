@@ -24,6 +24,14 @@
     }
   }
 
+  &-restaurant {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-store;
+      font-weight: 600;
+    }
+  }
+
   &-lunch {
     &::before {
       font-family: $_fontawesome;
@@ -69,6 +77,13 @@
       content: $_fa-heart;
       font-weight: 600;
       color: $c-gray;
+    }
+  }
+  &-yen {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-yen-sign;
+      font-weight: 600;
     }
   }
 }

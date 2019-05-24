@@ -11082,6 +11082,36 @@ a.text-dark:focus {
   background: #3b5998;
 }
 
+.m-btn[btn-type=search-obsessed],
+.m-btnS[btn-type=search-obsessed],
+.m-btnL[btn-type=search-obsessed] {
+  border-color: #aaaaaa;
+  color: #aaaaaa;
+  background: #fff;
+  border-left: 1px solid;
+  position: relative;
+}
+
+.m-btn[btn-type=search-obsessed]::after,
+.m-btnS[btn-type=search-obsessed]::after,
+.m-btnL[btn-type=search-obsessed]::after {
+  content: " ";
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 5px solid transparent;
+  border-top-color: #aaaaaa;
+  top: 43%;
+  left: 55%;
+  margin-left: 46px;
+}
+
+.m-btn[btn-type=search-obsessed]:focus,
+.m-btnS[btn-type=search-obsessed]:focus,
+.m-btnL[btn-type=search-obsessed]:focus {
+  outline: none;
+}
+
 .m-btn[disabled],
 .m-btn.is-disabled,
 .m-btnS[disabled],
@@ -11160,6 +11190,12 @@ a.m-btn {
   font-weight: 600;
 }
 
+.fa-restaurant::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F54E";
+  font-weight: 600;
+}
+
 .fa-lunch::before {
   font-family: "Font Awesome 5 Free";
   content: "\F185";
@@ -11200,6 +11236,12 @@ a.m-btn {
   color: #DEDEDE;
 }
 
+.fa-yen::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F157";
+  font-weight: 600;
+}
+
 /* ----------------------------------------------------------------------------
  * Form
  * ------------------------------------------------------------------------- */
@@ -11218,6 +11260,148 @@ a.m-btn {
 .m-frmTextbox label {
   border-bottom: 1px solid #CCCCCC;
   display: block;
+}
+
+/* ----------------------------------------------------------------------------
+ * Search Form
+ * ------------------------------------------------------------------------- */
+
+.m-search__suggest {
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  width: 100%;
+  height: 200px;
+  box-sizing: border-box;
+  border-top: 1px solid #d5d5d8;
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  margin: 0 auto;
+}
+
+.m-search__suggest--caution {
+  color: #ff5714;
+}
+
+.m-search__suggest-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.m-search__suggest__list {
+  flex: 1 0 0%;
+  width: 50%;
+}
+
+.m-search__suggest__list span::before {
+  font-size: 5px;
+  padding-bottom: 5px;
+}
+
+.m-search__suggest__category-list {
+  padding-right: 8px;
+}
+
+.m-search__suggest__restaurant-list {
+  padding-left: 8px;
+  border-left: 1px dotted #d5d5d8;
+}
+
+.m-search__suggest__tag {
+  margin-right: 8px;
+  padding: 8px;
+  background-color: #f4f4f5;
+  color: #4a4a4b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: calc(100% + 8px);
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 6px;
+  line-height: 0.923em;
+  outline: none;
+  text-align: left;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: all 0.3s ease-out;
+}
+
+.m-search__input {
+  position: relative;
+  width: 298px;
+}
+
+.m-search__input i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px 10px;
+  transition: 0.3s;
+  color: #aaaaaa;
+}
+
+.m-search__input input[type=text] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3em;
+  padding-left: 40px;
+  letter-spacing: 1px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.m-search__input input[type=text]:focus {
+  outline: none;
+}
+
+.m-search .switch-budget-type input {
+  display: none;
+}
+
+.m-search .switch-budget-type input[type=radio]:checked + .switch-on {
+  background-color: #FFD20B;
+  color: #fff;
+}
+
+.m-search .switch-budget-type input[type=radio]:checked + .switch-off {
+  background-color: #3b37af;
+  color: #fff;
+}
+
+.m-search .switch-budget-type label {
+  display: block;
+  float: left;
+  cursor: pointer;
+  width: 48px;
+  margin: 0;
+  padding: 10px;
+  background: #bdc3c7;
+  color: #869198;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1;
+  transition: 0.2s;
+}
+
+.m-search .switch-budget-type label:first-of-type {
+  border-radius: 3px 0 0 3px;
+}
+
+.m-search .switch-budget-type label:last-of-type {
+  border-radius: 0 3px 3px 0;
 }
 
 /* ----------------------------------------------------------------------------
@@ -11292,6 +11476,52 @@ a.m-btn {
 /* ============================================================================
 * pages
 * ========================================================================= */
+
+/* ----------------------------------------------------------------------------
+ * page  index
+ * ------------------------------------------------------------------------- */
+
+.p-index {
+  height: 400px;
+  position: relative;
+  background-image: url(/images/bg-top.jpg);
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-size: cover;
+  z-index: 0;
+  background-position: top;
+  min-width: 1160px;
+  padding-top: 100px;
+  padding-bottom: 90px;
+  width: 100%;
+}
+
+.p-index--copy {
+  position: relative;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-align: center;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.p-index__search-form {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-index .m-search__suggest {
+  position: relative;
+  top: 6.5%;
+}
+
+.p-index input,
+.p-index button {
+  height: 54px;
+}
 
 /* ----------------------------------------------------------------------------
  * page restaurants index

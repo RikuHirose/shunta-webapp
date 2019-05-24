@@ -32,10 +32,18 @@
 
   .m-search__suggest {
     position: relative;
-    top: 6.5%;
+    top: 5.5%;
   }
-  input, button {
-    height: 54px;
+  .m-search {
+    i {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 16px 10px;
+    }
+    input, button {
+      height: 54px;
+    }
   }
 
 }

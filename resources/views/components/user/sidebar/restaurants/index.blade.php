@@ -1,5 +1,5 @@
 <div class="col-md-2">
-  <form action="/q" accept-charset="UTF-8" method="get">
+  <!-- <form action="/q" accept-charset="UTF-8" method="get">
     @csrf
     <div class="form-group m-frmTextbox">
       <label for="" >カテゴリ</label>
@@ -17,5 +17,6 @@
     <div class="form-group m-frmTextbox">
       <button type="submit" class="form-control m-btnS" btn-type="primary">再検索する</button>
     </div>
-  </form>
+  </form> -->
+
 </div>

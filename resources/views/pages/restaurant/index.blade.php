@@ -8,6 +8,16 @@
         {{ Breadcrumbs::render('restaurants') }}
       </div>
       <div class="col-md-6"></div>
+
+      <div class="col-md-12 mt-3 mb-5" style="display: flex;
+        justify-content: center;">
+        <div class=" mx-auto" style="box-shadow: 0 1px 2px 0 rgba(0,0,0,.2); border-radius: 2px;">
+          <search-restaurants
+            :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
+            :search-button-title="'再検索する'" />
+        </div>
+      </div>
+
       <div class="col-md-6"></div>
       <div class="col-md-6">
         <nav class="float-right p-res-index__nav">
@@ -22,9 +32,8 @@
 
     <div class="row">
       <!-- sidebar -->
-      @include('components.user.sidebar.restaurants.index')
       <!-- content -->
-      <div class="col-md-10">
+      <div class="col-md-12">
         @isset($message)
           {{ $message }}
         @endisset

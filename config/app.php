@@ -235,6 +235,7 @@ return [
         'FavoriteHelper' => \App\Facades\FavoriteHelper::class,
         'UrlHelper' => \App\Facades\UrlHelper::class,
         'FormHelper' => \App\Facades\FormHelper::class,
+        'ImageHelper' => \App\Facades\ImageHelper::class,
     ],
 
 ];

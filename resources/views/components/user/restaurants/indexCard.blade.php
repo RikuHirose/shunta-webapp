@@ -1,7 +1,7 @@
 <div class="row mb-3 c-res-index-card">
 
   <div class="col-md-7 c-res-index-card--img__wrap">
-    <img src="{{ $restaurant->restaurantImages[0]->image->url }}" class="c-res-index-card--img__sizing">
+    <img src="{{ ImageHelper::getFirstImageForRestaurant($restaurant) }}" class="c-res-index-card--img__sizing">
   </div>
 
   <div class="col-md-5 mt-3 mb-3">
@@ -13,9 +13,9 @@
 
     @isset($currentUser)
       <favorite-restaurant
-          :restaurant="{{json_encode($restaurant)}}"
-          :current-user="{{json_encode($currentUser)}}"
-          :default-favorited="{{ json_encode(FavoriteHelper::defaultFavorited($restaurant, $currentUser)) }}"></favorite-restaurant>
+        :restaurant="{{json_encode($restaurant)}}"
+        :current-user="{{json_encode($currentUser)}}"
+        :default-favorited="{{ json_encode(FavoriteHelper::defaultFavorited($restaurant, $currentUser)) }}"></favorite-restaurant>
     @endisset
 
     <div style="">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="text-center">
-      <a href="{{ route('restaurants.show', [$restaurant->id]) }}" type="button" class="w-100 m-btnL" btn-type="primary">
+      <a href="{{ route('restaurants.show', [$restaurant->id]) }}" type="button" class="w-100 m-btnM" btn-type="primary">
         詳しく見る
       </a>
     </div>

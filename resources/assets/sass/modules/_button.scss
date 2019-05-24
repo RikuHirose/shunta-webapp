@@ -3,6 +3,7 @@
  * ------------------------------------------------------------------------- */
 .m-btn,
 .m-btnS,
+.m-btnM,
 .m-btnL {
   font-size: 14px;
   color: $c-white;
@@ -131,6 +132,16 @@ a.m-btn {
   background: #293160;
 }
 
+.m-btnM {
+  min-width: 145px;
+  min-height: 50px;
+  padding: 10px;
+}
+
+a.m-btn {
+  min-height: 20px;
+  min-width: 125px;
+}
 
 
 /* SizeL */

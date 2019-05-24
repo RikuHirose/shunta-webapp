@@ -10933,6 +10933,7 @@ a.text-dark:focus {
 
 .c-res-index-card--img__sizing {
   width: 100%;
+  height: 280px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -10951,7 +10952,7 @@ a.text-dark:focus {
 
 .c-res-index-card--desc {
   padding: 8px 0;
-  min-height: 176px;
+  min-height: 96px;
 }
 
 .c-res-index-card--desc-ttl {
@@ -10961,7 +10962,7 @@ a.text-dark:focus {
 
 .c-res-index-card--desc-p {
   font-size: 12px;
-  height: 56px;
+  height: 40px;
   overflow: hidden;
   position: relative;
 }
@@ -10969,7 +10970,7 @@ a.text-dark:focus {
 .c-res-index-card--desc-p::after {
   content: "...";
   position: absolute;
-  top: 35px;
+  top: 16px;
   left: 352px;
 }
 
@@ -10983,6 +10984,7 @@ a.text-dark:focus {
 
 .m-btn,
 .m-btnS,
+.m-btnM,
 .m-btnL {
   font-size: 14px;
   color: #fff;
@@ -10998,78 +11000,91 @@ a.text-dark:focus {
 
 .m-btn a,
 .m-btnS a,
+.m-btnM a,
 .m-btnL a {
   color: #fff;
 }
 
 .m-btn:hover,
 .m-btnS:hover,
+.m-btnM:hover,
 .m-btnL:hover {
   color: #fff;
 }
 
 .m-btn:active,
 .m-btnS:active,
+.m-btnM:active,
 .m-btnL:active {
   color: #fff;
 }
 
 .m-btn[btn-type=primary],
 .m-btnS[btn-type=primary],
+.m-btnM[btn-type=primary],
 .m-btnL[btn-type=primary] {
   background: #3b37af;
 }
 
 .m-btn[btn-type=primary]:hover,
 .m-btnS[btn-type=primary]:hover,
+.m-btnM[btn-type=primary]:hover,
 .m-btnL[btn-type=primary]:hover {
   background: #5e5ad6;
 }
 
 .m-btn[btn-type=primary]:active,
 .m-btnS[btn-type=primary]:active,
+.m-btnM[btn-type=primary]:active,
 .m-btnL[btn-type=primary]:active {
   background: #0a02e8;
 }
 
 .m-btn[btn-type=secondly],
 .m-btnS[btn-type=secondly],
+.m-btnM[btn-type=secondly],
 .m-btnL[btn-type=secondly] {
   background: #293162;
 }
 
 .m-btn[btn-type=secondly]:hover,
 .m-btnS[btn-type=secondly]:hover,
+.m-btnM[btn-type=secondly]:hover,
 .m-btnL[btn-type=secondly]:hover {
   background: #44509e;
 }
 
 .m-btn[btn-type=secondly]:active,
 .m-btnS[btn-type=secondly]:active,
+.m-btnM[btn-type=secondly]:active,
 .m-btnL[btn-type=secondly]:active {
   background: #071c9f;
 }
 
 .m-btn[btn-type=negative],
 .m-btnS[btn-type=negative],
+.m-btnM[btn-type=negative],
 .m-btnL[btn-type=negative] {
   background: #505050;
 }
 
 .m-btn[btn-type=negative]:hover,
 .m-btnS[btn-type=negative]:hover,
+.m-btnM[btn-type=negative]:hover,
 .m-btnL[btn-type=negative]:hover {
   background: #747474;
 }
 
 .m-btn[btn-type=negative]:active,
 .m-btnS[btn-type=negative]:active,
+.m-btnM[btn-type=negative]:active,
 .m-btnL[btn-type=negative]:active {
   background: #232323;
 }
 
 .m-btn[btn-type=facebook],
 .m-btnS[btn-type=facebook],
+.m-btnM[btn-type=facebook],
 .m-btnL[btn-type=facebook] {
   border-color: #3b5998;
   color: #fff;
@@ -11078,6 +11093,7 @@ a.text-dark:focus {
 
 .m-btn[btn-type=facebook]:hover,
 .m-btnS[btn-type=facebook]:hover,
+.m-btnM[btn-type=facebook]:hover,
 .m-btnL[btn-type=facebook]:hover {
   border-color: #3b5998;
   background: #3b5998;
@@ -11085,6 +11101,7 @@ a.text-dark:focus {
 
 .m-btn[btn-type=search-obsessed],
 .m-btnS[btn-type=search-obsessed],
+.m-btnM[btn-type=search-obsessed],
 .m-btnL[btn-type=search-obsessed] {
   border-color: #aaaaaa;
   color: #aaaaaa;
@@ -11095,6 +11112,7 @@ a.text-dark:focus {
 
 .m-btn[btn-type=search-obsessed]::after,
 .m-btnS[btn-type=search-obsessed]::after,
+.m-btnM[btn-type=search-obsessed]::after,
 .m-btnL[btn-type=search-obsessed]::after {
   content: " ";
   height: 0;
@@ -11109,6 +11127,7 @@ a.text-dark:focus {
 
 .m-btn[btn-type=search-obsessed]:focus,
 .m-btnS[btn-type=search-obsessed]:focus,
+.m-btnM[btn-type=search-obsessed]:focus,
 .m-btnL[btn-type=search-obsessed]:focus {
   outline: none;
 }
@@ -11117,6 +11136,8 @@ a.text-dark:focus {
 .m-btn.is-disabled,
 .m-btnS[disabled],
 .m-btnS.is-disabled,
+.m-btnM[disabled],
+.m-btnM.is-disabled,
 .m-btnL[disabled],
 .m-btnL.is-disabled {
   cursor: default;
@@ -11129,6 +11150,8 @@ a.text-dark:focus {
 .m-btn.is-disabled:hover,
 .m-btnS[disabled]:hover,
 .m-btnS.is-disabled:hover,
+.m-btnM[disabled]:hover,
+.m-btnM.is-disabled:hover,
 .m-btnL[disabled]:hover,
 .m-btnL.is-disabled:hover {
   color: #bcbcbc;
@@ -11139,6 +11162,8 @@ a.text-dark:focus {
 .m-btn.is-disabled:active,
 .m-btnS[disabled]:active,
 .m-btnS.is-disabled:active,
+.m-btnM[disabled]:active,
+.m-btnM.is-disabled:active,
 .m-btnL[disabled]:active,
 .m-btnL.is-disabled:active {
   color: #bcbcbc;
@@ -11164,6 +11189,17 @@ a.m-btn {
   min-width: 80px;
   min-height: 24px;
   background: #293160;
+}
+
+.m-btnM {
+  min-width: 145px;
+  min-height: 50px;
+  padding: 10px;
+}
+
+a.m-btn {
+  min-height: 20px;
+  min-width: 125px;
 }
 
 /* SizeL */

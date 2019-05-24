@@ -10895,7 +10895,8 @@ a.text-dark:focus {
 
 #header {
   width: 100%;
-  min-height: 80px;
+  min-height: 72px;
+  border-bottom: 2px solid #d5d5d5;
 }
 
 #header .m-header--wrap {
@@ -10950,7 +10951,7 @@ a.text-dark:focus {
 
 .c-res-index-card--desc {
   padding: 8px 0;
-  min-height: 144px;
+  min-height: 176px;
 }
 
 .c-res-index-card--desc-ttl {
@@ -10969,7 +10970,7 @@ a.text-dark:focus {
   content: "...";
   position: absolute;
   top: 35px;
-  left: 230px;
+  left: 352px;
 }
 
 /* ============================================================================
@@ -11144,7 +11145,7 @@ a.text-dark:focus {
   background: #ddd;
 }
 
-/* SizeM */
+/* Size */
 
 .m-btn {
   min-width: 145px;
@@ -11163,6 +11164,14 @@ a.m-btn {
   min-width: 80px;
   min-height: 24px;
   background: #293160;
+}
+
+/* SizeL */
+
+.m-btnL {
+  min-width: 195px;
+  min-height: 64px;
+  padding: 20px;
 }
 
 /* ----------------------------------------------------------------------------
@@ -11266,6 +11275,11 @@ a.m-btn {
  * Search Form
  * ------------------------------------------------------------------------- */
 
+.m-search--wrap {
+  display: flex;
+  width: 100%;
+}
+
 .m-search__suggest {
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
@@ -11344,10 +11358,6 @@ a.m-btn {
 }
 
 .m-search__input i {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 16px 10px;
   transition: 0.3s;
   color: #aaaaaa;
 }
@@ -11367,21 +11377,25 @@ a.m-btn {
   outline: none;
 }
 
-.m-search .switch-budget-type input {
+.m-search .budget-type {
+  display: flex;
+}
+
+.m-search .budget-type--switch input {
   display: none;
 }
 
-.m-search .switch-budget-type input[type=radio]:checked + .switch-on {
+.m-search .budget-type--switch input[type=radio]:checked + .switch-on {
   background-color: #FFD20B;
   color: #fff;
 }
 
-.m-search .switch-budget-type input[type=radio]:checked + .switch-off {
+.m-search .budget-type--switch input[type=radio]:checked + .switch-off {
   background-color: #3b37af;
   color: #fff;
 }
 
-.m-search .switch-budget-type label {
+.m-search .budget-type--switch label {
   display: block;
   float: left;
   cursor: pointer;
@@ -11396,11 +11410,11 @@ a.m-btn {
   transition: 0.2s;
 }
 
-.m-search .switch-budget-type label:first-of-type {
+.m-search .budget-type--switch label:first-of-type {
   border-radius: 3px 0 0 3px;
 }
 
-.m-search .switch-budget-type label:last-of-type {
+.m-search .budget-type--switch label:last-of-type {
   border-radius: 0 3px 3px 0;
 }
 
@@ -11515,11 +11529,18 @@ a.m-btn {
 
 .p-index .m-search__suggest {
   position: relative;
-  top: 6.5%;
+  top: 5.5%;
 }
 
-.p-index input,
-.p-index button {
+.p-index .m-search i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px 10px;
+}
+
+.p-index .m-search input,
+.p-index .m-search button {
   height: 54px;
 }
 
@@ -11529,6 +11550,23 @@ a.m-btn {
 
 .p-res-index__nav a {
   color: #555555;
+}
+
+.p-res-index .m-search__suggest {
+  position: relative;
+  top: -10.5%;
+}
+
+.p-res-index .m-search i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px 10px;
+}
+
+.p-res-index .m-search input,
+.p-res-index .m-search button {
+  height: 54px;
 }
 
 /* ----------------------------------------------------------------------------

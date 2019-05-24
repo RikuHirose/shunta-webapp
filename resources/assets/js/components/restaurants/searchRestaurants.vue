@@ -1,9 +1,6 @@
 <template>
   <div class="m-search">
-    <div
-      style="
-      display: flex;
-      width: 100%;">
+    <div class="m-search--wrap">
       <div
         class="m-search__input"
         @click="openSuggestBar()">
@@ -30,7 +27,7 @@
           class="m-btn"
           :disabled="!isInputed"
           @click="searchRestaurants()">
-          検索
+          {{ searchButtonTitle }}
         </button>
       </div>
     </div>
@@ -88,8 +85,8 @@
             <th class="fa-yen">
               予算
             </th>
-            <td style="display: flex;">
-              <div class="switch-budget-type mr-3">
+            <td class="budget-type">
+              <div class="budget-type--switch mr-3">
                 <input
                   id="on"
                   v-model="budget_meal_type"
@@ -138,6 +135,7 @@
 export default {
   props: {
     priceList: {required: true, type: Array},
+    searchButtonTitle: {required: true, type: String},
   },
   data (){
     return {

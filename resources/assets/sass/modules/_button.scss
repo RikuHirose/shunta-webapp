@@ -110,7 +110,7 @@
   }
 }
 
-/* SizeM */
+/* Size */
 .m-btn {
   min-width: 145px;
   min-height: 40px;
@@ -129,4 +129,13 @@ a.m-btn {
   min-height: 24px;
   //  padding: 5px;
   background: #293160;
+}
+
+
+
+/* SizeL */
+.m-btnL {
+  min-width: 195px;
+  min-height: 64px;
+  padding: 20px;
 }

@@ -32,7 +32,7 @@
     </div>
 
     <div class="text-center">
-      <a href="{{ route('restaurants.show', [$restaurant->id]) }}" type="button" class="w-100 m-btn" btn-type="primary">
+      <a href="{{ route('restaurants.show', [$restaurant->id]) }}" type="button" class="w-100 m-btnL" btn-type="primary">
         詳しく見る
       </a>
     </div>

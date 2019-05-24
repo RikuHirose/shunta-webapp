@@ -2513,14 +2513,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     priceList: {
       required: true,
       type: Array
+    },
+    searchButtonTitle: {
+      required: true,
+      type: String
     }
   },
   data: function data() {
@@ -39388,7 +39389,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "m-search" }, [
-    _c("div", { staticStyle: { display: "flex", width: "100%" } }, [
+    _c("div", { staticClass: "m-search--wrap" }, [
       _c(
         "div",
         {
@@ -39456,7 +39457,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n        検索\n      ")]
+          [_vm._v("\n        " + _vm._s(_vm.searchButtonTitle) + "\n      ")]
         )
       ])
     ]),
@@ -39595,8 +39596,8 @@ var render = function() {
                     _vm._v("\n            予算\n          ")
                   ]),
                   _vm._v(" "),
-                  _c("td", { staticStyle: { display: "flex" } }, [
-                    _c("div", { staticClass: "switch-budget-type mr-3" }, [
+                  _c("td", { staticClass: "budget-type" }, [
+                    _c("div", { staticClass: "budget-type--switch mr-3" }, [
                       _c("input", {
                         directives: [
                           {

@@ -1,7 +1,7 @@
 <div class="row mb-3 c-res-index-card">
 
   <div class="col-md-7 c-res-index-card--img__wrap">
-    <img src="{{ $restaurant->restaurantImages[0]->image->url }}" class="c-res-index-card--img__sizing">
+    <img src="{{ ImageHelper::getFirstImageForRestaurant($restaurant) }}" class="c-res-index-card--img__sizing">
   </div>
 
   <div class="col-md-5 mt-3 mb-3">

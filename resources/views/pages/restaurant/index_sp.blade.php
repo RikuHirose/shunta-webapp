@@ -2,12 +2,21 @@
 
 @section('content')
 
-  <div class="p-res-index">
+  <div class="p-res-index-sp">
     <div class="row mb-2">
       <div class="col-md-6">
         {{ Breadcrumbs::render('restaurants') }}
       </div>
       <div class="col-md-6"></div>
+
+      <div class="col-md-12 mt-3 mb-5">
+        <div class=" mx-auto">
+          <search-restaurants
+            :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
+            :search-button-title="'再検索する'" />
+        </div>
+      </div>
+
       <div class="col-md-6"></div>
       <div class="col-md-6">
         <nav class="float-right p-res-index__nav">

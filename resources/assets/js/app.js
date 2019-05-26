@@ -39,6 +39,7 @@ Vue.component('search-restaurants-suggest', require('./components/input/searchRe
  * ========================================================================= */
 Vue.component('favorite-restaurant', require('./components/restaurants/favoriteRestaurant.vue').default)
 Vue.component('search-restaurants', require('./components/restaurants/searchRestaurants.vue').default)
+Vue.component('search-restaurants-sp', require('./components/restaurants/searchRestaurantsSp.vue').default)
 
 /* ============================================================================
  * user

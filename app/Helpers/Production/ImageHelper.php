@@ -12,6 +12,7 @@ class ImageHelper implements ImageHelperInterface
 
     public function getFirstImageForRestaurant($restaurant)
     {
+        // $restaurant->restaurantImages[0]がなかったらdefault imageをreturnする
         $fullUrl = self::convertFullImageUrl($restaurant->restaurantImages[0]->image->url);
 
         return $fullUrl;

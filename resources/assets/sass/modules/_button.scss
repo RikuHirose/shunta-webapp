@@ -70,10 +70,8 @@
   }
 
   &[btn-type="search-obsessed"] {
-    border-color: #aaaaaa;
     color: #aaaaaa;
     background: $c-white;
-    border-left: 1px solid;
     position: relative;
     &::after {
       content: " ";
@@ -149,4 +147,25 @@ a.m-btn {
   min-width: 195px;
   min-height: 64px;
   padding: 20px;
+}
+
+
+.m-btn-close {
+  // close-button
+  &[btn-type="close-button"] {
+    color: #aaaaaa;
+    border: 1px solid #aaaaaa;
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    span {
+      position: relative;
+      top: 31%;
+    }
+    &:hover {
+    }
+  }
 }

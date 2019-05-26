@@ -11103,10 +11103,8 @@ a.text-dark:focus {
 .m-btnS[btn-type=search-obsessed],
 .m-btnM[btn-type=search-obsessed],
 .m-btnL[btn-type=search-obsessed] {
-  border-color: #aaaaaa;
   color: #aaaaaa;
   background: #fff;
-  border-left: 1px solid;
   position: relative;
 }
 
@@ -11210,6 +11208,22 @@ a.m-btn {
   padding: 20px;
 }
 
+.m-btn-close[btn-type=close-button] {
+  color: #aaaaaa;
+  border: 1px solid #aaaaaa;
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+}
+
+.m-btn-close[btn-type=close-button] span {
+  position: relative;
+  top: 31%;
+}
+
 /* ----------------------------------------------------------------------------
  * icon from fontawesome
  * ------------------------------------------------------------------------- */
@@ -11311,6 +11325,11 @@ a.m-btn {
  * Search Form
  * ------------------------------------------------------------------------- */
 
+.m-search {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
 .m-search--wrap {
   display: flex;
   width: 100%;
@@ -11367,6 +11386,7 @@ a.m-btn {
 
 .m-search__suggest__tag {
   margin-right: 8px;
+  margin-bottom: 8px;
   padding: 8px;
   background-color: #f4f4f5;
   color: #4a4a4b;
@@ -11455,6 +11475,125 @@ a.m-btn {
 }
 
 /* ----------------------------------------------------------------------------
+ * module search  sp
+ * ------------------------------------------------------------------------- */
+
+@media screen and (max-width: 640px) {
+  .m-search {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    width: 88%;
+    margin: 0 auto;
+  }
+
+  .m-search--wrap {
+    display: block;
+  }
+
+  .m-search__input--wrap {
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #d5d5d8;
+  }
+
+  .m-search button {
+    width: 100%;
+    border-left: none;
+  }
+
+  .m-search__suggest {
+    width: 100%;
+  }
+
+  .m-search__suggest--wrap {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .m-search__suggest--wrap__input {
+    padding: 0 32px;
+    width: 100%;
+  }
+
+  .m-search__suggest--wrap__input::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\F2E7";
+    font-weight: 600;
+    font-size: 0.8em;
+  }
+
+  .m-search__suggest-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .m-search__suggest-overlay .m-btn[btn-type=search-obsessed],
+  .m-search__suggest-overlay .m-search__suggest--wrap__input {
+    border-top: 1px solid #aaaaaa;
+    border-bottom: 1px solid #d5d5d8;
+    border-left: none !important;
+  }
+
+  .m-search__suggest-overlay .m-search__suggest--wrap {
+    width: 88%;
+    margin: 0 auto;
+  }
+
+  .m-search__suggest-overlay .m-search__suggest--list {
+    padding: 0 16px;
+    padding-top: 16px;
+    width: 100%;
+  }
+
+  .m-search__suggest-overlay .m-search__suggest__category-list,
+  .m-search__suggest-overlay .m-search__suggest__restaurant-list {
+    width: 100%;
+  }
+
+  .m-search__suggest-overlay .m-search__suggest__restaurant-list {
+    padding: 0;
+    border-left: none;
+  }
+
+  .m-search__suggest-fullscreen {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .m-search__suggest-fullscreen .m-btn[btn-type=search-obsessed] {
+    border-top: 1px solid #aaaaaa;
+    border-bottom: 1px solid #d5d5d8;
+    border-left: none !important;
+  }
+
+  .m-search__suggest-fullscreen .m-search__suggest--wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .m-search__suggest-fullscreen .m-search__suggest--list {
+    padding: 0 16px;
+    padding-top: 16px;
+    width: 100%;
+  }
+
+  .m-search__suggest-fullscreen .m-search__suggest__category-list {
+    width: 100%;
+  }
+}
+
+/* ----------------------------------------------------------------------------
  * tag
  * ------------------------------------------------------------------------- */
 
@@ -11540,7 +11679,6 @@ a.m-btn {
   background-size: cover;
   z-index: 0;
   background-position: top;
-  min-width: 1160px;
   padding-top: 100px;
   padding-bottom: 90px;
   width: 100%;
@@ -11605,6 +11743,10 @@ a.m-btn {
   height: 54px;
 }
 
+.p-res-index .m-search .m-btn[btn-type=search-obsessed] {
+  border-left: 1px solid #aaaaaa;
+}
+
 /* ----------------------------------------------------------------------------
  * page restaurants index sp
  * ------------------------------------------------------------------------- */
@@ -11616,6 +11758,10 @@ a.m-btn {
 
   .c-res-index-card--desc-p {
     height: 40px;
+  }
+
+  .c-res-index-card--img__sizing {
+    height: 228px;
   }
 }
 

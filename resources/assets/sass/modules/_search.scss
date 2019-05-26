@@ -2,6 +2,8 @@
  * Search Form
  * ------------------------------------------------------------------------- */
  .m-search {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  border-radius: 2px;
   &--wrap {
     display: flex;
     width: 100%;
@@ -28,7 +30,6 @@
       align-items: center;
       justify-content: left;
       position: fixed;
-      // background: rgba(0, 0, 0, 0.5);
       z-index: 30;
       top: 0;
       left: 0;
@@ -55,6 +56,7 @@
     }
     &__tag {
       margin-right: 8px;
+      margin-bottom: 8px;
       padding: 8px;
       background-color: #f4f4f5;
       color: #4a4a4b;

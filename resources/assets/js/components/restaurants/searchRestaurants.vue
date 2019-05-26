@@ -178,6 +178,7 @@ export default {
     addInputWord (name) {
       this.inputWord = name
       this.isInputed = true
+      this.closeSuggestBar()
     },
     onInput: function() {
       if (this.inputWord) {

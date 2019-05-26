@@ -11,7 +11,7 @@
 
       <div class="col-md-12 mt-3 mb-5" style="display: flex;
         justify-content: center;">
-        <div class=" mx-auto" style="box-shadow: 0 1px 2px 0 rgba(0,0,0,.2); border-radius: 2px;">
+        <div class="mx-auto">
           <search-restaurants
             :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
             :search-button-title="'再検索する'" />

@@ -12,8 +12,12 @@ class ImageHelper implements ImageHelperInterface
 
     public function getFirstImageForRestaurant($restaurant)
     {
-        // $restaurant->restaurantImages[0]がなかったらdefault imageをreturnする
-        $fullUrl = self::convertFullImageUrl($restaurant->restaurantImages[0]->image->url);
+        if (isset($restaurant->restaurantImages[0])) {
+            $fullUrl = self::convertFullImageUrl($restaurant->restaurantImages[0]->image->url);
+            return $fullUrl;
+        }
+
+        $fullUrl = self::sampleRestaurantImageUrl();
 
         return $fullUrl;
     }
@@ -22,6 +26,13 @@ class ImageHelper implements ImageHelperInterface
     {
         $fullUrl = 'https://s3-ap-northeast-1.amazonaws.com/farie/'.$imageUrl;
 
+        return $fullUrl;
+    }
+
+    public function sampleRestaurantImageUrl()
+    {
+        $domain = url('/');
+        $fullUrl = $domain.'/images/restaurant-bg.jpg';
         return $fullUrl;
     }
 

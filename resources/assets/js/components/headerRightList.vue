@@ -29,7 +29,7 @@ export default {
         title: 'ログイン'
       }, {
         height: 'auto',
-        width: '340'
+        width: '320'
       })
     },
     showRegisterModal () {
@@ -37,7 +37,7 @@ export default {
         title: '会員登録'
       }, {
         height: 'auto',
-        width: '400'
+        width: '320'
       })
     }
   }

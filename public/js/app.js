@@ -1792,7 +1792,7 @@ __webpack_require__.r(__webpack_exports__);
         title: 'ログイン'
       }, {
         height: 'auto',
-        width: '340'
+        width: '320'
       });
     },
     showRegisterModal: function showRegisterModal() {
@@ -1800,7 +1800,7 @@ __webpack_require__.r(__webpack_exports__);
         title: '会員登録'
       }, {
         height: 'auto',
-        width: '400'
+        width: '320'
       });
     }
   }
@@ -39615,7 +39615,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "m-frmTextbox" }, [
-          _c("label", [_vm._v("パスワード")]),
+          _c("label", [_vm._v("パスワードの確認")]),
           _vm._v(" "),
           _c("input", {
             directives: [

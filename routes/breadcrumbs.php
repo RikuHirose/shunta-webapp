@@ -26,14 +26,14 @@ Breadcrumbs::for('mypage.show', function ($trail, $currentUser) {
 
 });
 
-// top > 編集
+// top > 登録情報 > 編集
 Breadcrumbs::for('mypage.edit', function ($trail, $currentUser) {
-    $trail->parent('index');
+    $trail->parent('mypage.show', $currentUser);
     $trail->push('編集', route('mypage.edit'));
 
 });
 
-// top > 編集
+// top > パスワード編集
 Breadcrumbs::for('mypage.edit.password', function ($trail, $currentUser) {
     $trail->parent('index');
     $trail->push('パスワード編集', route('mypage.edit.password'));

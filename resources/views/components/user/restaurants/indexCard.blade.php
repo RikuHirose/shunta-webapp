@@ -1,7 +1,9 @@
 <div class="row mb-3 c-res-index-card">
 
   <div class="col-md-7 c-res-index-card--img__wrap">
-    <img src="{{ ImageHelper::getFirstImageForRestaurant($restaurant) }}" class="c-res-index-card--img__sizing">
+    <a href="{{ route('restaurants.show', [$restaurant->id]) }}">
+      <img src="{{ ImageHelper::getFirstImageForRestaurant($restaurant) }}" class="c-res-index-card--img__sizing">
+    </a>
   </div>
 
   <div class="col-md-5 mt-3 mb-3">

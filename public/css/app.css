@@ -10936,6 +10936,12 @@ a.text-dark:focus {
   height: 280px;
   -o-object-fit: cover;
      object-fit: cover;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.c-res-index-card--img__sizing:hover {
+  opacity: 0.8;
 }
 
 .c-res-index-card__ttl {

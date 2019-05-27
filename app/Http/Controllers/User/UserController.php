@@ -34,7 +34,6 @@ class UserController extends Controller
         FavoriteRepositoryInterface $favoriteRepository
     )
     {
-        $this->userService          = $userService;
         $this->userRepository       = $userRepository;
         $this->restaurantRepository = $restaurantRepository;
         $this->categoryRepository   = $categoryRepository;
@@ -60,6 +59,7 @@ class UserController extends Controller
     public function update(UserRequest $request)
     {
         $input = $request->only($this->userRepository->getBlankModel()->getFillable());
+
         $user = $this->userRepository->update(\Auth::user(), $input);
 
         return view('pages.user.edit',

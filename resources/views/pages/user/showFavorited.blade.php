@@ -12,15 +12,15 @@
 
     <div class="row">
       <!-- sidebar -->
-      @include('components.user.sidebar.users.show')
+      @include('components.user.sidebar.users.show', ['favorited' => true])
       <!-- content -->
-      <div class="col-md-10">
+      <div class="col-md-9">
         @isset($message)
           {{ $message }}
         @endisset
 
         @isset($restaurants)
-          {{ $restaurants }}
+          @each('components.user.restaurants.indexCard', $restaurants, 'restaurant')
         @endisset
 
       </div>

@@ -46,7 +46,7 @@
             required>
         </div>
         <div class="m-frmTextbox">
-          <label>パスワード</label>
+          <label>パスワードの確認</label>
           <input
             v-model="password_confirmation"
             type="password"

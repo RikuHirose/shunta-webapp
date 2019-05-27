@@ -12,9 +12,9 @@
 
     <div class="row">
       <!-- sidebar -->
-      @include('components.user.sidebar.users.show')
+      @include('components.user.sidebar.users.show', ['editPassword' => true])
       <!-- content -->
-      <div class="col-md-10">
+      <div class="col-md-9">
         <form action="{{ route('mypage.update.password') }}" method="POST">
           @csrf
           <div class="m-frmTextbox">

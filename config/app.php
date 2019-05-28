@@ -236,6 +236,7 @@ return [
         'UrlHelper' => \App\Facades\UrlHelper::class,
         'FormHelper' => \App\Facades\FormHelper::class,
         'ImageHelper' => \App\Facades\ImageHelper::class,
+        'UserHelper' => \App\Facades\UserHelper::class,
     ],
 
 ];

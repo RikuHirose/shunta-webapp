@@ -52,5 +52,10 @@ class HelperServiceProvider extends ServiceProvider
             \App\Helpers\ImageHelperInterface::class,
             \App\Helpers\Production\ImageHelper::class
         );
+
+        $this->app->singleton(
+            \App\Helpers\UserHelperInterface::class,
+            \App\Helpers\Production\UserHelper::class
+        );
     }
 }

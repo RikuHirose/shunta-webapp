@@ -3,7 +3,7 @@
   min-height: 72px;
   border-bottom: 2px solid #d5d5d5;
 
-  .m-header {
+  .s-header {
     &--wrap {
       padding: 22px 0;
     }
@@ -23,6 +23,21 @@
         border-radius: 30px;
         width: 30px;
         height: 30px;
+      }
+
+      &__dropdown {
+        &__nav-lists {
+          li {
+            display: block;
+            padding: 6px 15px;
+            &::hover {
+              // background-color: #aaaaaa;
+            }
+            a {
+              color: #4a4a4b;
+            }
+          }
+        }
       }
     }
   }

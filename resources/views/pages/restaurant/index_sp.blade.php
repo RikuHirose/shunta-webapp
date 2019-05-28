@@ -10,8 +10,8 @@
       <div class="col-md-6"></div>
 
       <div class="col-md-12 mt-3 mb-5">
-        <div class=" mx-auto">
-          <search-restaurants
+        <div class="mx-auto">
+          <search-restaurants-sp
             :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
             :search-button-title="'再検索する'" />
         </div>

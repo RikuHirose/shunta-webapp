@@ -10899,24 +10899,33 @@ a.text-dark:focus {
   border-bottom: 2px solid #d5d5d5;
 }
 
-#header .m-header--wrap {
+#header .s-header--wrap {
   padding: 22px 0;
 }
 
-#header .m-header-logo__sizing {
+#header .s-header-logo__sizing {
   height: 27px;
   width: 133px;
 }
 
-#header .m-header-list--link {
+#header .s-header-list--link {
   color: #333333;
   text-decoration: none;
 }
 
-#header .m-header-list__avatar {
+#header .s-header-list__avatar {
   border-radius: 30px;
   width: 30px;
   height: 30px;
+}
+
+#header .s-header-list__dropdown__nav-lists li {
+  display: block;
+  padding: 6px 15px;
+}
+
+#header .s-header-list__dropdown__nav-lists li a {
+  color: #4a4a4b;
 }
 
 /* ============================================================================
@@ -11519,6 +11528,8 @@ a.m-btn {
 
   .m-search__suggest {
     width: 100%;
+    min-height: 128px;
+    height: auto;
   }
 
   .m-search__suggest--wrap {
@@ -11678,6 +11689,14 @@ a.m-btn {
   margin-bottom: 60px;
 }
 
+/* ----------------------------------------------------------------------------
+ * hamburger menu
+ * ------------------------------------------------------------------------- */
+
+.m-hamburger .bm-burger-button {
+  top: 1px;
+}
+
 /* ============================================================================
 * pages
 * ========================================================================= */
@@ -11735,6 +11754,58 @@ a.m-btn {
 }
 
 /* ----------------------------------------------------------------------------
+ * page  index
+ * ------------------------------------------------------------------------- */
+
+.p-index-sp {
+  height: 400px;
+  position: relative;
+  background-image: url(/images/bg-top.jpg);
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-size: cover;
+  z-index: 0;
+  background-position: top;
+  padding-top: 100px;
+  padding-bottom: 90px;
+  width: 100%;
+}
+
+.p-index-sp--copy {
+  position: relative;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-align: center;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.p-index-sp__search-form {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-index-sp .m-search__suggest {
+  position: relative;
+  top: 5.5%;
+}
+
+.p-index-sp .m-search i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px 10px;
+}
+
+.p-index-sp .m-search input,
+.p-index-sp .m-search button {
+  height: 54px;
+}
+
+/* ----------------------------------------------------------------------------
  * page restaurants index
  * ------------------------------------------------------------------------- */
 
@@ -11768,16 +11839,21 @@ a.m-btn {
  * ------------------------------------------------------------------------- */
 
 @media screen and (max-width: 640px) {
-  .c-res-index-card--desc {
+  .p-res-index-sp .c-res-index-card--desc {
     min-height: 96px;
   }
 
-  .c-res-index-card--desc-p {
+  .p-res-index-sp .c-res-index-card--desc-p {
     height: 40px;
   }
 
-  .c-res-index-card--img__sizing {
+  .p-res-index-sp .c-res-index-card--img__sizing {
     height: 228px;
+  }
+
+  .p-res-index-sp .m-search input,
+  .p-res-index-sp .m-search button {
+    height: 48px;
   }
 }
 

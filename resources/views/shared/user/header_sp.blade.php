@@ -1,42 +1,54 @@
 <header id="header" class="">
     <!-- <div class="container-fluid"> -->
-    <div class="m-header container">
+    <div class="s-header container">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <div class="row m-header--wrap">
-                    <div class="col-md-3">
-                        <div class="float-left m-header-logo">
+                <div class="row s-header--wrap">
+                    <div class="col-md-12">
+                        <div class="float-left s-header-logo">
                             <a href="/" class="">
-                                <img src="http://rlx.jp/img/logo.png?1510128432" class="m-header-logo__sizing">
+                                <img src="http://rlx.jp/img/logo.png?1510128432" class="s-header-logo__sizing">
                             </a>
                         </div>
-                    </div>
-
-                    <div class="col-md-9">
-                        <nav class="float-right m-header-list">
+                        <nav class="float-right s-header-list">
                             @guest
-                                <header-right-list></header-right-list>
+                                <header-right-list-sp></header-right-list-sp>
                             @else
-
-                                <div id="dropdown" class="dropdown">
-                                    <div class="dropdown-toggle " type="" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="{{ $currentUser->image->url }}" class="m-header-list__avatar">
-                                    </div>
-                                    <ul class="dropdown-menu nav-lists dbmenu" aria-labelledby="dropdownMenu1">
-                                        <li><a href="">マイページ</a></li>
-                                        <li><a href="">Setting</a></li>
-                                        <li>
-                                            <a class="" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
+                                <div class="m-hamburger">
+                                    <Slide right>
+                                        <a href="{{ route('mypage.show') }}" class="">
+                                            <span>マイページ</span>
+                                        </a>
+                                        <a href="{{ route('mypage.edit.password') }}" class="">
+                                            <span>パスワード変更</span>
+                                        </a>
+                                        <a href="{{ route('mypage.favorited') }}" class="">
+                                            <span>お気に入り</span>
+                                        </a>
+                                        <a class="" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <span>ログアウト</span>
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                        <!-- <div class="list-group list-group-flush"> -->
+                                            <!-- <a href="{{ route('mypage.show') }}" class="list-group-item list-group-item-action">
+                                                マイページ
                                             </a>
-
+                                            <a href="{{ route('mypage.edit.password') }}" class="list-group-item list-group-item-action">
+                                                パスワード変更
+                                            </a>
+                                            <a href="{{ route('mypage.favorited') }}" class="list-group-item list-group-item-action">
+                                                お気に入り
+                                            </a>
+                                            <a class="list-group-item list-group-item-action" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                ログアウト
+                                            </a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
-                                            </form>
-                                        </li>
-                                    </ul>
+                                            </form> -->
+                                        <!-- </div> -->
+                                    </Slide>
                                 </div>
                             @endif
                         </nav>

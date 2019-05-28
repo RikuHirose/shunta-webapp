@@ -21,6 +21,8 @@
     }
     &__suggest {
       width: 100%;
+      min-height: 128px;
+      height: auto;
       // height: 304px;
       // top: 27.5% !important;
       &--wrap {

@@ -8,6 +8,7 @@ require('./bootstrap')
 
 import Vue from 'vue'
 import VModal from 'vue-js-modal'
+import { Slide } from 'vue-burger-menu'
 
 Vue.prototype.$axios = window.axios
 
@@ -22,8 +23,10 @@ Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+Vue.component('slide', Slide)
 
 Vue.component('header-right-list', require('./components/headerRightList.vue').default)
+Vue.component('header-right-list-sp', require('./components/headerRightListSp.vue').default)
 
 /* ============================================================================
  * input

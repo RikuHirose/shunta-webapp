@@ -39,9 +39,11 @@
             </tr>
           </tbody>
         </table>
-        <a href="{{ route('mypage.edit') }}" type="button" class="m-btn" btn-type="primary">
-          修正する
-        </a>
+        <div class="text-center">
+          <a href="{{ route('mypage.edit') }}"  class="m-btn" btn-type="primary">
+            修正する
+          </a>
+        </div>
       </div>
     </div>
   </div>

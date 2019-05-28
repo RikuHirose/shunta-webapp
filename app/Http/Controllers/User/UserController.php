@@ -62,7 +62,7 @@ class UserController extends Controller
 
         $user = $this->userRepository->update(\Auth::user(), $input);
 
-        return view('pages.user.edit',
+        return view('pages.user.show',
             [
             ]
         );

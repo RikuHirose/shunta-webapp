@@ -5,12 +5,14 @@
  */
 
 require('./bootstrap')
-
 import Vue from 'vue'
 import VModal from 'vue-js-modal'
 import { Slide } from 'vue-burger-menu'
 import vueSmoothScroll from 'vue2-smooth-scroll'
 import Sticky from 'vue-sticky-directive'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+// require styles
+import 'swiper/dist/css/swiper.css'
 
 Vue.prototype.$axios = window.axios
 
@@ -28,7 +30,10 @@ Vue.use(Sticky)
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 Vue.component('slide', Slide)
+Vue.component('swiper', swiper)
+Vue.component('swiperSlide', swiperSlide)
 
+Vue.component('swiper-my-pagination', require('./components/swiperMyPagination.vue').default)
 Vue.component('header-right-list', require('./components/headerRightList.vue').default)
 Vue.component('header-right-list-sp', require('./components/headerRightListSp.vue').default)
 
@@ -60,5 +65,24 @@ Vue.component('gmap', require('./components/user/gmap.vue').default)
  */
 
 const app = new Vue({ // eslint-disable-line
-  el: '#app'
+  el: '#app',
+  data() {
+    return {
+      swiperOption: {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      }
+    }
+  }
 })

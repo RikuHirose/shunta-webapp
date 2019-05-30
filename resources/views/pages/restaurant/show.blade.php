@@ -19,7 +19,18 @@
 
         <!-- slideshow -->
         <div class="w-100 p-res-show--slideshow">
-          <img src="{{ ImageHelper::getFirstImageForRestaurant($restaurant) }}" class="" style="width: 760px; height: 400px; object-fit: cover;">
+          <swiper :options="swiperOption" class="swiper-box">
+            @foreach($restaurant->restaurantImages as $image)
+              <swiper-slide>
+                <img src="{{ ImageHelper::convertFullImageUrl($image->image->url) }}" class="" style="width: 760px; height: 400px; object-fit: cover;">
+              </swiper-slide>
+            @endforeach
+            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+            <div class="swiper-pagination" slot="pagination"></div>
+            <!-- <swiper-my-pagination
+            :restaurant="{{json_encode($restaurant)}}" /> -->
+          </swiper>
         </div>
 
         <!-- description -->

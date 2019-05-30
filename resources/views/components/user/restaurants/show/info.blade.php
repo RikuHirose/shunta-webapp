@@ -46,7 +46,7 @@
               </div>
 
               <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
-              <script type="application/javascript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <!-- <script type="application/javascript" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 
               <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="" style="display: none;"></div>
 

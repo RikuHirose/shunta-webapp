@@ -6,19 +6,12 @@
     </a>
   </div>
 
-  <div class="col-md-5 mt-3 mb-3">
-    <div>
+  <div class="col-md-5 mt-2 mb-2">
+    <div class="c-res-index-card__ttl--wrap">
         <h2 class="c-res-index-card__ttl">
           <a href="{{ route('restaurants.show', [$restaurant->id]) }}" class="c-res-index-card__ttl--link">{{ $restaurant->name }}</a>
         </h2>
     </div>
-
-    @isset($currentUser)
-      <favorite-restaurant
-        :restaurant="{{json_encode($restaurant)}}"
-        :current-user="{{json_encode($currentUser)}}"
-        :default-favorited="{{ json_encode(FavoriteHelper::defaultFavorited($restaurant, $currentUser)) }}"></favorite-restaurant>
-    @endisset
 
     <div style="">
       @include('components.user.restaurants.info', ['restaurant' => $restaurant])
@@ -33,7 +26,7 @@
       </p>
     </div>
 
-    <div class="text-center">
+    <div class="text-center" style="margin-top: 16px;">
       <a href="{{ route('restaurants.show', [$restaurant->id]) }}" type="button" class="w-100 m-btnM" btn-type="primary">
         詳しく見る
       </a>

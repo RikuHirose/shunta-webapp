@@ -13,9 +13,6 @@ $line-height-base: 1.6;
  * ========================================================================= */
 $facebook_color: #3b5998;
 
-// テキストカラー
-$c-headliner: #6a7785;
-
 // カラー
 $c-border: #d8d8d8;
 $c-buttonHover: #e8e7f5;
@@ -30,7 +27,7 @@ $c-gray: #DEDEDE;
 
 // common
 $c-text-normal: #504643;
-$c-text-headliner: #6a7785;
+$c-text-headliner: #000000;
 $c-text-link-normal: #293162;
 $c-text-link-hover: #44509e;
 $c-text-link-press: #071c9f;
@@ -50,8 +47,8 @@ $c-text-error: #a10000;
 $c-bg-error: #f9e2e2;
 
 // button
-$c-btn-secondly-normal: #293162;
-$c-btn-secondly-hover: #44509e;
+$c-btn-secondly-normal: #293163;
+$c-btn-secondly-hover: #44509f;
 $c-btn-secondly-press: #071c9f;
 // ★テキストリンクと同じ色なので全置換で対応しない様注意してください
 $c-btn-primary-normal: #3b37af;
@@ -62,11 +59,7 @@ $c-btn-negative-normal: #505050;
 $c-btn-negative-hover: #747474;
 $c-btn-negative-press: #232323;
 
-$c-btn-round-normal: #e62d5f;
-$c-btn-round-hover: #ff5986;
-$c-btn-round-press: #ff1050;
 
 // labels
-$c-investor: #268aaa;
-$c-startup: #4b980d;
-$c-round: #e62d5f;
+$c-tag: #796bae;
+

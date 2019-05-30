@@ -150,12 +150,12 @@ a {
   color: $c-text-link-normal;
   text-decoration: none !important;
 
-  &::hover {
-    color: #3b51dc;
+  &:hover {
+    color: $c-text-link-normal;
     text-decoration: none !important;
   }
-  &::active {
-    // color: $c-text-link-press;
+  &:active {
+    color: $c-text-link-press;
   }
 
   // 非活性
@@ -178,7 +178,7 @@ img {
 // カレント、非活性
 .is-current,
 .is-disabled {
-  &::hover {
+  &:hover {
     cursor: default;
   }
 }

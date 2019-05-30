@@ -1,5 +1,7 @@
 <template>
-  <div class="btn-wrap">
+  <div
+    class="btn-wrap"
+    style="display: inline-block;">
     <a
       v-if="!favorited"
       class=""

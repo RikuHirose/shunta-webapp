@@ -26,21 +26,26 @@
     margin: 0;
     font-weight: 600;
 
+    &--wrap {
+      min-height: 40px;
+    }
+
     &--link {
-      color: #000000;
+      color: $c-text-headliner;
     }
   }
 
   &--desc {
-    padding: 8px 0;
+    margin-top: 16px;
     min-height: 96px;
     &-ttl {
       font-size: 12px;
       font-weight: 600;
+      margin-bottom: 16px;
     }
     &-p {
       font-size: 12px;
-      height: 40px;
+      height: 32px;
       overflow: hidden;
       position: relative;
 

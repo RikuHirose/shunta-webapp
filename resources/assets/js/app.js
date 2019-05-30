@@ -9,10 +9,14 @@ require('./bootstrap')
 import Vue from 'vue'
 import VModal from 'vue-js-modal'
 import { Slide } from 'vue-burger-menu'
+import vueSmoothScroll from 'vue2-smooth-scroll'
+import Sticky from 'vue-sticky-directive'
 
 Vue.prototype.$axios = window.axios
 
 Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
+Vue.use(vueSmoothScroll)
+Vue.use(Sticky)
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -48,6 +52,7 @@ Vue.component('search-restaurants-sp', require('./components/restaurants/searchR
  * user
  * ========================================================================= */
 Vue.component('update-user-image', require('./components/user/updateUserImage.vue').default)
+Vue.component('gmap', require('./components/user/gmap.vue').default)
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

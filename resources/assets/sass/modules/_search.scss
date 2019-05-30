@@ -20,6 +20,8 @@
     flex-wrap: wrap;
     width: 45%;
     margin: 0 auto;
+    position: relative;
+    top: -10.5%;
 
     &--caution {
       color: #ff5714;

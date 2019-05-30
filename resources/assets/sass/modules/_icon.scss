@@ -12,7 +12,39 @@
       color: #666666;
     }
     span {
-      font-size: 10px;
+      font-size: 12px;
+    }
+  }
+
+  &-clock {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-clock;
+      font-weight: 600;
+    }
+  }
+
+  &-credit-card {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-credit-card;
+      font-weight: 600;
+    }
+  }
+
+  &-sleep {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-sleep;
+      font-weight: 600;
+    }
+  }
+
+  &-train {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-train;
+      font-weight: 600;
     }
   }
 

@@ -59,11 +59,15 @@ class RestaurantController extends Controller
 
     public function show(Restaurant $restaurant)
     {
+        $recommendRestaurants = $this->restaurantRepository->getRecommendRestaurants($restaurant);
+
         $restaurant->load('category', 'restaurantImages.image');
+        $recommendRestaurants->load('category', 'restaurantImages.image');
 
         return view('pages.restaurant.show',
             [
-                'restaurant' => $restaurant
+                'restaurant'           => $restaurant,
+                'recommendRestaurants' => $recommendRestaurants
             ]
         );
     }

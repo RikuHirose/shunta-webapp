@@ -2,7 +2,7 @@
  * page restaurant show
  * ------------------------------------------------------------------------- */
 .p-res-show {
-  &--content, &--description, &--detail-info {
+  &--content, &--description, &--detail-info , &--map, &--recommend-restaurants{
     margin: 40px 0;
     h2 {
       margin-bottom : 16px;

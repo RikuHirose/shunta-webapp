@@ -48,11 +48,26 @@
         </div>
 
         <!-- google map -->
-        <div>
+        <div class="p-res-show--map">
           <gmap
             :restaurant="{{json_encode($restaurant)}}" />
         </div>
 
+        <!-- recommend restaurants -->
+        <div id="res-detail-info" class="p-res-show--recommend-restaurants w-100">
+          <h2>オススメのレストラン</h2>
+          <div class="row">
+            <swiper :options="swiperOptionRecoCard">
+              @foreach($recommendRestaurants as $restaurant)
+                <swiper-slide>
+                  @include('components.user.restaurants.recoCard', ['restaurant' => $restaurant])
+                </swiper-slide>
+              @endforeach
+              <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+              <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+            </swiper>
+          </div>
+        </div>
       </div>
     </div>
   </div>

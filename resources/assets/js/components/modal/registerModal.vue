@@ -70,6 +70,7 @@
 export default {
   props: {
     title: {required: true, type: String},
+    redirectUrl: {required: true, type: String},
   },
   data (){
     return {
@@ -92,7 +93,7 @@ export default {
           password_confirmation: this.password_confirmation,
         })
         .then(() => {
-          window.location.href = '/'
+          window.location.href = this.redirectUrl
         })
         .catch((err) => {
           alert(err)

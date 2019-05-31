@@ -1779,6 +1779,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    redirectUrl: {
+      required: true,
+      type: String
+    }
+  },
   data: function data() {
     return {};
   },
@@ -1786,7 +1792,8 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     showLoginModal: function showLoginModal() {
       this.$modal.show(_modal_loginModal_vue__WEBPACK_IMPORTED_MODULE_0__["default"], {
-        title: 'ログイン'
+        title: 'ログイン',
+        redirectUrl: this.redirectUrl
       }, {
         height: 'auto',
         width: '320'
@@ -1794,7 +1801,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     showRegisterModal: function showRegisterModal() {
       this.$modal.show(_modal_registerModal_vue__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        title: '会員登録'
+        title: '会員登録',
+        redirectUrl: this.redirectUrl
       }, {
         height: 'auto',
         width: '320'
@@ -2204,6 +2212,10 @@ __webpack_require__.r(__webpack_exports__);
     title: {
       required: true,
       type: String
+    },
+    redirectUrl: {
+      required: true,
+      type: String
     }
   },
   data: function data() {
@@ -2215,11 +2227,13 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {},
   methods: {
     postLogin: function postLogin() {
+      var _this = this;
+
       this.$axios.post('/login', {
         email: this.email,
         password: this.password
       }).then(function () {
-        window.location.href = '/';
+        window.location.href = _this.redirectUrl;
       })["catch"](function (err) {
         alert(err);
       });
@@ -2311,6 +2325,10 @@ __webpack_require__.r(__webpack_exports__);
     title: {
       required: true,
       type: String
+    },
+    redirectUrl: {
+      required: true,
+      type: String
     }
   },
   data: function data() {
@@ -2324,13 +2342,15 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {},
   methods: {
     postRegister: function postRegister() {
+      var _this = this;
+
       this.$axios.post('/register', {
         name: this.name,
         email: this.email,
         password: this.password,
         password_confirmation: this.password_confirmation
       }).then(function () {
-        window.location.href = '/';
+        window.location.href = _this.redirectUrl;
       })["catch"](function (err) {
         alert(err);
       });

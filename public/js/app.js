@@ -2207,6 +2207,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     title: {
@@ -2221,7 +2235,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      errors: []
     };
   },
   created: function created() {},
@@ -2235,7 +2250,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function () {
         window.location.href = _this.redirectUrl;
       })["catch"](function (err) {
-        alert(err);
+        _this.errors = err.response.data.errors;
       });
     }
   }
@@ -2320,6 +2335,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     title: {
@@ -2336,7 +2372,8 @@ __webpack_require__.r(__webpack_exports__);
       name: '',
       email: '',
       password: '',
-      password_confirmation: ''
+      password_confirmation: '',
+      errors: []
     };
   },
   created: function created() {},
@@ -2352,7 +2389,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function () {
         window.location.href = _this.redirectUrl;
       })["catch"](function (err) {
-        alert(err);
+        _this.errors = err.response.data.errors;
       });
     }
   }
@@ -49849,7 +49886,18 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "mail-content" }, [
         _c("div", { staticClass: "m-frmTextbox" }, [
-          _c("label", [_vm._v("メールアドレス")]),
+          _c("label", [
+            _vm._v("\n          メールアドレス\n          "),
+            _vm.errors.email
+              ? _c("span", { staticClass: "error-message" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.errors.email[0]) +
+                      "\n          "
+                  )
+                ])
+              : _vm._e()
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -49875,7 +49923,18 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "m-frmTextbox" }, [
-          _c("label", [_vm._v("パスワード")]),
+          _c("label", [
+            _vm._v("\n          パスワード\n          "),
+            _vm.errors.password
+              ? _c("span", { staticClass: "error-message" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.errors.password[0]) +
+                      "\n          "
+                  )
+                ])
+              : _vm._e()
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -49983,7 +50042,18 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "mail-content" }, [
         _c("div", { staticClass: "m-frmTextbox" }, [
-          _c("label", [_vm._v("お名前")]),
+          _c("label", [
+            _vm._v("\n          お名前\n          "),
+            _vm.errors.name
+              ? _c("span", { staticClass: "error-message" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.errors.name[0]) +
+                      "\n          "
+                  )
+                ])
+              : _vm._e()
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -50009,7 +50079,18 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "m-frmTextbox" }, [
-          _c("label", [_vm._v("メールアドレス")]),
+          _c("label", [
+            _vm._v("\n          メールアドレス\n          "),
+            _vm.errors.email
+              ? _c("span", { staticClass: "error-message" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.errors.email[0]) +
+                      "\n          "
+                  )
+                ])
+              : _vm._e()
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -50035,7 +50116,18 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "m-frmTextbox" }, [
-          _c("label", [_vm._v("パスワード")]),
+          _c("label", [
+            _vm._v("\n          パスワード\n          "),
+            _vm.errors.password
+              ? _c("span", { staticClass: "error-message" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.errors.password[0]) +
+                      "\n          "
+                  )
+                ])
+              : _vm._e()
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [

@@ -15,6 +15,15 @@
       @include('components.user.sidebar.users.show', ['editPassword' => true])
       <!-- content -->
       <div class="col-md-9">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('mypage.update.password') }}" method="POST">
           @csrf
           <div class="m-frmTextbox">

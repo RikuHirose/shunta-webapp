@@ -7821,6 +7821,40 @@ function isSlowBuffer (obj) {
 
 /***/ }),
 
+/***/ "./node_modules/is-mobile/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/is-mobile/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = isMobile;
+module.exports.isMobile = isMobile;
+
+var mobileRE = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i;
+
+var tabletRE = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino|android|ipad|playbook|silk/i;
+
+function isMobile (opts) {
+  if (!opts) opts = {}
+  var ua = opts.ua
+  if (!ua && typeof navigator !== 'undefined') ua = navigator.userAgent;
+  if (ua && ua.headers && typeof ua.headers['user-agent'] === 'string') {
+    ua = ua.headers['user-agent'];
+  }
+  if (typeof ua !== 'string') return false;
+
+  return opts.tablet
+    ? tabletRE.test(ua)
+    : mobileRE.test(ua);
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -63476,14 +63510,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_sticky_directive__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_sticky_directive__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
 /* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var swiper_dist_css_swiper_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/dist/css/swiper.css */ "./node_modules/swiper/dist/css/swiper.css");
-/* harmony import */ var swiper_dist_css_swiper_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var is_mobile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! is-mobile */ "./node_modules/is-mobile/index.js");
+/* harmony import */ var is_mobile__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(is_mobile__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var swiper_dist_css_swiper_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/dist/css/swiper.css */ "./node_modules/swiper/dist/css/swiper.css");
+/* harmony import */ var swiper_dist_css_swiper_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_css__WEBPACK_IMPORTED_MODULE_7__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
+
 
 
 
@@ -63567,7 +63604,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       },
       swiperOptionRecoCard: {
         loop: true,
-        slidesPerView: 3,
+        slidesPerView: is_mobile__WEBPACK_IMPORTED_MODULE_6___default()() ? 1 : 3,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',

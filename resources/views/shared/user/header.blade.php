@@ -15,7 +15,8 @@
                     <div class="col-md-9">
                         <nav class="float-right s-header-list">
                             @guest
-                                <header-right-list></header-right-list>
+                                <header-right-list
+                                :redirect-url="{{ json_encode(url()->full()) }}"></header-right-list>
                             @else
 
                                 <div id="dropdown" class="dropdown s-header-list__dropdown">

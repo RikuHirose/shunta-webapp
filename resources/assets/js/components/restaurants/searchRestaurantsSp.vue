@@ -251,7 +251,6 @@ export default {
       } else {
         this.isOpenObsessedBar = false
       }
-      console.log(this.isOpenObsessedBar)
     },
     openSuggestBar (){
       this.isOpenSuggestBar = true
@@ -261,11 +260,9 @@ export default {
     },
     openObsessedBar (){
       this.isOpenObsessedBar = true
-      console.log(this.isOpenObsessedBar)
     },
     closeObsessedBar (){
       this.isOpenObsessedBar = false
-      console.log(this.isOpenObsessedBar)
     },
     addInputWord (name) {
       this.inputWord = name

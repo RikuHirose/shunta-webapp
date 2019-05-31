@@ -11492,6 +11492,18 @@ a.m-btn {
   font-weight: 600;
 }
 
+.fa-key::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F084";
+  font-weight: 600;
+}
+
+.fa-signout::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F2F5";
+  font-weight: 600;
+}
+
 /* ----------------------------------------------------------------------------
  * Form
  * ------------------------------------------------------------------------- */
@@ -11868,6 +11880,30 @@ a.m-btn {
 
 .m-hamburger .bm-burger-button {
   top: 1px;
+}
+
+.m-hamburger .bm-menu {
+  background-color: #fff;
+  border-left: 1px solid #d5d5d5;
+}
+
+.m-hamburger .bm-item-list > * > span {
+  font-size: 14px;
+  color: #555555;
+  height: 30px;
+  line-height: 30px;
+}
+
+.m-hamburger .bm-item-list > * > i {
+  min-width: 48px;
+}
+
+.m-hamburger .bm-item-list img {
+  margin-right: 17px;
+}
+
+.bm-overlay {
+  background: none !important;
 }
 
 /* ============================================================================

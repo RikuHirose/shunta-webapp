@@ -118,4 +118,18 @@
       font-weight: 600;
     }
   }
+  &-key {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-key;
+      font-weight: 600;
+    }
+  }
+  &-signout {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-sign-out-alt;
+      font-weight: 600;
+    }
+  }
 }

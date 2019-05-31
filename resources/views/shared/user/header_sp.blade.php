@@ -17,15 +17,19 @@
                                 <div class="m-hamburger">
                                     <Slide right>
                                         <a href="{{ route('mypage.show') }}" class="">
+                                            <img src="{{ $currentUser->image->url }}" class="s-header-list__avatar">
                                             <span>マイページ</span>
                                         </a>
                                         <a href="{{ route('mypage.edit.password') }}" class="">
+                                            <i class="fa-key"></i>
                                             <span>パスワード変更</span>
                                         </a>
                                         <a href="{{ route('mypage.favorited') }}" class="">
+                                            <i class="fa-heart-red"></i>
                                             <span>お気に入り</span>
                                         </a>
                                         <a class="" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fa-signout"></i>
                                             <span>ログアウト</span>
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

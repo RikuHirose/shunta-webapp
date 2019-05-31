@@ -12,7 +12,7 @@ import vueSmoothScroll from 'vue2-smooth-scroll'
 import Sticky from 'vue-sticky-directive'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import mobile from 'is-mobile'
-// require styles
+// require swiper styles
 import 'swiper/dist/css/swiper.css'
 
 Vue.prototype.$axios = window.axios

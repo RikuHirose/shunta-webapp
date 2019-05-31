@@ -3009,8 +3009,6 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.isOpenObsessedBar = false;
       }
-
-      console.log(this.isOpenObsessedBar);
     },
     openSuggestBar: function openSuggestBar() {
       this.isOpenSuggestBar = true;
@@ -3020,11 +3018,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     openObsessedBar: function openObsessedBar() {
       this.isOpenObsessedBar = true;
-      console.log(this.isOpenObsessedBar);
     },
     closeObsessedBar: function closeObsessedBar() {
       this.isOpenObsessedBar = false;
-      console.log(this.isOpenObsessedBar);
     },
     addInputWord: function addInputWord(name) {
       this.inputWord = name;
@@ -63639,7 +63635,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
 
 
 
- // require styles
+ // require swiper styles
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$axios = window.axios;

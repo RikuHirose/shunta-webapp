@@ -33,6 +33,8 @@
                     @include('shared.user.frame')
                 @endif
             </main>
+
+            @include('shared.user.footer')
         @endif
 
         <modals-container />

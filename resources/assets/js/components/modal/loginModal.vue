@@ -22,7 +22,14 @@
       </div>
       <div class="mail-content">
         <div class="m-frmTextbox">
-          <label>メールアドレス</label>
+          <label>
+            メールアドレス
+            <span
+              v-if="errors.email"
+              class="error-message">
+              {{ errors.email[0] }}
+            </span>
+          </label>
           <input
             v-model="email"
             class="form-control"
@@ -30,7 +37,14 @@
             required>
         </div>
         <div class="m-frmTextbox">
-          <label>パスワード</label>
+          <label>
+            パスワード
+            <span
+              v-if="errors.password"
+              class="error-message">
+              {{ errors.password[0] }}
+            </span>
+          </label>
           <input
             v-model="password"
             class="form-control"
@@ -60,6 +74,7 @@ export default {
     return {
       email: '',
       password: '',
+      errors: []
     }
   },
   created () {
@@ -76,7 +91,7 @@ export default {
           window.location.href = this.redirectUrl
         })
         .catch((err) => {
-          alert(err)
+          this.errors = err.response.data.errors
         })
     }
   }

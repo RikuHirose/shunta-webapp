@@ -11,6 +11,7 @@ import { Slide } from 'vue-burger-menu'
 import vueSmoothScroll from 'vue2-smooth-scroll'
 import Sticky from 'vue-sticky-directive'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import mobile from 'is-mobile'
 // require styles
 import 'swiper/dist/css/swiper.css'
 
@@ -85,7 +86,7 @@ const app = new Vue({ // eslint-disable-line
       },
       swiperOptionRecoCard: {
         loop: true,
-        slidesPerView: 3,
+        slidesPerView: mobile() ? 1 : 3,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',

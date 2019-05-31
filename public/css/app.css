@@ -12028,7 +12028,8 @@ a.m-btn {
 .p-res-show--description,
 .p-res-show--detail-info,
 .p-res-show--map,
-.p-res-show--recommend-restaurants {
+.p-res-show--recommend-restaurants,
+.p-res-show--sns-share {
   margin: 40px 0;
 }
 
@@ -12036,7 +12037,8 @@ a.m-btn {
 .p-res-show--description h2,
 .p-res-show--detail-info h2,
 .p-res-show--map h2,
-.p-res-show--recommend-restaurants h2 {
+.p-res-show--recommend-restaurants h2,
+.p-res-show--sns-share h2 {
   margin-bottom: 16px;
   font-size: 16px;
   color: #000000;
@@ -12048,6 +12050,38 @@ a.m-btn {
   color: #333333;
   overflow: hidden;
   font-size: 12px;
+}
+
+/* ----------------------------------------------------------------------------
+ * page restaurants show sp
+ * ------------------------------------------------------------------------- */
+
+@media screen and (max-width: 640px) {
+  .p-res-show--content,
+  .p-res-show--description,
+  .p-res-show--detail-info,
+  .p-res-show--map,
+  .p-res-show--recommend-restaurants,
+  .p-res-show--sns-share,
+  .p-res-show--info {
+    margin: 24px 0;
+  }
+
+  .p-res-show--content {
+    margin-top: 0;
+  }
+
+  .p-res-show--slideshow {
+    padding: 0;
+  }
+
+  .p-res-show-sp .c-res-show-detail-info__table th {
+    min-width: 144px;
+  }
+
+  .p-res-show-sp .c-res-show-info__name h1 {
+    font-size: 20px;
+  }
 }
 
 .navbar-laravel {

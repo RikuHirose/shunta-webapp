@@ -31,6 +31,7 @@
                     @yield('content')
                 @else
                     @include('shared.user.frame')
+                    <div style="margin-bottom: 96px;"></div>
                 @endif
             </main>
 

@@ -96,6 +96,19 @@ const app = new Vue({ // eslint-disable-line
           el: '.swiper-pagination',
           clickable: true
         }
+      },
+      swiperOptionIndexRecoCard: {
+        loop: true,
+        slidesPerView: mobile() ? 3 : 5,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
       }
     }
   }

@@ -128,12 +128,21 @@ class RestaurantRepository implements RestaurantRepositoryInterface
 
     public function getRecommendRestaurants($restaurant)
     {
-      $restaurants = $this->restaurant
+      $restaurants = $this->restaurant;
+
+      if(!is_null($restaurant)) {
+        $name = $restaurant->name;
+        $restaurants = $restaurants->when($name, function ($query) use ($name) {
+            return $query
+                    ->where('name', '!=', $name)
+                    ->orWhereNull('name');
+        });
+      }
+
+      $recoRestaurants = $restaurants
         ->orderBy('admin_evaluate', 'desc')
-        ->where('name', '!=', $restaurant->name)
-        ->orWhereNull('name')
         ->get();
 
-      return $restaurants;
+      return $recoRestaurants;
     }
 }

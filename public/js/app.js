@@ -63722,6 +63722,19 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
           el: '.swiper-pagination',
           clickable: true
         }
+      },
+      swiperOptionIndexRecoCard: {
+        loop: true,
+        slidesPerView: is_mobile__WEBPACK_IMPORTED_MODULE_6___default()() ? 3 : 5,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
       }
     };
   }

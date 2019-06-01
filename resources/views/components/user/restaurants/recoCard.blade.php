@@ -5,9 +5,9 @@
     </div>
 
     <div class="c-res-reco-card__content">
-      <h2 class="c-res-reco-card__ttl">
+      <p class="c-res-reco-card__ttl">
         <a href="{{ route('restaurants.show', [$restaurant->id]) }}" class="c-res-reco-card__ttl--link">{{ $restaurant->name }}</a>
-      </h2>
+      </p>
       <div>
         @include('components.user.restaurants.adminEvaluate', ['restaurant' => $restaurant])
         <span class="m-tag">

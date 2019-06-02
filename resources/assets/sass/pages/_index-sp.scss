@@ -35,6 +35,11 @@
         height: 54px;
       }
     }
+  }
 
+  .c-res-reco-card__ttl {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }

@@ -52,6 +52,7 @@ class RestaurantController extends Controller
         return view('pages.restaurant.index',
             [
                 'restaurants' => $restaurants,
+                'parameter'   => $parameter,
                 'message'     => $message
             ]
         );

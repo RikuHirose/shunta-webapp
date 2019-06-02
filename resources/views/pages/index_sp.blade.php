@@ -78,7 +78,7 @@
     </section>
 
     <!-- p-index--category -->
-    <section class="p-index__category">
+    <!-- <section class="p-index__category">
       <div class="container">
           <div class="row">
               <div class="col-md-12 col-12">
@@ -107,26 +107,14 @@
                           <p class="category__name">イタリアン</p>
                       </div>
                     </a>
-                    <a href="" class="p-index__category__images--link">
-                      <img src="/images/restaurant-bg.jpg">
-                      <div class="category__info">
-                          <p class="category__name">イタリアン</p>
-                      </div>
-                    </a>
-                    <a href="" class="p-index__category__images--link">
-                      <img src="/images/restaurant-bg.jpg">
-                      <div class="category__info">
-                          <p class="category__name">イタリアン</p>
-                      </div>
-                    </a>
                   </div>
               </div>
           </div>
       </div>
     </section>
-
+ -->
     <!-- p-index--reco-job -->
-    <section class="p-index__reco-job bg-light">
+    <section class="p-index__reco-job">
       <div class="container">
           <div class="row">
               <div class="col-md-12 col-12">

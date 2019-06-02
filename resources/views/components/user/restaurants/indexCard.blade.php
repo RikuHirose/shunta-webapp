@@ -27,7 +27,7 @@
     </div>
 
     <div class="text-center" style="margin-top: 16px;">
-      <a href="{{ route('restaurants.show', [$restaurant->id]) }}" type="button" class="w-100 m-btnM" btn-type="primary">
+      <a href="{{ route('restaurants.show', [$restaurant->id]) }}" class="w-100 m-btnM" btn-type="primary">
         詳しく見る
       </a>
     </div>

@@ -13,6 +13,9 @@
 import LoginModal from './modal/loginModal.vue'
 import RegisterModal from './modal/registerModal.vue'
 export default {
+  props: {
+    redirectUrl: {required: true, type: String},
+  },
   data (){
     return {
     }
@@ -23,7 +26,8 @@ export default {
   methods: {
     showLoginModal () {
       this.$modal.show(LoginModal, {
-        title: 'ログイン'
+        title: 'ログイン',
+        redirectUrl: this.redirectUrl
       }, {
         height: 'auto',
         width: '320'
@@ -31,7 +35,8 @@ export default {
     },
     showRegisterModal () {
       this.$modal.show(RegisterModal, {
-        title: '会員登録'
+        title: '会員登録',
+        redirectUrl: this.redirectUrl
       }, {
         height: 'auto',
         width: '320'

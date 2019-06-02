@@ -1838,6 +1838,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    redirectUrl: {
+      required: true,
+      type: String
+    }
+  },
   data: function data() {
     return {};
   },
@@ -1845,7 +1851,8 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     showLoginModal: function showLoginModal() {
       this.$modal.show(_modal_loginModal_vue__WEBPACK_IMPORTED_MODULE_0__["default"], {
-        title: 'ログイン'
+        title: 'ログイン',
+        redirectUrl: this.redirectUrl
       }, {
         height: 'auto',
         width: '320'
@@ -1853,7 +1860,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     showRegisterModal: function showRegisterModal() {
       this.$modal.show(_modal_registerModal_vue__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        title: '会員登録'
+        title: '会員登録',
+        redirectUrl: this.redirectUrl
       }, {
         height: 'auto',
         width: '320'
@@ -2267,6 +2275,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -50210,6 +50223,8 @@ var render = function() {
           })
         ]),
         _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
         _c("div", { staticClass: "m-frmTextbox" }, [
           _c(
             "button",
@@ -50243,6 +50258,22 @@ var staticRenderFns = [
         },
         [_vm._v("\n        Facebookで登録する\n      ")]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "m-frmTextbox" }, [
+      _c("p", { staticStyle: { "font-size": "8px", padding: "16px 0" } }, [
+        _vm._v("\n          登録すると"),
+        _c("a", { attrs: { href: "/term" } }, [_vm._v("利用規約")]),
+        _vm._v("および"),
+        _c("a", { attrs: { href: "/privacy" } }, [
+          _vm._v("プライバシーポリシー")
+        ]),
+        _vm._v("に同意したことになります。\n        ")
+      ])
     ])
   }
 ]

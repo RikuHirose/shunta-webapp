@@ -60,11 +60,13 @@ Route::get('/', 'User\IndexController@index')->name('index');
 Route::resource('restaurants', 'User\RestaurantController', ['only' => ['index', 'show']]);
 Route::get('/q', 'User\RestaurantController@index')->name('restaurants.search');
 
+Route::group(['as' => 'about.'], function () {
+  Route::get('/privacy', 'User\AboutController@privacy')->name('privacy');
+  Route::get('/term', 'User\AboutController@term')->name('term');
+});
+
 
 // footer Cpntact
 // Route::get('/contact', 'User\ContactController@getContact')->name('get.Contact');
 // Route::post('/contact/check', 'User\ContactController@postContactCheck')->name('post.contact.check');
 // Route::post('/contact/submit', 'User\ContactController@postContactSubmit')->name('post.contact.submit');
-
-// Route::get('/term', 'User\FooterController@getTerm')->name('term');
-// Route::get('/privacy', 'User\FooterController@getPrivacy')->name('privacy');

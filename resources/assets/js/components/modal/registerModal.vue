@@ -75,6 +75,11 @@
             required>
         </div>
         <div class="m-frmTextbox">
+          <p style="font-size: 8px; padding: 16px 0;">
+            登録すると<a href="/term">利用規約</a>および<a href="/privacy">プライバシーポリシー</a>に同意したことになります。
+          </p>
+        </div>
+        <div class="m-frmTextbox">
           <button
             class="form-control m-btnS"
             type="submit"

@@ -12,7 +12,8 @@
                         </div>
                         <nav class="float-right s-header-list">
                             @guest
-                                <header-right-list-sp></header-right-list-sp>
+                                <header-right-list-sp
+                                :redirect-url="{{ json_encode(url()->full()) }}"></header-right-list-sp>
                             @else
                                 <div class="m-hamburger">
                                     <Slide right>

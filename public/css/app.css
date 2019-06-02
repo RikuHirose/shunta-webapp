@@ -12113,6 +12113,39 @@ a.m-btn {
 }
 
 /* ----------------------------------------------------------------------------
+ * page about
+ * ------------------------------------------------------------------------- */
+
+.p-about-privacy,
+.p-about-term {
+  margin: 40px 0;
+}
+
+.p-about-privacy h1,
+.p-about-term h1 {
+  color: #000000;
+  font-size: 24px;
+  margin: 16px 0;
+}
+
+.p-about-privacy h2,
+.p-about-term h2 {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #000000;
+}
+
+.p-about-privacy p,
+.p-about-term p {
+  line-height: 2.2;
+  letter-spacing: 4px;
+  color: #333333;
+  overflow: hidden;
+  font-size: 12px;
+  margin: 16px 0;
+}
+
+/* ----------------------------------------------------------------------------
  * page restaurants index
  * ------------------------------------------------------------------------- */
 

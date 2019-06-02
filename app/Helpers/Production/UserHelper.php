@@ -21,15 +21,21 @@ class UserHelper implements UserHelperInterface
 
     public function getBirthYear()
     {
-        return $this->birthday[0];
+        if (!isset($this->birthday)) {
+            return $this->birthday[0];
+        }
     }
     public function getBirthMonth()
     {
-        return $this->birthday[1];
+        if (!isset($this->birthday)) {
+            return $this->birthday[1];
+        }
     }
     public function getBirthDay()
     {
-        return $this->birthday[2];
+        if (!isset($this->birthday)) {
+            return $this->birthday[2];
+        }
     }
 
 }

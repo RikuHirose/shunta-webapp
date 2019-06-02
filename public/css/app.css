@@ -11023,6 +11023,7 @@ button[type=submit] {
 .c-res-reco-card__content {
   border: 1px solid #eaeaeb;
   padding: 8px;
+  min-height: 80px;
 }
 
 .c-res-reco-card .star-icon {
@@ -11973,12 +11974,18 @@ a.m-btn {
   letter-spacing: 4px;
   text-align: center;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 48px;
 }
 
 .p-index__category__images--wrap {
   line-height: 0;
   display: flex;
   display: -webkit-flex;
+  width: 100%;
+}
+
+.p-index__category__images--link {
+  width: 20%;
 }
 
 .p-index__category__images--link img {
@@ -12070,20 +12077,6 @@ a.m-btn {
 /* ----------------------------------------------------------------------------
  * page  index
  * ------------------------------------------------------------------------- */
-
-.p-index-sp {
-  height: 400px;
-  position: relative;
-  background-image: url(/images/bg-top.jpg);
-  -o-object-fit: cover;
-     object-fit: cover;
-  background-size: cover;
-  z-index: 0;
-  background-position: top;
-  padding-top: 100px;
-  padding-bottom: 90px;
-  width: 100%;
-}
 
 .p-index-sp--copy {
   position: relative;

@@ -13,6 +13,7 @@
         <div class="mx-auto">
           <search-restaurants-sp
             :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
+            :parameter="{{ json_encode($parameter) }}"
             :search-button-title="'再検索する'" />
         </div>
       </div>

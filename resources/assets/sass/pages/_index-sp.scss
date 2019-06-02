@@ -1,48 +1,40 @@
 /* ----------------------------------------------------------------------------
  * page  index
  * ------------------------------------------------------------------------- */
-.p-index-sp {
-  height: 400px;
-  position: relative;
-  background-image: url(/images/bg-top.jpg);
-  object-fit: cover;
-  background-size: cover;
-  z-index: 0;
-  background-position: top;
-  padding-top: 100px;
-  padding-bottom: 90px;
-  width: 100%;
-  &--copy {
-    position: relative;
-    color: #fff;
-    font-size: 36px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    text-align: center;
-    text-shadow: 0 2px 2px rgba(0,0,0,.5);
-  }
-
-  &__search-form {
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .m-search__suggest {
-    position: relative;
-    top: 5.5%;
-  }
-  .m-search {
-    i {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 16px 10px;
+.p-index {
+  &-sp {
+    &--copy {
+      position: relative;
+      color: #fff;
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-align: center;
+      text-shadow: 0 2px 2px rgba(0,0,0,.5);
     }
-    input, button {
-      height: 54px;
-    }
-  }
 
+    &__search-form {
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .m-search__suggest {
+      position: relative;
+      top: 5.5%;
+    }
+    .m-search {
+      i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 16px 10px;
+      }
+      input, button {
+        height: 54px;
+      }
+    }
+
+  }
 }

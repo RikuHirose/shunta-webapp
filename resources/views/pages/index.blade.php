@@ -8,6 +8,7 @@
       <div class="p-index__search-form">
           <search-restaurants
           :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
+          :parameter="{}"
           :search-button-title="'検索する'" />
       </div>
     </div>
@@ -32,8 +33,7 @@
                                 ①デートにピッタリなお店がすぐ見つかる
                             </div>
                             <p class="">
-                                営業、マーケティング、人事、広報、ファイナンスなど、ビジネス職を中心に多様な案件があります。
-                                できることをそのままスキマ時間でやるのではなく、経験を活かしながらキャリアアップにつながる案件にチャレンジできます。
+                              今までのグルメサイトはお店が多すぎました。{{ Config::get('app.name') }}ではデートにピッタリなお店のみを掲載。さらにシンプルなデザインでサクサクと検索できるので、もうお店選びで迷うことはありません。
                             </p>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="">
                             <div class="">
-                              ③週1回・4時間〜/月5万円〜。柔軟な働き方が可能
+                              ③もう迷わない
                             </div>
                             <p class="">
                               今のお仕事も忙しいあなたに合わせて、週1回からチャレンジできる案件多数。まずキャリアが広がる体験をしてみましょう。
@@ -78,39 +78,39 @@
               <div class="col-md-12 col-12">
                   <div class="text-center mb-5">
                       <h2 class="">
-                          オススメのカテゴリから選ぶ
+                          オススメのカテゴリ
                       </h2>
                   </div>
 
                   <div class="p-index__category__images--wrap">
                     <a href="" class="p-index__category__images--link">
-                      <img src="/images/restaurant-bg.jpg">
+                      <img src="/images/italian-bg.jpg">
                       <div class="category__info">
                           <p class="category__name">イタリアン</p>
                       </div>
                     </a>
                     <a href="" class="p-index__category__images--link">
-                      <img src="/images/restaurant-bg.jpg">
+                      <img src="/images/french-bg.jpg">
                       <div class="category__info">
-                          <p class="category__name">イタリアン</p>
+                          <p class="category__name">フレンチ</p>
                       </div>
                     </a>
                     <a href="" class="p-index__category__images--link">
-                      <img src="/images/restaurant-bg.jpg">
+                      <img src="/images/cafe-bg.jpg">
                       <div class="category__info">
-                          <p class="category__name">イタリアン</p>
+                          <p class="category__name">カフェ</p>
                       </div>
                     </a>
                     <a href="" class="p-index__category__images--link">
-                      <img src="/images/restaurant-bg.jpg">
+                      <img src="/images/beer-bg.jpg">
                       <div class="category__info">
-                          <p class="category__name">イタリアン</p>
+                          <p class="category__name">ビアレストラン</p>
                       </div>
                     </a>
                     <a href="" class="p-index__category__images--link">
-                      <img src="/images/restaurant-bg.jpg">
+                      <img src="/images/yakiniku-bg.jpg">
                       <div class="category__info">
-                          <p class="category__name">イタリアン</p>
+                          <p class="category__name">焼肉</p>
                       </div>
                     </a>
                   </div>
@@ -152,9 +152,9 @@
                   <div class="col-md-12 col-12">
                       <div class="text-center p-index__message--wrap">
                         <p class="">見つけよう</p>
-                        <button class="m-btn">
-                          <a href="#p-index" class="" v-smooth-scroll>いますぐお店を見つける</a>
-                        </button>
+                        <a href="#p-index" class="" v-smooth-scroll>
+                          <button class="m-btn">いますぐお店を見つける</button>
+                        </a>
                       </div>
                   </div>
               </div>

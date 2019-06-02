@@ -2626,6 +2626,10 @@ __webpack_require__.r(__webpack_exports__);
       required: true,
       type: Array
     },
+    parameter: {
+      required: true,
+      type: Object
+    },
     searchButtonTitle: {
       required: true,
       type: String
@@ -2653,6 +2657,20 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.category_title = '人気のカテゴリ';
     this.restaurant_title = '人気のレストラン';
+
+    if (this.parameter['word']) {
+      this.inputWord = this.parameter['word'];
+      this.isInputed = true;
+    }
+
+    if (this.parameter['budget']) {
+      this.budget = this.parameter['budget'];
+    }
+
+    if (this.parameter['budget_meal_type']) {
+      this.budget_meal_type = this.parameter['budget_meal_type'];
+    }
+
     this.fetchPopularCategories();
     this.fetchPopularRestaurants();
   },
@@ -2965,6 +2983,10 @@ __webpack_require__.r(__webpack_exports__);
       required: true,
       type: Array
     },
+    parameter: {
+      required: true,
+      type: Object
+    },
     searchButtonTitle: {
       required: true,
       type: String
@@ -2992,6 +3014,20 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.category_title = '人気のカテゴリ';
     this.restaurant_title = '人気のレストラン';
+
+    if (this.parameter['word']) {
+      this.inputWord = this.parameter['word'];
+      this.isInputed = true;
+    }
+
+    if (this.parameter['budget']) {
+      this.budget = this.parameter['budget'];
+    }
+
+    if (this.parameter['budget_meal_type']) {
+      this.budget_meal_type = this.parameter['budget_meal_type'];
+    }
+
     this.fetchPopularCategories();
     this.fetchPopularRestaurants();
   },

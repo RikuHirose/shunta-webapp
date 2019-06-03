@@ -132,4 +132,11 @@
       font-weight: 600;
     }
   }
+  &-search {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-search;
+      font-weight: 600;
+    }
+  }
 }

@@ -44,6 +44,9 @@
           }
         }
       }
+      &--caution {
+        margin-bottom: 16px;
+      }
 
       &-overlay {
         background: rgba(0, 0, 0, 0.5);
@@ -111,6 +114,10 @@
           }
         }
       }
+    }
+
+    .budget-type--switch label {
+      width: 32px;
     }
   }
 }

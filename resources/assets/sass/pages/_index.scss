@@ -42,7 +42,6 @@
     background-image: url(/images/bg-top.jpg);
     object-fit: cover;
     background-size: cover;
-    z-index: 0;
     background-position: top;
     padding-top: 100px;
     padding-bottom: 90px;
@@ -58,6 +57,36 @@
     text-align: center;
     text-shadow: 0 2px 2px rgba(0,0,0,.5);
     margin-bottom: 48px;
+  }
+
+  &__point{
+    .fa-style {
+      display: block;
+      height: 2em;
+      line-height: 2em;
+      position: relative;
+      vertical-align: middle;
+      width: 2.5em;
+      margin: 0 auto;
+      .fa-primary {
+        color: #796bae;
+      }
+      .fa-white {
+        color: $c-white;
+      }
+      i {
+        left: 0;
+        position:absolute;
+        text-align: center;
+        width: 100%;
+      }
+    }
+    .card-ttl {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 16px 0;
+    }
   }
 
   &__category {
@@ -142,6 +171,7 @@
 
   &__search-form {
     z-index: 10;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;

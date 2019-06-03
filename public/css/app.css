@@ -10910,6 +10910,8 @@ button[type=submit] {
 #header .s-header-logo__sizing {
   height: 27px;
   width: 133px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #header .s-header-list--link {
@@ -11505,6 +11507,12 @@ a.m-btn {
   font-weight: 600;
 }
 
+.fa-search::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F002";
+  font-weight: 600;
+}
+
 /* ----------------------------------------------------------------------------
  * Form
  * ------------------------------------------------------------------------- */
@@ -11737,6 +11745,10 @@ a.m-btn {
     font-size: 0.8em;
   }
 
+  .m-search__suggest--caution {
+    margin-bottom: 16px;
+  }
+
   .m-search__suggest-overlay {
     background: rgba(0, 0, 0, 0.5);
   }
@@ -11803,6 +11815,10 @@ a.m-btn {
 
   .m-search__suggest-fullscreen .m-search__suggest__category-list {
     width: 100%;
+  }
+
+  .m-search .budget-type--switch label {
+    width: 32px;
   }
 }
 
@@ -11959,7 +11975,6 @@ a.m-btn {
   -o-object-fit: cover;
      object-fit: cover;
   background-size: cover;
-  z-index: 0;
   background-position: top;
   padding-top: 100px;
   padding-bottom: 90px;
@@ -11975,6 +11990,38 @@ a.m-btn {
   text-align: center;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   margin-bottom: 48px;
+}
+
+.p-index__point .fa-style {
+  display: block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 2.5em;
+  margin: 0 auto;
+}
+
+.p-index__point .fa-style .fa-primary {
+  color: #796bae;
+}
+
+.p-index__point .fa-style .fa-white {
+  color: #fff;
+}
+
+.p-index__point .fa-style i {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.p-index__point .card-ttl {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 16px 0;
 }
 
 .p-index__category__images--wrap {
@@ -12052,6 +12099,7 @@ a.m-btn {
 
 .p-index__search-form {
   z-index: 10;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

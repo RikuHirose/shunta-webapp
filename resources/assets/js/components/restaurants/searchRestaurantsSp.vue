@@ -1,3 +1,4 @@
+
 <template>
   <div class="m-search">
     <div class="m-search--wrap">
@@ -143,67 +144,6 @@
         </button>
       </div>
     </div>
-    <!-- Obsesed Bar -->
-    <!-- <div
-      v-if="isOpenObsessedBar"
-      class="m-search__suggest-overlay"
-      @click.self="closeObsessedBar()">
-      <div
-        class="m-search__suggest">
-        <p
-          v-if="!isInputed"
-          class="m-search__suggest--caution">
-          カテゴリ・店名・キーワードを選択してください
-        </p>
-        <table class="w-100">
-          <tr>
-            <th class="fa-yen">
-              予算
-            </th>
-            <td class="budget-type">
-              <div class="budget-type--switch mr-3">
-                <input
-                  id="on"
-                  v-model="budget_meal_type"
-                  type="radio"
-                  value="1"
-                  :checked="true">
-                <label
-                  for="on"
-                  class="switch-on">
-                  <span class="fa-lunch" />
-                </label>
-                <input
-                  id="off"
-                  v-model="budget_meal_type"
-                  type="radio"
-                  value="0">
-                <label
-                  for="off"
-                  class="switch-off">
-                  <span class="fa-dinner" />
-                </label>
-              </div>
-              <div>
-                <label>
-                  <select
-                    v-model="budget"
-                    class="form-control">
-                    <option
-                      disabled
-                      value="">未選択</option>
-                    <option
-                      v-for="(price, index) in priceList"
-                      :key="index"
-                      :value="price"> ~ {{ price }}円</option>
-                  </select>
-                </label>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div> -->
   </div>
 </template>
 <script>

@@ -31,9 +31,6 @@
                 <div class="row mb-3">
                     <div class="col-md-4 col-sm-6 col-12">
                         <div class="">
-                            <img src="/static/user/images/point_item01.png" class="">
-                        </div>
-                        <div class="">
                             <div class="">
                                 ①デートにピッタリなお店がすぐ見つかる
                             </div>
@@ -46,9 +43,6 @@
 
                     <div class="col-md-4 col-sm-6 col-12">
                         <div class="">
-                            <img src="/static/user/images/point_item02.png" class="">
-                        </div>
-                        <div class="">
                             <div class="">
                                 ②専門のスタッフがお店を厳選
                             </div>
@@ -59,9 +53,6 @@
                     </div>
 
                     <div class="col-md-4 col-sm-6 col-12">
-                        <div class="">
-                            <img src="/static/user/images/point_item03.png" class="">
-                        </div>
                         <div class="">
                             <div class="">
                               ③週1回・4時間〜/月5万円〜。柔軟な働き方が可能

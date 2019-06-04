@@ -49,6 +49,8 @@ class RestaurantController extends Controller
         if ($restaurants->isEmpty()) { $message = 'まだレストランはありません'; }
         if (!$restaurants->isEmpty()) { $message = ''; }
 
+        \SeoHelper::setRestaurantsIndexSeo();
+
         return view('pages.restaurant.index',
             [
                 'restaurants' => $restaurants,
@@ -64,6 +66,8 @@ class RestaurantController extends Controller
 
         $restaurant->load('category', 'restaurantImages.image');
         $recommendRestaurants->load('category', 'restaurantImages.image');
+
+        \SeoHelper::setRestaurantsShowSeo($restaurant);
 
         return view('pages.restaurant.show',
             [

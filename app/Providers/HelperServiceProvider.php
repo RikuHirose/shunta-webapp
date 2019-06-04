@@ -57,5 +57,10 @@ class HelperServiceProvider extends ServiceProvider
             \App\Helpers\UserHelperInterface::class,
             \App\Helpers\Production\UserHelper::class
         );
+
+        $this->app->singleton(
+            \App\Helpers\SeoHelperInterface::class,
+            \App\Helpers\Production\SeoHelper::class
+        );
     }
 }

@@ -24,6 +24,8 @@ class IndexController extends Controller
         $recommendRestaurants = $this->restaurantRepository->getRecommendRestaurants($restaurant);
         $recommendRestaurants->load('category', 'restaurantImages.image');
 
+        \SeoHelper::setIndexSeo();
+
         return view('pages.index',
             [
                 'recommendRestaurants' => $recommendRestaurants

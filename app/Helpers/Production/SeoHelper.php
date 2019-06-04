@@ -39,7 +39,7 @@ class SeoHelper implements SeoHelperInterface
     public function setRestaurantsShowSeo($model)
     {
         $appName      = config('app.name');
-        $title        = $model->description_title;
+        $title        = $model->name;
         $description  = $model->description;
         $keyWords     = $model->keywords;
 

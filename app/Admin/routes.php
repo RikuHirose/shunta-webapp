@@ -15,6 +15,7 @@ Route::group([
     $router->resource('users', UserController::class);
     $router->resource('restaurants', RestaurantController::class);
     $router->resource('categories', CategoryController::class);
+    $router->resource('situations', SituationController::class);
     $router->resource('images', ImageController::class);
     $router->resource('restaurantImages', restaurantImageController::class);
     $router->resource('favorites', FavoriteController::class);

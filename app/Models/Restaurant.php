@@ -10,10 +10,11 @@ class Restaurant extends Model
     protected $table = 'restaurants';
 
     protected $fillable = [
+        'category_id',
+        'situation_id',
         'name',
         'description_title',
         'description',
-        'category_id',
         'price_zone',
         'address',
         'nearest_station',
@@ -37,6 +38,11 @@ class Restaurant extends Model
     public function category()
     {
         return $this->belongsTo(\App\Models\Category::class, 'category_id', 'id');
+    }
+
+    public function situation()
+    {
+        return $this->belongsTo(\App\Models\Category::class, 'situation_id', 'id');
     }
 
     public function restaurantImages()

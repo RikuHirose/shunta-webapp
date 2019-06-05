@@ -29,6 +29,12 @@ class AdminMenusTableSeeder extends Seeder
         ],
         [
           'parent_id' => 8,
+          'title'     => 'Situations',
+          'icon'      => 'fa-bars',
+          'uri'       => 'situations',
+        ],
+        [
+          'parent_id' => 8,
           'title'     => 'Favorites',
           'icon'      => 'fa-bars',
           'uri'       => 'favorites',

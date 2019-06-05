@@ -15,7 +15,8 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('category_id')->unsigned()->index();
+            $table->bigInteger('category_id')->unsigned()->index()->nullable();
+            $table->bigInteger('situation_id')->unsigned()->index()->nullable();
 
             $table->string('name')->nullable();
             $table->string('description_title')->nullable();
@@ -37,20 +38,21 @@ class CreateRestaurantsTable extends Migration
             // （定休日）
             $table->string('regular_holiday')->nullable();
             // （座席数）
-            $table->unsignedInteger('seating_capacity')->default(0);
+            $table->string('seating_capacity')->nullable();
             // （HP URL）
-            $table->decimal('hp_url')->nullable();
+            $table->string('hp_url')->nullable();
             // （Facebook URL）
-            $table->decimal('fb_url')->nullable();
-            $table->decimal('tw_url')->nullable();
-            $table->decimal('ig_url')->nullable();
-            $table->decimal('tel')->nullable();
+            $table->string('fb_url')->nullable();
+            $table->string('tw_url')->nullable();
+            $table->string('ig_url')->nullable();
+            $table->string('tel')->nullable();
 
             $table->string('remarks')->nullable();
             // adminからの5段階評価
             $table->unsignedInteger('admin_evaluate')->default(0);
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('situation_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

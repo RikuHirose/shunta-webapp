@@ -3266,7 +3266,7 @@ __webpack_require__.r(__webpack_exports__);
             // eslint-disable-line
             center: center,
             // 地図の中心を指定
-            zoom: 15 // 地図のズームを指定
+            zoom: 17 // 地図のズームを指定
 
           });
           new google.maps.Marker({

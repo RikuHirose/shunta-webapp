@@ -70,20 +70,24 @@
       </tr>
       <tr>
         <th>お店のホームページ</th>
-        <td>{{ $restaurant->hp_url }}</td>
+        <td>
+          <a href="{{ $restaurant->hp_url }}" target="_blank">{{ $restaurant->hp_url }}</a>
+        </td>
       </tr>
       <tr>
         <th>SNSのURL</th>
         <td>
-          @isset($restaurant->fb_url)
-            FacebookのURL: {{ $restaurant->fb_url }}
-          @endisset
-          @isset($restaurant->tw_url)
-            TwitterのURL: {{ $restaurant->tw_url }}
-          @endisset
-          @isset($restaurant->ig_url)
-            InstagramのURL: {{ $restaurant->ig_url }}
-          @endisset
+          @if(!empty($restaurant->fb_url))
+            <p>FacebookのURL: <a href="{{ $restaurant->fb_url }}" target="_blank">{{ $restaurant->fb_url }}</a></p>
+          @endempty
+
+          @if(!empty($restaurant->tw_url))
+            <p>TwitterのURL: <a href="{{ $restaurant->tw_url }}" target="_blank">{{ $restaurant->tw_url }}</a></p>
+          @endempty
+
+          @if(!empty($restaurant->ig_url))
+            <p>InstagramのURL: <a href="{{ $restaurant->ig_url }}" target="_blank">{{ $restaurant->ig_url }}</a></p>
+          @endempty
         </td>
       </tr>
       <tr>

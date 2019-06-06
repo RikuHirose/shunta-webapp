@@ -43,7 +43,7 @@ class RestaurantController extends Controller
     {
         $input = $request->only($this->restaurantRepository->getBlankModel()->getFillable());
 
-        $restaurants = $this->restaurantRepository->all();
+        $restaurants = $this->restaurantRepository->getPopularRestaurants();
 
         if (empty($restaurants)) {
             return redirect()->back()->withErrors(trans('admin.errors.general.save_failed'));

@@ -39,7 +39,7 @@ class CategoryController extends Controller
     {
         $input = $request->only($this->categoryRepository->getBlankModel()->getFillable());
 
-        $categories = $this->categoryRepository->all();
+        $categories = $this->categoryRepository->getPopularCategories();
 
         if (empty($categories)) {
             return redirect()->back()->withErrors(trans('admin.errors.general.save_failed'));

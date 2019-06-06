@@ -50,4 +50,12 @@ class CategoryRepository implements CategoryRepositoryInterface
         return $category_id;
     }
 
+    public function getPopularCategories(){
+        $categories = $this->category
+        ->take(10)
+        ->get();
+
+        return $categories;
+    }
+
 }

@@ -30,7 +30,7 @@ export default {
 
           map = new google.maps.Map(document.getElementById('map'), { // eslint-disable-line
             center: center, // 地図の中心を指定
-            zoom: 15 // 地図のズームを指定
+            zoom: 17 // 地図のズームを指定
           })
 
           new google.maps.Marker({ // eslint-disable-line

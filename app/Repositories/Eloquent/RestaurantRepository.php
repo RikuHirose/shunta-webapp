@@ -64,22 +64,15 @@ class RestaurantRepository implements RestaurantRepositoryInterface
           $models = $models->when($category_id, function ($query) use ($category_id) {
               return $query->where('category_id', $category_id);
           });
+
+        } else {
+
+          $models = $models->when($word, function ($query) use ($word) {
+              return $query
+              ->where('name',$word)
+              ->orWhere('description', 'like', "%{$word}%");
+          });
         }
-      }
-
-      if(!is_null($word)) {
-        $restaurant_name = $word;
-        $models = $models->when($restaurant_name, function ($query) use ($restaurant_name) {
-            // return $query->where('name', 'like', "%{$restaurant_name}%");
-            return $query->where('name',$restaurant_name);
-        });
-      }
-
-      if(!is_null($word)) {
-        $description = $word;
-        $models = $models->when($description, function ($query) use ($description) {
-            return $query->orWhere('description', 'like', "%{$description}%");
-        });
       }
 
       if (!is_null($budget_meal_type)) {
@@ -87,14 +80,14 @@ class RestaurantRepository implements RestaurantRepositoryInterface
           // lunch
           if(!is_null($budget)) {
             $models = $models->when($budget, function ($query) use ($budget) {
-                return $query->where('lunch_price_zone', '=<', $budget);
+                return $query->where('lunch_price_zone', '<=', $budget);
             });
           }
         } else {
           // dinner
           if(!is_null($budget)) {
             $models = $models->when($budget, function ($query) use ($budget) {
-                return $query->where('dinner_price_zone', '=<', $budget);
+                return $query->where('dinner_price_zone', '<=', $budget);
             });
           }
         }
@@ -144,5 +137,14 @@ class RestaurantRepository implements RestaurantRepositoryInterface
         ->get();
 
       return $recoRestaurants;
+    }
+
+    public function getPopularRestaurants()
+    {
+      $restaurants = $this->restaurant
+        ->take(5)
+        ->get();
+
+      return $restaurants;
     }
 }

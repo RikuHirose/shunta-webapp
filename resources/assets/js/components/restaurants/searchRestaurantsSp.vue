@@ -82,12 +82,10 @@
                   class="m-search__suggest--caution">
                   カテゴリ・店名・キーワードを選択してください
                 </p>
-                <table class="w-100">
-                  <tr>
-                    <th class="fa-yen">
-                      予算
-                    </th>
-                    <td class="budget-type">
+                <div class="m-search__suggest--list--box">
+                  <div class="suggest-box">
+                    <span class="fa-yen">予算</span>
+                    <div class="budget-type">
                       <div class="budget-type--switch mr-3">
                         <input
                           id="on"
@@ -126,9 +124,29 @@
                           </select>
                         </label>
                       </div>
-                    </td>
-                  </tr>
-                </table>
+                    </div>
+                  </div>
+
+                  <div class="suggest-box">
+                    <span class="fa-question">利用シーン</span>
+                    <div>
+                      <label>
+                        <select
+                          v-model="situation_id"
+                          class="form-control">
+                          <option
+                            disabled
+                            value="">未選択</option>
+                          <option
+                            v-for="(situation, index) in situationList"
+                            :key="index"
+                            :value="situation.id">{{ situation.name }}</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="clearObsesed--wrap">
                   <button
                     class="clearObsesed__btn"
@@ -157,6 +175,7 @@
 export default {
   props: {
     priceList: {required: true, type: Array},
+    situationList: {required: true, type: Array},
     parameter: {required: true, type: Object},
     searchButtonTitle: {required: true, type: String},
   },
@@ -176,7 +195,8 @@ export default {
       budget_meal_type: '',
       max_budget: '',
       budget: '',
-      opening_hours: ''
+      opening_hours: '',
+      situation_id: ''
     }
   },
   created () {
@@ -188,6 +208,7 @@ export default {
     }
     if (this.parameter['budget']) { this.budget = this.parameter['budget'] }
     if (this.parameter['budget_meal_type']) { this.budget_meal_type = this.parameter['budget_meal_type'] }
+    if (this.parameter['situation_id']) { this.situation_id = this.parameter['situation_id'] }
 
     this.fetchPopularCategories()
     this.fetchPopularRestaurants()
@@ -222,6 +243,7 @@ export default {
     clearObsesed (){
       this.budget = ''
       this.budget_meal_type = ''
+      this.situation_id = ''
     },
     addInputWord (name) {
       this.inputWord = name
@@ -292,7 +314,7 @@ export default {
     },
     searchRestaurants () {
       if (this.inputWord) {
-        let url = `/q?word=${this.inputWord}&budget_meal_type=${this.budget_meal_type}&budget=${this.budget}`
+        let url = `/q?word=${this.inputWord}&budget_meal_type=${this.budget_meal_type}&budget=${this.budget}&situation_id=${this.situation_id}`
 
         window.location.href = url
       }

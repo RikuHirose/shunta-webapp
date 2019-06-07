@@ -53,7 +53,7 @@ class RestaurantRepository implements RestaurantRepositoryInterface
         return $models;
     }
 
-    public function restaurantsByTopSearch($word, $budget, $budget_meal_type)
+    public function restaurantsByTopSearch($word, $budget, $budget_meal_type, $situation_id)
     {
       $models = $this->restaurant;
 
@@ -91,6 +91,12 @@ class RestaurantRepository implements RestaurantRepositoryInterface
             });
           }
         }
+      }
+
+      if(!is_null($situation_id)) {
+        $models = $models->when($situation_id, function ($query) use ($situation_id) {
+            return $query->where('situation_id', $situation_id);
+        });
       }
 
       $models = $models->get();

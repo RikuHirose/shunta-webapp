@@ -10786,7 +10786,7 @@ strong {
 }
 
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
 }
 
 th,
@@ -11517,6 +11517,12 @@ a.m-btn {
   font-weight: 600;
 }
 
+.fa-question::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F059";
+  font-weight: 600;
+}
+
 /* ----------------------------------------------------------------------------
  * Form
  * ------------------------------------------------------------------------- */
@@ -11571,6 +11577,11 @@ a.m-btn {
   margin: 0 auto;
   position: relative;
   z-index: 31;
+}
+
+.m-search__suggest__table {
+  width: 100%;
+  border-spacing: 16px;
 }
 
 .m-search__suggest--caution {
@@ -11657,7 +11668,7 @@ a.m-btn {
   outline: none;
 }
 
-.m-search .budget-type {
+.m-search .td {
   display: flex;
 }
 
@@ -11829,6 +11840,21 @@ a.m-btn {
     width: 100%;
   }
 
+  .m-search__suggest-fullscreen .m-search__suggest--list--box .suggest-box {
+    margin-bottom: 16px;
+    display: flex;
+    display: -webkit-flex;
+  }
+
+  .m-search__suggest-fullscreen .m-search__suggest--list--box .suggest-box span {
+    min-width: 96px;
+  }
+
+  .m-search__suggest-fullscreen .m-search__suggest--list--box .suggest-box .budget-type {
+    display: flex;
+    display: -webkit-flex;
+  }
+
   .m-search__suggest-fullscreen .m-search__suggest__category-list {
     width: 100%;
   }
@@ -11837,7 +11863,7 @@ a.m-btn {
     margin-top: 24px;
   }
 
-  .m-search .budget-type--switch label {
+  .m-search .td--switch label {
     width: 32px;
   }
 
@@ -11864,6 +11890,10 @@ a.m-btn {
   letter-spacing: 1.8px;
   padding: 0 8px 0 8px;
   background-color: #796bae;
+}
+
+.m-tag__situation {
+  background-color: #F78901;
 }
 
 /* ----------------------------------------------------------------------------

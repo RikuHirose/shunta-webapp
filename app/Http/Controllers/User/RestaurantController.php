@@ -44,7 +44,7 @@ class RestaurantController extends Controller
         $parameter = \Request::query();
 
         $restaurants = $this->restaurantService->getRestaurantsByParameter($parameter);
-        $restaurants->load('category', 'restaurantImages.image');
+        $restaurants->load('category', 'situation', 'restaurantImages.image');
 
         if ($restaurants->isEmpty()) { $message = 'まだレストランはありません'; }
         if (!$restaurants->isEmpty()) { $message = ''; }
@@ -64,8 +64,8 @@ class RestaurantController extends Controller
     {
         $recommendRestaurants = $this->restaurantRepository->getRecommendRestaurants($restaurant);
 
-        $restaurant->load('category', 'restaurantImages.image');
-        $recommendRestaurants->load('category', 'restaurantImages.image');
+        $restaurant->load('category', 'situation', 'restaurantImages.image');
+        $recommendRestaurants->load('category', 'situation', 'restaurantImages.image');
 
         \SeoHelper::setRestaurantsShowSeo($restaurant);
 

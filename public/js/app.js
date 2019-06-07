@@ -2739,9 +2739,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     priceList: {
+      required: true,
+      type: Array
+    },
+    situationList: {
       required: true,
       type: Array
     },
@@ -2770,7 +2796,8 @@ __webpack_require__.r(__webpack_exports__);
       budget_meal_type: '',
       max_budget: '',
       budget: '',
-      opening_hours: ''
+      opening_hours: '',
+      situation_id: ''
     };
   },
   created: function created() {
@@ -2788,6 +2815,10 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.parameter['budget_meal_type']) {
       this.budget_meal_type = this.parameter['budget_meal_type'];
+    }
+
+    if (this.parameter['situation_id']) {
+      this.situation_id = this.parameter['situation_id'];
     }
 
     this.fetchPopularCategories();
@@ -2809,6 +2840,7 @@ __webpack_require__.r(__webpack_exports__);
     clearObsesed: function clearObsesed() {
       this.budget = '';
       this.budget_meal_type = '';
+      this.situation_id = '';
     },
     addInputWord: function addInputWord(name) {
       this.inputWord = name;
@@ -2874,7 +2906,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     searchRestaurants: function searchRestaurants() {
       if (this.inputWord) {
-        var url = "/q?word=".concat(this.inputWord, "&budget_meal_type=").concat(this.budget_meal_type, "&budget=").concat(this.budget);
+        var url = "/q?word=".concat(this.inputWord, "&budget_meal_type=").concat(this.budget_meal_type, "&budget=").concat(this.budget, "&situation_id=").concat(this.situation_id);
         window.location.href = url;
       }
     }
@@ -3047,9 +3079,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     priceList: {
+      required: true,
+      type: Array
+    },
+    situationList: {
       required: true,
       type: Array
     },
@@ -3078,7 +3132,8 @@ __webpack_require__.r(__webpack_exports__);
       budget_meal_type: '',
       max_budget: '',
       budget: '',
-      opening_hours: ''
+      opening_hours: '',
+      situation_id: ''
     };
   },
   created: function created() {
@@ -3096,6 +3151,10 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.parameter['budget_meal_type']) {
       this.budget_meal_type = this.parameter['budget_meal_type'];
+    }
+
+    if (this.parameter['situation_id']) {
+      this.situation_id = this.parameter['situation_id'];
     }
 
     this.fetchPopularCategories();
@@ -3131,6 +3190,7 @@ __webpack_require__.r(__webpack_exports__);
     clearObsesed: function clearObsesed() {
       this.budget = '';
       this.budget_meal_type = '';
+      this.situation_id = '';
     },
     addInputWord: function addInputWord(name) {
       this.inputWord = name;
@@ -3195,7 +3255,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     searchRestaurants: function searchRestaurants() {
       if (this.inputWord) {
-        var url = "/q?word=".concat(this.inputWord, "&budget_meal_type=").concat(this.budget_meal_type, "&budget=").concat(this.budget);
+        var url = "/q?word=".concat(this.inputWord, "&budget_meal_type=").concat(this.budget_meal_type, "&budget=").concat(this.budget, "&situation_id=").concat(this.situation_id);
         window.location.href = url;
       }
     }
@@ -50547,13 +50607,13 @@ var render = function() {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _c("table", { staticClass: "w-100" }, [
+          _c("table", { staticClass: "m-search__suggest__table" }, [
             _c("tr", [
               _c("th", { staticClass: "fa-yen" }, [
                 _vm._v("\n          予算\n        ")
               ]),
               _vm._v(" "),
-              _c("td", { staticClass: "budget-type" }, [
+              _c("td", { staticClass: "budget-type td" }, [
                 _c("div", { staticClass: "budget-type--switch mr-3" }, [
                   _c("input", {
                     directives: [
@@ -50639,6 +50699,62 @@ var render = function() {
                             "option",
                             { key: index, domProps: { value: price } },
                             [_vm._v(" ~ " + _vm._s(price) + "円")]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("th", { staticClass: "fa-question" }, [
+                _vm._v("\n          利用シーン\n        ")
+              ]),
+              _vm._v(" "),
+              _c("td", { staticClass: "td" }, [
+                _c("div", [
+                  _c("label", [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.situation_id,
+                            expression: "situation_id"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.situation_id = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c("option", { attrs: { disabled: "", value: "" } }, [
+                          _vm._v("未選択")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.situationList, function(situation, index) {
+                          return _c(
+                            "option",
+                            { key: index, domProps: { value: situation.id } },
+                            [_vm._v(_vm._s(situation.name))]
                           )
                         })
                       ],
@@ -50923,73 +51039,143 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _c("table", { staticClass: "w-100" }, [
-                        _c("tr", [
-                          _c("th", { staticClass: "fa-yen" }, [
-                            _vm._v(
-                              "\n                    予算\n                  "
-                            )
+                      _c(
+                        "div",
+                        { staticClass: "m-search__suggest--list--box" },
+                        [
+                          _c("div", { staticClass: "suggest-box" }, [
+                            _c("span", { staticClass: "fa-yen" }, [
+                              _vm._v("予算")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "budget-type" }, [
+                              _c(
+                                "div",
+                                { staticClass: "budget-type--switch mr-3" },
+                                [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.budget_meal_type,
+                                        expression: "budget_meal_type"
+                                      }
+                                    ],
+                                    attrs: {
+                                      id: "on",
+                                      type: "radio",
+                                      value: "1"
+                                    },
+                                    domProps: {
+                                      checked: true,
+                                      checked: _vm._q(_vm.budget_meal_type, "1")
+                                    },
+                                    on: {
+                                      change: function($event) {
+                                        _vm.budget_meal_type = "1"
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(0),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.budget_meal_type,
+                                        expression: "budget_meal_type"
+                                      }
+                                    ],
+                                    attrs: {
+                                      id: "off",
+                                      type: "radio",
+                                      value: "0"
+                                    },
+                                    domProps: {
+                                      checked: _vm._q(_vm.budget_meal_type, "0")
+                                    },
+                                    on: {
+                                      change: function($event) {
+                                        _vm.budget_meal_type = "0"
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(1)
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", [
+                                _c("label", [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.budget,
+                                          expression: "budget"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.budget = $event.target.multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "option",
+                                        { attrs: { disabled: "", value: "" } },
+                                        [_vm._v("未選択")]
+                                      ),
+                                      _vm._v(" "),
+                                      _vm._l(_vm.priceList, function(
+                                        price,
+                                        index
+                                      ) {
+                                        return _c(
+                                          "option",
+                                          {
+                                            key: index,
+                                            domProps: { value: price }
+                                          },
+                                          [_vm._v(" ~ " + _vm._s(price) + "円")]
+                                        )
+                                      })
+                                    ],
+                                    2
+                                  )
+                                ])
+                              ])
+                            ])
                           ]),
                           _vm._v(" "),
-                          _c("td", { staticClass: "budget-type" }, [
-                            _c(
-                              "div",
-                              { staticClass: "budget-type--switch mr-3" },
-                              [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.budget_meal_type,
-                                      expression: "budget_meal_type"
-                                    }
-                                  ],
-                                  attrs: {
-                                    id: "on",
-                                    type: "radio",
-                                    value: "1"
-                                  },
-                                  domProps: {
-                                    checked: true,
-                                    checked: _vm._q(_vm.budget_meal_type, "1")
-                                  },
-                                  on: {
-                                    change: function($event) {
-                                      _vm.budget_meal_type = "1"
-                                    }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _vm._m(0),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.budget_meal_type,
-                                      expression: "budget_meal_type"
-                                    }
-                                  ],
-                                  attrs: {
-                                    id: "off",
-                                    type: "radio",
-                                    value: "0"
-                                  },
-                                  domProps: {
-                                    checked: _vm._q(_vm.budget_meal_type, "0")
-                                  },
-                                  on: {
-                                    change: function($event) {
-                                      _vm.budget_meal_type = "0"
-                                    }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _vm._m(1)
-                              ]
-                            ),
+                          _c("div", { staticClass: "suggest-box" }, [
+                            _c("span", { staticClass: "fa-question" }, [
+                              _vm._v("利用シーン")
+                            ]),
                             _vm._v(" "),
                             _c("div", [
                               _c("label", [
@@ -51000,8 +51186,8 @@ var render = function() {
                                       {
                                         name: "model",
                                         rawName: "v-model",
-                                        value: _vm.budget,
-                                        expression: "budget"
+                                        value: _vm.situation_id,
+                                        expression: "situation_id"
                                       }
                                     ],
                                     staticClass: "form-control",
@@ -51018,7 +51204,8 @@ var render = function() {
                                               "_value" in o ? o._value : o.value
                                             return val
                                           })
-                                        _vm.budget = $event.target.multiple
+                                        _vm.situation_id = $event.target
+                                          .multiple
                                           ? $$selectedVal
                                           : $$selectedVal[0]
                                       }
@@ -51031,17 +51218,17 @@ var render = function() {
                                       [_vm._v("未選択")]
                                     ),
                                     _vm._v(" "),
-                                    _vm._l(_vm.priceList, function(
-                                      price,
+                                    _vm._l(_vm.situationList, function(
+                                      situation,
                                       index
                                     ) {
                                       return _c(
                                         "option",
                                         {
                                           key: index,
-                                          domProps: { value: price }
+                                          domProps: { value: situation.id }
                                         },
-                                        [_vm._v(" ~ " + _vm._s(price) + "円")]
+                                        [_vm._v(_vm._s(situation.name))]
                                       )
                                     })
                                   ],
@@ -51050,8 +51237,8 @@ var render = function() {
                               ])
                             ])
                           ])
-                        ])
-                      ]),
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("div", { staticClass: "clearObsesed--wrap" }, [
                         _c(

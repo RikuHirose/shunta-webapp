@@ -48,6 +48,12 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\FavoriteRepositoryInterface::class,
             \App\Repositories\Eloquent\FavoriteRepository::class
         );
+
+        // Favorites
+        $this->app->bind(
+            \App\Repositories\SituationRepositoryInterface::class,
+            \App\Repositories\Eloquent\SituationRepository::class
+        );
     }
 
     /**

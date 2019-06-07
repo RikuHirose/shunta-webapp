@@ -3,11 +3,17 @@ namespace App\Helpers\Production;
 
 use App\Helpers\FormHelperInterface;
 use Illuminate\Http\Request;
+use App\Repositories\SituationRepositoryInterface;
 
 class FormHelper implements FormHelperInterface
 {
+    /** @var SituationRepositoryInterface */
+    protected $situationRepository;
+
     public function __construct(
+        SituationRepositoryInterface $situationRepository
     ) {
+        $this->situationRepository = $situationRepository;
     }
 
     public function suggestpriceList()
@@ -39,6 +45,11 @@ class FormHelper implements FormHelperInterface
       ];
 
       return $time_list;
+    }
+
+    public function getSituationList()
+    {
+        return $this->situationRepository->all();
     }
 
 }

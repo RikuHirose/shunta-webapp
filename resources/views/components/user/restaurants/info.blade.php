@@ -4,6 +4,9 @@
     <span class="m-tag">
       {{ $restaurant->category->name }}
     </span>
+    <span class="m-tag m-tag__situation">
+      {{ $restaurant->situation->name }}
+    </span>
   </div>
 </div>
 

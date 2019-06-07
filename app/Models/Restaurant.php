@@ -42,7 +42,7 @@ class Restaurant extends Model
 
     public function situation()
     {
-        return $this->belongsTo(\App\Models\Category::class, 'situation_id', 'id');
+        return $this->belongsTo(\App\Models\Situation::class, 'situation_id', 'id');
     }
 
     public function restaurantImages()

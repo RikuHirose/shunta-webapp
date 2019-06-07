@@ -24,6 +24,11 @@
     position: relative;
     z-index: 31;
 
+    &__table {
+      width: 100%;
+      border-spacing: 16px;
+    }
+
     &--caution {
       color: #ff5714;
     }
@@ -81,6 +86,7 @@
       transition: all .3s ease-out;
     }
   }
+
   &__input {
     position: relative;
     width: 56%;
@@ -103,8 +109,10 @@
     }
   }
 
-  .budget-type {
+  .td {
     display: flex;
+  }
+  .budget-type {
     &--switch {
       input {
         display: none;

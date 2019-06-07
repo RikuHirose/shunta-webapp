@@ -97,6 +97,22 @@
             padding: 0 16px;
             padding-top: 16px;
             width: 100%;
+
+            &--box {
+              .suggest-box {
+                margin-bottom: 16px;
+                display: flex;
+                display: -webkit-flex;
+                span {
+                  min-width: 96px;
+                }
+
+                .budget-type {
+                  display: flex;
+                  display: -webkit-flex;
+                }
+              }
+            }
           }
           &__category-list {
             width: 100%;
@@ -111,7 +127,7 @@
       }
     }
 
-    .budget-type--switch label {
+    .td--switch label {
       width: 32px;
     }
 

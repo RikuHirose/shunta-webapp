@@ -139,4 +139,12 @@
       font-weight: 600;
     }
   }
+
+  &-question {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-question-circle;
+      font-weight: 600;
+    }
+  }
 }

@@ -8,6 +8,7 @@
       <div class="p-index__search-form">
           <search-restaurants
           :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
+          :situation-list="{{ json_encode(FormHelper::getSituationList()) }}"
           :parameter="{}"
           :search-button-title="'検索する'" />
       </div>

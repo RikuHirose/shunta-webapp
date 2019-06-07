@@ -13,6 +13,7 @@
         <div class="">
           <search-restaurants
             :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
+            :situation-list="{{ json_encode(FormHelper::getSituationList()) }}"
             :parameter="{{ json_encode($parameter) }}"
             :search-button-title="'再検索する'" />
         </div>

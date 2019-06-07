@@ -2,7 +2,7 @@
 
 return [
     'index' => [
-        'title'       => 'farie(ファリエ) | ',
+        'title'       => 'farie(ファリエ) | デートにピッタリなお店がすぐ見つかる',
         'description' => 'farie(ファリエ)はデートにピッタリなお店がすぐ見つかるサービスです',
         'keywords'    => 'レストラン,デート',
     ],

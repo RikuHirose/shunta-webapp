@@ -30,31 +30,39 @@
                 <p class="text-center h2-desc">デートにピッタリなお店がすぐ見つかるサービスです</p>
                 <div class="row mb-3">
                     <div class="col-md-4 col-sm-6 col-12">
-                        <div class="">
-                            <div class="">
-                                ①デートにピッタリなお店がすぐ見つかる
-                            </div>
-                            <p class="">
-                                営業、マーケティング、人事、広報、ファイナンスなど、ビジネス職を中心に多様な案件があります。
-                                できることをそのままスキマ時間でやるのではなく、経験を活かしながらキャリアアップにつながる案件にチャレンジできます。
-                            </p>
+                      <span class="fa-4x fa-style">
+                        <i class="fas fa-circle fa-stack-2x fa-primary"></i>
+                        <i class="fa-eat fa-white"></i>
+                      </span>
+                      <div class="">
+                        <div class="card-ttl">
+                            ①デートにピッタリなお店がすぐ見つかる
                         </div>
+                        <p class="">
+                            営業、マーケティング、人事、広報、ファイナンスなど、ビジネス職を中心に多様な案件があります。
+                            できることをそのままスキマ時間でやるのではなく、経験を活かしながらキャリアアップにつながる案件にチャレンジできます。
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12">
+                      <span class="fa-4x fa-style">
+                        <i class="fas fa-circle fa-stack-2x fa-primary"></i>
+                        <i class="fa-search fa-white"></i>
+                      </span>
+                      <div class="">
+                          <div class="card-ttl">
+                              ②専門のスタッフがお店を厳選
+                          </div>
+                          <p class="">
+                            食事や雰囲気、内装、接客など20項目以上の{{ Config::get('app.name') }}独自の選定基準を全て満たしたお店だけを掲載しています。
+                          </p>
+                      </div>
                     </div>
 
                     <div class="col-md-4 col-sm-6 col-12">
                         <div class="">
-                            <div class="">
-                                ②専門のスタッフがお店を厳選
-                            </div>
-                            <p class="">
-                              食事や雰囲気、内装、接客など20項目以上の{{ Config::get('app.name') }}独自の選定基準を全て満たしたお店だけを掲載しています。
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="">
-                            <div class="">
+                            <div class="card-ttl">
                               ③週1回・4時間〜/月5万円〜。柔軟な働き方が可能
                             </div>
                             <p class="">

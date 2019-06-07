@@ -21,9 +21,11 @@
       <h3 class="c-res-index-card--desc-ttl">
         {{ $restaurant->description_title }}
       </h3>
-      <p class="c-res-index-card--desc-p">
-        {{ $restaurant->description }}
-      </p>
+      @if(!empty($restaurant->description))
+        <p class="c-res-index-card--desc-p">
+          {{ $restaurant->description }}
+        </p>
+      @endif
     </div>
 
     <div class="text-center" style="margin-top: 16px;">

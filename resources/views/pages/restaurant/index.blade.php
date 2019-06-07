@@ -9,9 +9,8 @@
       </div>
       <div class="col-md-6"></div>
 
-      <div class="col-md-12 mt-3 mb-5" style="display: flex;
-        justify-content: center;">
-        <div class="mx-auto">
+      <div class="col-md-12 mt-3 mb-5">
+        <div class="">
           <search-restaurants
             :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
             :parameter="{{ json_encode($parameter) }}"

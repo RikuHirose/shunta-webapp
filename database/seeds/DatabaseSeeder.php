@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RestaurantsTableSeeder::class);
         // $this->call(RestaurantImagesTableSeeder::class);
         // admin
-        $this->call(AdminMenusTableSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }

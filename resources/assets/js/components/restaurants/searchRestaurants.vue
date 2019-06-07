@@ -34,101 +34,110 @@
     <!-- SuggestBar -->
     <div
       v-if="isOpenSuggestBar"
-      class="m-search__suggest-overlay"
-      @click.self="closeSuggestBar()">
-      <div
-        class="m-search__suggest">
-        <div class="m-search__suggest__category-list m-search__suggest__list">
-          <span class="fa-eat">
-            <span class="ml-2">{{ category_title }}</span>
-          </span>
-          <ul class="mt-2">
-            <li
-              v-for="(category, index) in categories"
-              :key="index"
-              class="m-search__suggest__tag"
-              @click="addInputWord(category.name)">
-              {{ category.name }}
-            </li>
-          </ul>
-        </div>
-        <div class="m-search__suggest__restaurant-list m-search__suggest__list">
-          <span class="fa-restaurant">
-            <span class="ml-2">{{ restaurant_title }}</span>
-          </span>
-          <ul class="mt-2">
-            <li
-              v-for="(restaurant, index) in restaurants"
-              :key="index"
-              class="m-search__suggest__tag"
-              @click="addInputWord(restaurant.name)">
-              {{ restaurant.name }}
-            </li>
-          </ul>
-        </div>
+      class="m-search__suggest">
+      <div class="m-search__suggest__category-list m-search__suggest__list">
+        <span class="fa-eat">
+          <span class="ml-2">{{ category_title }}</span>
+        </span>
+        <ul class="mt-2">
+          <li
+            v-for="(category, index) in categories"
+            :key="index"
+            class="m-search__suggest__tag"
+            @click="addInputWord(category.name)">
+            {{ category.name }}
+          </li>
+        </ul>
+      </div>
+      <div class="m-search__suggest__restaurant-list m-search__suggest__list">
+        <span class="fa-restaurant">
+          <span class="ml-2">{{ restaurant_title }}</span>
+        </span>
+        <ul class="mt-2">
+          <li
+            v-for="(restaurant, index) in restaurants"
+            :key="index"
+            class="m-search__suggest__tag"
+            @click="addInputWord(restaurant.name)">
+            {{ restaurant.name }}
+          </li>
+        </ul>
       </div>
     </div>
     <!-- Obsesed Bar -->
     <div
       v-if="isOpenObsessedBar"
-      class="m-search__suggest-overlay"
-      @click.self="closeObsessedBar()">
-      <div
-        class="m-search__suggest">
-        <p
-          v-if="!isInputed"
-          class="m-search__suggest--caution">
-          カテゴリ・店名・キーワードを選択してください
-        </p>
-        <table class="w-100">
-          <tr>
-            <th class="fa-yen">
-              予算
-            </th>
-            <td class="budget-type">
-              <div class="budget-type--switch mr-3">
-                <input
-                  id="on"
-                  v-model="budget_meal_type"
-                  type="radio"
-                  value="1"
-                  :checked="true">
-                <label
-                  for="on"
-                  class="switch-on">
-                  <span class="fa-lunch" />
-                </label>
-                <input
-                  id="off"
-                  v-model="budget_meal_type"
-                  type="radio"
-                  value="0">
-                <label
-                  for="off"
-                  class="switch-off">
-                  <span class="fa-dinner" />
-                </label>
-              </div>
-              <div>
-                <label>
-                  <select
-                    v-model="budget"
-                    class="form-control">
-                    <option
-                      disabled
-                      value="">未選択</option>
-                    <option
-                      v-for="(price, index) in priceList"
-                      :key="index"
-                      :value="price"> ~ {{ price }}円</option>
-                  </select>
-                </label>
-              </div>
-            </td>
-          </tr>
-        </table>
+      class="m-search__suggest">
+      <p
+        v-if="!isInputed"
+        class="m-search__suggest--caution">
+        カテゴリ・店名・キーワードを選択してください
+      </p>
+      <table class="w-100">
+        <tr>
+          <th class="fa-yen">
+            予算
+          </th>
+          <td class="budget-type">
+            <div class="budget-type--switch mr-3">
+              <input
+                id="on"
+                v-model="budget_meal_type"
+                type="radio"
+                value="1"
+                :checked="true">
+              <label
+                for="on"
+                class="switch-on">
+                <span class="fa-lunch" />
+              </label>
+              <input
+                id="off"
+                v-model="budget_meal_type"
+                type="radio"
+                value="0">
+              <label
+                for="off"
+                class="switch-off">
+                <span class="fa-dinner" />
+              </label>
+            </div>
+            <div>
+              <label>
+                <select
+                  v-model="budget"
+                  class="form-control">
+                  <option
+                    disabled
+                    value="">未選択</option>
+                  <option
+                    v-for="(price, index) in priceList"
+                    :key="index"
+                    :value="price"> ~ {{ price }}円</option>
+                </select>
+              </label>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="clearObsesed--wrap">
+        <button
+          class="clearObsesed__btn"
+          @click="clearObsesed()">
+          こだわり条件をクリアする
+        </button>
       </div>
     </div>
+    <!-- overlay -->
+    <div
+      v-if="isOpenSuggestBar"
+      class="m-search__suggest-overlay"
+      @click.self="closeSuggestBar()" />
+
+    <div
+      v-if="isOpenObsessedBar"
+      class="m-search__suggest-overlay"
+      @click.self="closeObsessedBar()" />
   </div>
 </template>
 <script>
@@ -183,6 +192,10 @@ export default {
     },
     closeObsessedBar (){
       this.isOpenObsessedBar = false
+    },
+    clearObsesed (){
+      this.budget = ''
+      this.budget_meal_type = ''
     },
     addInputWord (name) {
       this.inputWord = name

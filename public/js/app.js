@@ -2730,6 +2730,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     priceList: {
@@ -2796,6 +2805,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     closeObsessedBar: function closeObsessedBar() {
       this.isOpenObsessedBar = false;
+    },
+    clearObsesed: function clearObsesed() {
+      this.budget = '';
+      this.budget_meal_type = '';
     },
     addInputWord: function addInputWord(name) {
       this.inputWord = name;
@@ -3027,6 +3040,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     priceList: {
@@ -3107,6 +3127,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     closeObsessedBar: function closeObsessedBar() {
       this.isOpenObsessedBar = false;
+    },
+    clearObsesed: function clearObsesed() {
+      this.budget = '';
+      this.budget_meal_type = '';
     },
     addInputWord: function addInputWord(name) {
       this.inputWord = name;
@@ -50430,242 +50454,245 @@ var render = function() {
     ]),
     _vm._v(" "),
     _vm.isOpenSuggestBar
-      ? _c(
-          "div",
-          {
-            staticClass: "m-search__suggest-overlay",
-            on: {
-              click: function($event) {
-                if ($event.target !== $event.currentTarget) {
-                  return null
-                }
-                return _vm.closeSuggestBar()
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "m-search__suggest" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "m-search__suggest__category-list m-search__suggest__list"
-                },
-                [
-                  _c("span", { staticClass: "fa-eat" }, [
-                    _c("span", { staticClass: "ml-2" }, [
-                      _vm._v(_vm._s(_vm.category_title))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    { staticClass: "mt-2" },
-                    _vm._l(_vm.categories, function(category, index) {
-                      return _c(
-                        "li",
-                        {
-                          key: index,
-                          staticClass: "m-search__suggest__tag",
-                          on: {
-                            click: function($event) {
-                              return _vm.addInputWord(category.name)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n            " +
-                              _vm._s(category.name) +
-                              "\n          "
-                          )
-                        ]
-                      )
-                    }),
-                    0
-                  )
-                ]
-              ),
+      ? _c("div", { staticClass: "m-search__suggest" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "m-search__suggest__category-list m-search__suggest__list"
+            },
+            [
+              _c("span", { staticClass: "fa-eat" }, [
+                _c("span", { staticClass: "ml-2" }, [
+                  _vm._v(_vm._s(_vm.category_title))
+                ])
+              ]),
               _vm._v(" "),
               _c(
-                "div",
-                {
-                  staticClass:
-                    "m-search__suggest__restaurant-list m-search__suggest__list"
-                },
-                [
-                  _c("span", { staticClass: "fa-restaurant" }, [
-                    _c("span", { staticClass: "ml-2" }, [
-                      _vm._v(_vm._s(_vm.restaurant_title))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    { staticClass: "mt-2" },
-                    _vm._l(_vm.restaurants, function(restaurant, index) {
-                      return _c(
-                        "li",
-                        {
-                          key: index,
-                          staticClass: "m-search__suggest__tag",
-                          on: {
-                            click: function($event) {
-                              return _vm.addInputWord(restaurant.name)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n            " +
-                              _vm._s(restaurant.name) +
-                              "\n          "
-                          )
-                        ]
+                "ul",
+                { staticClass: "mt-2" },
+                _vm._l(_vm.categories, function(category, index) {
+                  return _c(
+                    "li",
+                    {
+                      key: index,
+                      staticClass: "m-search__suggest__tag",
+                      on: {
+                        click: function($event) {
+                          return _vm.addInputWord(category.name)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n          " + _vm._s(category.name) + "\n        "
                       )
-                    }),
-                    0
+                    ]
                   )
-                ]
+                }),
+                0
               )
-            ])
-          ]
-        )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "m-search__suggest__restaurant-list m-search__suggest__list"
+            },
+            [
+              _c("span", { staticClass: "fa-restaurant" }, [
+                _c("span", { staticClass: "ml-2" }, [
+                  _vm._v(_vm._s(_vm.restaurant_title))
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "ul",
+                { staticClass: "mt-2" },
+                _vm._l(_vm.restaurants, function(restaurant, index) {
+                  return _c(
+                    "li",
+                    {
+                      key: index,
+                      staticClass: "m-search__suggest__tag",
+                      on: {
+                        click: function($event) {
+                          return _vm.addInputWord(restaurant.name)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n          " + _vm._s(restaurant.name) + "\n        "
+                      )
+                    ]
+                  )
+                }),
+                0
+              )
+            ]
+          )
+        ])
       : _vm._e(),
     _vm._v(" "),
     _vm.isOpenObsessedBar
-      ? _c(
-          "div",
-          {
-            staticClass: "m-search__suggest-overlay",
-            on: {
-              click: function($event) {
-                if ($event.target !== $event.currentTarget) {
-                  return null
-                }
-                return _vm.closeObsessedBar()
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "m-search__suggest" }, [
-              !_vm.isInputed
-                ? _c("p", { staticClass: "m-search__suggest--caution" }, [
-                    _vm._v(
-                      "\n        カテゴリ・店名・キーワードを選択してください\n      "
-                    )
-                  ])
-                : _vm._e(),
+      ? _c("div", { staticClass: "m-search__suggest" }, [
+          !_vm.isInputed
+            ? _c("p", { staticClass: "m-search__suggest--caution" }, [
+                _vm._v(
+                  "\n      カテゴリ・店名・キーワードを選択してください\n    "
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("table", { staticClass: "w-100" }, [
+            _c("tr", [
+              _c("th", { staticClass: "fa-yen" }, [
+                _vm._v("\n          予算\n        ")
+              ]),
               _vm._v(" "),
-              _c("table", { staticClass: "w-100" }, [
-                _c("tr", [
-                  _c("th", { staticClass: "fa-yen" }, [
-                    _vm._v("\n            予算\n          ")
-                  ]),
+              _c("td", { staticClass: "budget-type" }, [
+                _c("div", { staticClass: "budget-type--switch mr-3" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.budget_meal_type,
+                        expression: "budget_meal_type"
+                      }
+                    ],
+                    attrs: { id: "on", type: "radio", value: "1" },
+                    domProps: {
+                      checked: true,
+                      checked: _vm._q(_vm.budget_meal_type, "1")
+                    },
+                    on: {
+                      change: function($event) {
+                        _vm.budget_meal_type = "1"
+                      }
+                    }
+                  }),
                   _vm._v(" "),
-                  _c("td", { staticClass: "budget-type" }, [
-                    _c("div", { staticClass: "budget-type--switch mr-3" }, [
-                      _c("input", {
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.budget_meal_type,
+                        expression: "budget_meal_type"
+                      }
+                    ],
+                    attrs: { id: "off", type: "radio", value: "0" },
+                    domProps: { checked: _vm._q(_vm.budget_meal_type, "0") },
+                    on: {
+                      change: function($event) {
+                        _vm.budget_meal_type = "0"
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("label", [
+                    _c(
+                      "select",
+                      {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.budget_meal_type,
-                            expression: "budget_meal_type"
+                            value: _vm.budget,
+                            expression: "budget"
                           }
                         ],
-                        attrs: { id: "on", type: "radio", value: "1" },
-                        domProps: {
-                          checked: true,
-                          checked: _vm._q(_vm.budget_meal_type, "1")
-                        },
+                        staticClass: "form-control",
                         on: {
                           change: function($event) {
-                            _vm.budget_meal_type = "1"
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.budget = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
                           }
                         }
-                      }),
-                      _vm._v(" "),
-                      _vm._m(0),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.budget_meal_type,
-                            expression: "budget_meal_type"
-                          }
-                        ],
-                        attrs: { id: "off", type: "radio", value: "0" },
-                        domProps: {
-                          checked: _vm._q(_vm.budget_meal_type, "0")
-                        },
-                        on: {
-                          change: function($event) {
-                            _vm.budget_meal_type = "0"
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _vm._m(1)
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("label", [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.budget,
-                                expression: "budget"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.budget = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c(
-                              "option",
-                              { attrs: { disabled: "", value: "" } },
-                              [_vm._v("未選択")]
-                            ),
-                            _vm._v(" "),
-                            _vm._l(_vm.priceList, function(price, index) {
-                              return _c(
-                                "option",
-                                { key: index, domProps: { value: price } },
-                                [_vm._v(" ~ " + _vm._s(price) + "円")]
-                              )
-                            })
-                          ],
-                          2
-                        )
-                      ])
-                    ])
+                      },
+                      [
+                        _c("option", { attrs: { disabled: "", value: "" } }, [
+                          _vm._v("未選択")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.priceList, function(price, index) {
+                          return _c(
+                            "option",
+                            { key: index, domProps: { value: price } },
+                            [_vm._v(" ~ " + _vm._s(price) + "円")]
+                          )
+                        })
+                      ],
+                      2
+                    )
                   ])
                 ])
               ])
             ])
-          ]
-        )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "clearObsesed--wrap" }, [
+            _c(
+              "button",
+              {
+                staticClass: "clearObsesed__btn",
+                on: {
+                  click: function($event) {
+                    return _vm.clearObsesed()
+                  }
+                }
+              },
+              [_vm._v("\n        こだわり条件をクリアする\n      ")]
+            )
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.isOpenSuggestBar
+      ? _c("div", {
+          staticClass: "m-search__suggest-overlay",
+          on: {
+            click: function($event) {
+              if ($event.target !== $event.currentTarget) {
+                return null
+              }
+              return _vm.closeSuggestBar()
+            }
+          }
+        })
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.isOpenObsessedBar
+      ? _c("div", {
+          staticClass: "m-search__suggest-overlay",
+          on: {
+            click: function($event) {
+              if ($event.target !== $event.currentTarget) {
+                return null
+              }
+              return _vm.closeObsessedBar()
+            }
+          }
+        })
       : _vm._e()
   ])
 }
@@ -51024,6 +51051,25 @@ var render = function() {
                             ])
                           ])
                         ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearObsesed--wrap" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "clearObsesed__btn",
+                            on: {
+                              click: function($event) {
+                                return _vm.clearObsesed()
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                  こだわり条件をクリアする\n                "
+                            )
+                          ]
+                        )
                       ])
                     ])
                   : _vm._e()

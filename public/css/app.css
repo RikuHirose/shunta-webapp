@@ -10801,6 +10801,10 @@ button {
   transition: 0.3s all ease;
 }
 
+button:focus {
+  outline: 0;
+}
+
 input,
 textarea {
   outline: none;
@@ -11545,6 +11549,8 @@ a.m-btn {
 .m-search {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
+  width: 656px;
+  margin: 0 auto;
 }
 
 .m-search--wrap {
@@ -11562,10 +11568,9 @@ a.m-btn {
   border-top: 1px solid #d5d5d8;
   display: flex;
   flex-wrap: wrap;
-  width: 45%;
   margin: 0 auto;
   position: relative;
-  top: -10.5%;
+  z-index: 31;
 }
 
 .m-search__suggest--caution {
@@ -11629,7 +11634,7 @@ a.m-btn {
 
 .m-search__input {
   position: relative;
-  width: 298px;
+  width: 56%;
 }
 
 .m-search__input i {
@@ -11691,6 +11696,23 @@ a.m-btn {
 
 .m-search .budget-type--switch label:last-of-type {
   border-radius: 0 3px 3px 0;
+}
+
+.m-search .clearObsesed--wrap {
+  width: 100%;
+  text-align: center;
+}
+
+.m-search .clearObsesed__btn {
+  width: 72%;
+  height: 32px !important;
+  border: 1px solid #d5d5d8;
+  background: #fff;
+}
+
+.m-search .m-btn[btn-type=search-obsessed] {
+  border-left: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
 }
 
 /* ----------------------------------------------------------------------------
@@ -11794,12 +11816,6 @@ a.m-btn {
     height: 100%;
   }
 
-  .m-search__suggest-fullscreen .m-btn[btn-type=search-obsessed] {
-    border-top: 1px solid #aaaaaa;
-    border-bottom: 1px solid #d5d5d8;
-    border-left: none !important;
-  }
-
   .m-search__suggest-fullscreen .m-search__suggest--wrap {
     width: 100%;
     height: 100%;
@@ -11817,8 +11833,17 @@ a.m-btn {
     width: 100%;
   }
 
+  .m-search .clearObsesed--wrap {
+    margin-top: 24px;
+  }
+
   .m-search .budget-type--switch label {
     width: 32px;
+  }
+
+  .m-search .m-btn[btn-type=search-obsessed] {
+    border-left: none !important;
+    border-right: none !important;
   }
 }
 
@@ -12098,16 +12123,7 @@ a.m-btn {
 }
 
 .p-index__search-form {
-  z-index: 10;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.p-index .m-search__suggest {
-  position: relative;
-  top: 3%;
+  width: 100%;
 }
 
 .p-index .m-search i {
@@ -12217,10 +12233,6 @@ a.m-btn {
 .p-res-index .m-search input,
 .p-res-index .m-search button {
   height: 54px;
-}
-
-.p-res-index .m-search .m-btn[btn-type=search-obsessed] {
-  border-left: 1px solid #aaaaaa;
 }
 
 /* ----------------------------------------------------------------------------

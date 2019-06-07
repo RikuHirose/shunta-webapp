@@ -170,17 +170,13 @@
   }
 
   &__search-form {
-    z-index: 10;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    // position: relative;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
   }
 
-  .m-search__suggest {
-    position: relative;
-    top: 3%;
-  }
   .m-search {
     i {
       position: absolute;

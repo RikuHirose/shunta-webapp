@@ -129,6 +129,13 @@
                     </td>
                   </tr>
                 </table>
+                <div class="clearObsesed--wrap">
+                  <button
+                    class="clearObsesed__btn"
+                    @click="clearObsesed()">
+                    こだわり条件をクリアする
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -211,6 +218,10 @@ export default {
     },
     closeObsessedBar (){
       this.isOpenObsessedBar = false
+    },
+    clearObsesed (){
+      this.budget = ''
+      this.budget_meal_type = ''
     },
     addInputWord (name) {
       this.inputWord = name

@@ -57,13 +57,13 @@ $app->singleton(
 | 環境によって読み込む.envファイル切り替え
 |--------------------------------------------------------------------------
 */
-if ('localhost') {
-  $app->loadEnvironmentFrom('.env');
+// if ('localhost') {
+//   $app->loadEnvironmentFrom('.env');
 
-} else {
-  // 本番環境
-  $app->loadEnvironmentFrom('.env.prod');
-}
+// } else {
+//   // 本番環境
+//   $app->loadEnvironmentFrom('.env.prod');
+// }
 
 
 

@@ -1,45 +1,37 @@
 /* ----------------------------------------------------------------------------
  * page  index
  * ------------------------------------------------------------------------- */
-.p-index {
-  &-sp {
+ @include max-screen($breakpoint-mobile) {
+  .p-index {
+    &-sp {
+      .m-search__suggest {
+        position: relative;
+        top: 5.5%;
+      }
+      .m-search {
+        i {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 16px 10px;
+        }
+        input, button {
+          height: 54px;
+        }
+      }
+    }
     &--copy {
-      position: relative;
-      color: #fff;
-      font-size: 36px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      text-align: center;
-      text-shadow: 0 2px 2px rgba(0,0,0,.5);
+      font-size: 25px;
     }
 
-    &__search-form {
-      z-index: 10;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    &__image {
+      padding: 64px 0 40px 0;
     }
 
-    .m-search__suggest {
-      position: relative;
-      top: 5.5%;
+    .c-res-reco-card__ttl {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
-    .m-search {
-      i {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 16px 10px;
-      }
-      input, button {
-        height: 54px;
-      }
-    }
-  }
-
-  .c-res-reco-card__ttl {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
 }

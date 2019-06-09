@@ -18,11 +18,29 @@
     min-height: 200px;
     box-sizing: border-box;
     border-top: 1px solid #d5d5d8;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
     position: relative;
     z-index: 31;
+
+    &--top {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+
+    &--bottom {
+      padding-top: 8px;
+      margin-top: 8px;
+      border-top: 1px dotted #d5d5d8;
+    }
+
+    &--top, &--bottom {
+      span {
+        &::before {
+          font-size: 5px;
+          padding-bottom: 5px;
+        }
+      }
+    }
 
     &__table {
       width: 100%;
@@ -48,19 +66,13 @@
     &__list {
       flex: 1 0 0%;
       width: 50%;
-      span {
-        &::before {
-          font-size: 5px;
-          padding-bottom: 5px;
-        }
-      }
     }
     &__category-list {
       padding-right: 8px;
+      border-right: 1px dotted #d5d5d8;
     }
-    &__restaurant-list {
+    &__situation-list {
       padding-left: 8px;
-      border-left: 1px dotted #d5d5d8;
     }
     &__tag {
       margin-right: 8px;

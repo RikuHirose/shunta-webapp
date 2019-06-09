@@ -7,7 +7,7 @@ v<template>
         <input
           v-model="inputWord"
           type="text"
-          placeholder="カテゴリ・店名・キーワード"
+          placeholder="カテゴリ・利用シーン・店名・キーワード"
           @input="onInput">
         <i
           class="fa-eat" />
@@ -35,21 +35,37 @@ v<template>
     <div
       v-if="isOpenSuggestBar"
       class="m-search__suggest">
-      <div class="m-search__suggest__category-list m-search__suggest__list">
-        <span class="fa-eat">
-          <span class="ml-2">{{ category_title }}</span>
-        </span>
-        <ul class="mt-2">
-          <li
-            v-for="(category, index) in categories"
-            :key="index"
-            class="m-search__suggest__tag"
-            @click="addInputWord(category.name)">
-            {{ category.name }}
-          </li>
-        </ul>
+      <div class="m-search__suggest--top">
+        <div class="m-search__suggest__category-list m-search__suggest__list">
+          <span class="fa-eat">
+            <span class="ml-2">{{ category_title }}</span>
+          </span>
+          <ul class="mt-2">
+            <li
+              v-for="(category, index) in categories"
+              :key="index"
+              class="m-search__suggest__tag"
+              @click="addInputWord(category.name)">
+              {{ category.name }}
+            </li>
+          </ul>
+        </div>
+        <div class="m-search__suggest__situation-list m-search__suggest__list">
+          <span class="fa-friends">
+            <span class="ml-2">利用シーン</span>
+          </span>
+          <ul class="mt-2">
+            <li
+              v-for="(situation, index) in situationList"
+              :key="index"
+              class="m-search__suggest__tag"
+              @click="addInputWord(situation.name)">
+              {{ situation.name }}
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="m-search__suggest__restaurant-list m-search__suggest__list">
+      <div class="m-search__suggest--bottom">
         <span class="fa-restaurant">
           <span class="ml-2">{{ restaurant_title }}</span>
         </span>
@@ -71,7 +87,7 @@ v<template>
       <p
         v-if="!isInputed"
         class="m-search__suggest--caution">
-        カテゴリ・店名・キーワードを選択してください
+        カテゴリ・利用シーン・店名・キーワードを選択してください
       </p>
       <table class="m-search__suggest__table">
         <tr>
@@ -120,22 +136,26 @@ v<template>
           </td>
         </tr>
         <tr>
-          <th class="fa-question">
-            利用シーン
+          <th class="fa-map">
+            エリア
           </th>
           <td class="td">
             <div>
               <label>
                 <select
-                  v-model="situation_id"
+                  v-model="nearest_station"
                   class="form-control">
                   <option
                     disabled
                     value="">未選択</option>
                   <option
-                    v-for="(situation, index) in situationList"
-                    :key="index"
-                    :value="situation.id">{{ situation.name }}</option>
+                    value="渋谷">渋谷</option>
+                  <option
+                    disabled
+                    value="新宿">新宿(未対応)</option>
+                  <option
+                    disabled
+                    value="六本木">六本木(未対応)</option>
                 </select>
               </label>
             </div>
@@ -187,20 +207,14 @@ export default {
       max_budget: '',
       budget: '',
       opening_hours: '',
-      situation_id: ''
+      nearest_station: ''
     }
   },
   created () {
     this.category_title = '人気のカテゴリ'
     this.restaurant_title = '人気のレストラン'
 
-    if (this.parameter['word']) {
-      this.inputWord = this.parameter['word']
-      this.isInputed = true
-    }
-    if (this.parameter['budget']) { this.budget = this.parameter['budget'] }
-    if (this.parameter['budget_meal_type']) { this.budget_meal_type = this.parameter['budget_meal_type'] }
-    if (this.parameter['situation_id']) { this.situation_id = this.parameter['situation_id'] }
+    this.assigningInitialParameter()
 
     this.fetchPopularCategories()
     this.fetchPopularRestaurants()
@@ -221,7 +235,7 @@ export default {
     clearObsesed (){
       this.budget = ''
       this.budget_meal_type = ''
-      this.situation_id = ''
+      this.nearest_station = ''
     },
     addInputWord (name) {
       this.inputWord = name
@@ -240,6 +254,15 @@ export default {
         this.restaurants = this.popularRestaurants
         this.isInputed = false
       }
+    },
+    assigningInitialParameter () {
+      if (this.parameter['word']) {
+        this.inputWord = this.parameter['word']
+        this.isInputed = true
+      }
+      if (this.parameter['budget']) { this.budget = this.parameter['budget'] }
+      if (this.parameter['budget_meal_type']) { this.budget_meal_type = this.parameter['budget_meal_type'] }
+      if (this.parameter['nearest_station']) { this.nearest_station = this.parameter['nearest_station'] }
     },
     fetchPopularCategories () {
       let url = '/api/v1/categories/popular'
@@ -286,14 +309,14 @@ export default {
       })
         .then((res) => {
           this.restaurants = res.data.restaurants
-          this.restaurant_title = '人気のレストラン'
+          this.restaurant_title = 'レストラン'
         })
         .catch(() => {
         })
     },
     searchRestaurants () {
       if (this.inputWord) {
-        let url = `/q?word=${this.inputWord}&budget_meal_type=${this.budget_meal_type}&budget=${this.budget}&situation_id=${this.situation_id}`
+        let url = `/q?word=${this.inputWord}&budget_meal_type=${this.budget_meal_type}&budget=${this.budget}&nearest_station=${this.nearest_station}`
 
         window.location.href = url
       }

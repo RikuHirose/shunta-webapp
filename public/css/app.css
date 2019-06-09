@@ -11273,9 +11273,13 @@ button[type=submit] {
   background: #3b5998;
 }
 
+.m-btn[btn-type=search-suggest],
 .m-btn[btn-type=search-obsessed],
+.m-btnS[btn-type=search-suggest],
 .m-btnS[btn-type=search-obsessed],
+.m-btnM[btn-type=search-suggest],
 .m-btnM[btn-type=search-obsessed],
+.m-btnL[btn-type=search-suggest],
 .m-btnL[btn-type=search-obsessed] {
   color: #aaaaaa;
   background: #fff;
@@ -11523,6 +11527,18 @@ a.m-btn {
   font-weight: 600;
 }
 
+.fa-map::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F3C5";
+  font-weight: 600;
+}
+
+.fa-friends::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F500";
+  font-weight: 600;
+}
+
 /* ----------------------------------------------------------------------------
  * Form
  * ------------------------------------------------------------------------- */
@@ -11572,11 +11588,26 @@ a.m-btn {
   min-height: 200px;
   box-sizing: border-box;
   border-top: 1px solid #d5d5d8;
+  position: relative;
+  z-index: 31;
+}
+
+.m-search__suggest--top {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  position: relative;
-  z-index: 31;
+}
+
+.m-search__suggest--bottom {
+  padding-top: 8px;
+  margin-top: 8px;
+  border-top: 1px dotted #d5d5d8;
+}
+
+.m-search__suggest--top span::before,
+.m-search__suggest--bottom span::before {
+  font-size: 5px;
+  padding-bottom: 5px;
 }
 
 .m-search__suggest__table {
@@ -11605,18 +11636,13 @@ a.m-btn {
   width: 50%;
 }
 
-.m-search__suggest__list span::before {
-  font-size: 5px;
-  padding-bottom: 5px;
-}
-
 .m-search__suggest__category-list {
   padding-right: 8px;
+  border-right: 1px dotted #d5d5d8;
 }
 
-.m-search__suggest__restaurant-list {
+.m-search__suggest__situation-list {
   padding-left: 8px;
-  border-left: 1px dotted #d5d5d8;
 }
 
 .m-search__suggest__tag {
@@ -11782,38 +11808,6 @@ a.m-btn {
     margin-bottom: 16px;
   }
 
-  .m-search__suggest-overlay {
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-  .m-search__suggest-overlay .m-btn[btn-type=search-obsessed],
-  .m-search__suggest-overlay .m-search__suggest--wrap__input {
-    border-top: 1px solid #aaaaaa;
-    border-bottom: 1px solid #d5d5d8;
-    border-left: none !important;
-  }
-
-  .m-search__suggest-overlay .m-search__suggest--wrap {
-    width: 88%;
-    margin: 0 auto;
-  }
-
-  .m-search__suggest-overlay .m-search__suggest--list {
-    padding: 0 16px;
-    padding-top: 16px;
-    width: 100%;
-  }
-
-  .m-search__suggest-overlay .m-search__suggest__category-list,
-  .m-search__suggest-overlay .m-search__suggest__restaurant-list {
-    width: 100%;
-  }
-
-  .m-search__suggest-overlay .m-search__suggest__restaurant-list {
-    padding: 0;
-    border-left: none;
-  }
-
   .m-search__suggest-fullscreen {
     background: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -11856,7 +11850,18 @@ a.m-btn {
   }
 
   .m-search__suggest-fullscreen .m-search__suggest__category-list {
+    border-right: none;
+  }
+
+  .m-search__suggest-fullscreen .m-search__suggest__category-list,
+  .m-search__suggest-fullscreen .m-search__suggest__restaurant-list,
+  .m-search__suggest-fullscreen .m-search__suggest__situation-list {
     width: 100%;
+    margin: 24px 0;
+  }
+
+  .m-search__suggest-fullscreen .m-search__suggest__tag {
+    font-size: 12px;
   }
 
   .m-search .clearObsesed--wrap {
@@ -12030,9 +12035,9 @@ a.m-btn {
   -o-object-fit: cover;
      object-fit: cover;
   background-size: cover;
-  background-position: top;
-  padding-top: 100px;
-  padding-bottom: 90px;
+  background-position: center;
+  padding-top: 136px;
+  padding-bottom: 40px;
   width: 100%;
 }
 
@@ -12130,15 +12135,20 @@ a.m-btn {
 .p-index__message {
   height: 336px;
   position: relative;
-  background-image: url(https://folio-sec.com/images/common/signup-area-background-pc.jpg);
+  background-image: url(https://farie.s3-ap-northeast-1.amazonaws.com/farie/top-bottom-bg.jpg);
   -o-object-fit: cover;
      object-fit: cover;
   background-size: cover;
   z-index: 0;
-  background-position: top;
+  background-position: bottom;
   padding-top: 100px;
   padding-bottom: 90px;
   width: 100%;
+  -webkit-filter: brightness(0.9);
+  -moz-filter: brightness(0.9);
+  -o-filter: brightness(0.9);
+  -ms-filter: brightness(0.9);
+  filter: brightness(0.9);
 }
 
 .p-index__message--wrap p {
@@ -12172,44 +12182,37 @@ a.m-btn {
  * page  index
  * ------------------------------------------------------------------------- */
 
-.p-index-sp--copy {
-  position: relative;
-  color: #fff;
-  font-size: 36px;
-  font-weight: 400;
-  letter-spacing: 4px;
-  text-align: center;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-}
+@media screen and (max-width: 640px) {
+  .p-index-sp .m-search__suggest {
+    position: relative;
+    top: 5.5%;
+  }
 
-.p-index-sp__search-form {
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .p-index-sp .m-search i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px 10px;
+  }
 
-.p-index-sp .m-search__suggest {
-  position: relative;
-  top: 5.5%;
-}
+  .p-index-sp .m-search input,
+  .p-index-sp .m-search button {
+    height: 54px;
+  }
 
-.p-index-sp .m-search i {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 16px 10px;
-}
+  .p-index--copy {
+    font-size: 25px;
+  }
 
-.p-index-sp .m-search input,
-.p-index-sp .m-search button {
-  height: 54px;
-}
+  .p-index__image {
+    padding: 64px 0 40px 0;
+  }
 
-.p-index .c-res-reco-card__ttl {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  .p-index .c-res-reco-card__ttl {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
 
 /* ----------------------------------------------------------------------------

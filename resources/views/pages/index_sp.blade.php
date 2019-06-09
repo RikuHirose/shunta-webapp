@@ -5,7 +5,7 @@
   <div id="p-index" class="p-index p-index-sp">
     <!-- p-index--image -->
     <div class="p-index__image">
-      <p class="p-index--copy">失敗しないデート</p>
+      <p class="p-index--copy">デートにピッタリなお店を見つけよう</p>
       <div class="p-index__search-form">
         <div class="col-md-12 mt-3 mb-5">
           <div class="mx-auto">
@@ -40,8 +40,7 @@
                             ①デートにピッタリなお店がすぐ見つかる
                         </div>
                         <p class="">
-                            営業、マーケティング、人事、広報、ファイナンスなど、ビジネス職を中心に多様な案件があります。
-                            できることをそのままスキマ時間でやるのではなく、経験を活かしながらキャリアアップにつながる案件にチャレンジできます。
+                            今までのグルメサイトはお店が多すぎました。{{ Config::get('app.name') }}ではデートにピッタリなお店のみを掲載。さらにシンプルなデザインでサクサクと検索できるので、もうお店選びで迷うことはありません。
                         </p>
                       </div>
                     </div>
@@ -56,7 +55,7 @@
                               ②専門のスタッフがお店を厳選
                           </div>
                           <p class="">
-                            食事や雰囲気、内装、接客など20項目以上の{{ Config::get('app.name') }}独自の選定基準を全て満たしたお店だけを掲載しています。
+                            食事や雰囲気、内装、接客など20項目以上の{{ Config::get('app.name') }}独自の選定基準を全て満たしたデートにピッタリなお店だけを掲載しています。
                           </p>
                       </div>
                     </div>
@@ -145,7 +144,7 @@
               <div class="row">
                   <div class="col-md-12 col-12">
                       <div class="text-center p-index__message--wrap">
-                        <p class="">見つけよう</p>
+                        <p class="">デートにピッタリなお店を見つけよう</p>
                         <button class="m-btn">
                           <a href="#p-index" class="" v-smooth-scroll>いますぐお店を見つける</a>
                         </button>

@@ -1,25 +1,29 @@
 <?php
 
 namespace App\Repositories\Eloquent;
-use App\Repositories\RestaurantRepositoryInterface;
 use App\Models\Restaurant;
+use App\Repositories\RestaurantRepositoryInterface;
 use App\Repositories\CategoryRepositoryInterface;
+use App\Repositories\SituationRepositoryInterface;
 
 class RestaurantRepository implements RestaurantRepositoryInterface
 {
     protected $restaurant;
     protected $categoryRepository;
+    protected $situationRepository;
 
     /**
     * @param object $restaurant
     */
     public function __construct(
       Restaurant $restaurant,
-      CategoryRepositoryInterface $categoryRepository
+      CategoryRepositoryInterface $categoryRepository,
+      SituationRepositoryInterface $situationRepository
     )
     {
         $this->restaurant = $restaurant;
         $this->categoryRepository = $categoryRepository;
+        $this->situationRepository = $situationRepository;
     }
 
     public function getBlankModel()
@@ -53,26 +57,34 @@ class RestaurantRepository implements RestaurantRepositoryInterface
         return $models;
     }
 
-    public function restaurantsByTopSearch($word, $budget, $budget_meal_type, $situation_id)
+    public function restaurantsByTopSearch($word, $budget, $budget_meal_type, $nearest_station)
     {
       $models = $this->restaurant;
 
       if (!is_null($word)) {
         $category_id = $this->categoryRepository->findCategoryId($word);
+        $situation_id = $this->situationRepository->findSituationId($word);
 
-        if(!is_null($category_id)) {
+        if (!is_null($category_id)) {
           $models = $models->when($category_id, function ($query) use ($category_id) {
               return $query->where('category_id', $category_id);
           });
+        }
 
-        } else {
+        if (!is_null($situation_id)) {
+          $models = $models->when($situation_id, function ($query) use ($situation_id) {
+              return $query->where('situation_id', $situation_id);
+          });
+        }
 
+        if (is_null($category_id) && is_null($situation_id)) {
           $models = $models->when($word, function ($query) use ($word) {
               return $query
               ->where('name',$word)
               ->orWhere('description', 'like', "%{$word}%");
           });
         }
+
       }
 
       if (!is_null($budget_meal_type)) {
@@ -91,12 +103,6 @@ class RestaurantRepository implements RestaurantRepositoryInterface
             });
           }
         }
-      }
-
-      if(!is_null($situation_id)) {
-        $models = $models->when($situation_id, function ($query) use ($situation_id) {
-            return $query->where('situation_id', $situation_id);
-        });
       }
 
       $models = $models->get();

@@ -24,7 +24,7 @@
     RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
     # 301リダイレクトhttps://farie.me/index.php → https://farie.me
-    RewriteEngine on
-    RewriteCond %{THE_REQUEST} ^.*/index.php
-    RewriteRule ^(.*)index.php$ https://farie.me/$1 [R=301,L]
+    # RewriteEngine on
+    # RewriteCond %{THE_REQUEST} ^.*/index.php
+    # RewriteRule ^(.*)index.php$ https://farie.me/$1 [R=301,L]
 </IfModule>

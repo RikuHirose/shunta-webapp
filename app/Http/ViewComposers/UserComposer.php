@@ -27,5 +27,8 @@ class UserComposer
     public function compose(View $view)
     {
         $view->with('currentUser', $this->user);
+
+        $is_production = config('app.env') === 'prod' ? true : false;
+        $view->with('is_production',$is_production);
     }
 }

@@ -14,9 +14,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
-
     <!-- Styles -->
-    <link href="{{ asset('css/app.css', $is_production) }}" rel="stylesheet">
+    @if($is_production)
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    @else
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @endif
 </head>
 <body>
     <div id="app">

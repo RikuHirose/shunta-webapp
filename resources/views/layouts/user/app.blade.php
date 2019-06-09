@@ -23,6 +23,7 @@
 </head>
 <body>
     <div id="app">
+        <?php var_dump($is_production); ?>
         @if( isset($lp) && $lp == true )
 
         @else

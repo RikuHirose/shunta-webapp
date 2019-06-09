@@ -3,7 +3,7 @@
 @if($is_production)
   <script src="{{ secure_asset('js/app.js') }}" defer></script>
 @else
-  <script src="{{ asset('js/app.js') }}" defer></script>
+  <script src="{{ asset('js/app.js') }}" data="local" defer></script>
 @endif
 
 <div id="fb-root"></div>

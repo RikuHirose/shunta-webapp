@@ -18,12 +18,11 @@
     @if($is_production)
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     @else
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet" data="local">
     @endif
 </head>
 <body>
     <div id="app">
-        <?php var_dump($is_production); ?>
         @if( isset($lp) && $lp == true )
 
         @else

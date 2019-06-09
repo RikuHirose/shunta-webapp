@@ -37,7 +37,7 @@ task('build', function () {
 
 // .envをアップロードする
 task('upload:env', function () {
-    upload('.env', '{{deploy_path}}/shared/.env');
+    upload('.env.prod', '{{deploy_path}}/shared/.env.prod');
 })->desc('.envをアップロード');
 
 before('deploy:shared','upload:env');
@@ -48,4 +48,4 @@ after('deploy:failed', 'deploy:unlock');
 // Migrate database before symlink new release.
 // before('deploy:symlink', 'artisan:migrate');
 // before('deploy:symlink', 'artisan:admin:install');
-before('deploy:symlink', 'artisan:db:seed');
+// before('deploy:symlink', 'artisan:db:seed');

@@ -7,9 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- meta -->
-    {!! SEOMeta::generate(true) !!}
-    {!! OpenGraph::generate(true) !!}
-    {!! Twitter::generate(true) !!}
+    @include('layouts.user.metadata')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

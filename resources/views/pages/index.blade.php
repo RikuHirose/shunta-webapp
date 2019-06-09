@@ -4,7 +4,7 @@
   <div id="p-index" class="p-index">
     <!-- p-index--image -->
     <div class="p-index__image">
-      <p class="p-index--copy">失敗しないデート</p>
+      <p class="p-index--copy">デートにピッタリなお店を見つけよう</p>
       <div class="p-index__search-form">
           <search-restaurants
           :price-list="{{ json_encode(FormHelper::suggestpriceList()) }}"
@@ -50,7 +50,7 @@
                               ②専門のスタッフがお店を厳選
                           </div>
                           <p class="">
-                            食事や雰囲気、内装、接客など20項目以上の{{ Config::get('app.name') }}独自の選定基準を全て満たしたお店だけを掲載しています。
+                            食事や雰囲気、内装、接客など20項目以上の{{ Config::get('app.name') }}独自の選定基準を全て満たしたデートにピッタリなお店だけを掲載しています。
                           </p>
                       </div>
                     </div>
@@ -78,39 +78,39 @@
               <div class="col-md-12 col-12">
                   <div class="text-center mb-5">
                       <h2 class="">
-                          オススメのカテゴリ
+                          オススメの項目
                       </h2>
                   </div>
 
                   <div class="p-index__category__images--wrap">
-                    <a href="" class="p-index__category__images--link">
-                      <img src="/images/italian-bg.jpg">
+                    <a href="{{ route('restaurants.search', ['word' => 'イタリアン']) }}" class="p-index__category__images--link">
+                      <img src="https://farie.s3-ap-northeast-1.amazonaws.com/farie/italian-bg.jpg">
                       <div class="category__info">
                           <p class="category__name">イタリアン</p>
                       </div>
                     </a>
-                    <a href="" class="p-index__category__images--link">
-                      <img src="/images/french-bg.jpg">
+                    <a href="{{ route('restaurants.search', ['word' => '和食']) }}" class="p-index__category__images--link">
+                      <img src="https://farie.s3-ap-northeast-1.amazonaws.com/farie/washoku-bg.jpg">
                       <div class="category__info">
-                          <p class="category__name">フレンチ</p>
+                          <p class="category__name">和食</p>
                       </div>
                     </a>
-                    <a href="" class="p-index__category__images--link">
-                      <img src="/images/cafe-bg.jpg">
+                    <a href="{{ route('restaurants.search', ['word' => 'ビアバー']) }}" class="p-index__category__images--link">
+                      <img src="https://farie.s3-ap-northeast-1.amazonaws.com/farie/beer-bg.jpg">
                       <div class="category__info">
-                          <p class="category__name">カフェ</p>
+                          <p class="category__name">ビアバー</p>
                       </div>
                     </a>
-                    <a href="" class="p-index__category__images--link">
-                      <img src="/images/beer-bg.jpg">
+                    <a href="{{ route('restaurants.search', ['word' => 'カジュアル']) }}" class="p-index__category__images--link">
+                      <img src="https://farie.s3-ap-northeast-1.amazonaws.com/farie/casual-bg.jpg">
                       <div class="category__info">
-                          <p class="category__name">ビアレストラン</p>
+                          <p class="category__name">カジュアル</p>
                       </div>
                     </a>
-                    <a href="" class="p-index__category__images--link">
-                      <img src="/images/yakiniku-bg.jpg">
+                    <a href="{{ route('restaurants.search', ['word' => 'フォーマル']) }}" class="p-index__category__images--link">
+                      <img src="https://farie.s3-ap-northeast-1.amazonaws.com/farie/formal-bg.jpg">
                       <div class="category__info">
-                          <p class="category__name">焼肉</p>
+                          <p class="category__name">フォーマル</p>
                       </div>
                     </a>
                   </div>
@@ -151,7 +151,7 @@
               <div class="row">
                   <div class="col-md-12 col-12">
                       <div class="text-center p-index__message--wrap">
-                        <p class="">見つけよう</p>
+                        <p class="">デートにピッタリなお店を見つけよう</p>
                         <a href="#p-index" class="" v-smooth-scroll>
                           <button class="m-btn">いますぐお店を見つける</button>
                         </a>

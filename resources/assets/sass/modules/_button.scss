@@ -69,10 +69,13 @@
     }
   }
 
-  &[btn-type="search-obsessed"] {
+  &[btn-type="search-suggest"], &[btn-type="search-obsessed"] {
     color: #aaaaaa;
     background: $c-white;
     position: relative;
+  }
+
+  &[btn-type="search-obsessed"] {
     &::after {
       content: " ";
       height: 0;

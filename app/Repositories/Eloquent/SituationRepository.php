@@ -20,4 +20,14 @@ class SituationRepository implements SituationRepositoryInterface
     {
         return $this->situation->all();
     }
+
+    public function findSituationId($situation_name)
+    {
+        $situation_id = $this->situation
+        ->where('name', $situation_name)
+        ->pluck('id')
+        ->first();
+
+        return $situation_id;
+    }
 }

@@ -7,7 +7,7 @@
                     <div class="col-md-12">
                         <div class="float-left s-header-logo">
                             <a href="/" class="">
-                                <img src="/images/header.jpg" class="s-header-logo__sizing">
+                                <img src="/images/logo.jpg" class="s-header-logo__sizing">
                             </a>
                         </div>
                         <nav class="float-right s-header-list">

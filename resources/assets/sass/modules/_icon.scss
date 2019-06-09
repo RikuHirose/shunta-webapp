@@ -147,4 +147,20 @@
       font-weight: 600;
     }
   }
+
+  &-map {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-map-marker-alt;
+      font-weight: 600;
+    }
+  }
+
+  &-friends {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-user-friends;
+      font-weight: 600;
+    }
+  }
 }

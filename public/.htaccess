@@ -1,3 +1,6 @@
+<ifModule mod_headers.c>
+    Header always set X-XSS-Protection "0"
+</ifModule>
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes

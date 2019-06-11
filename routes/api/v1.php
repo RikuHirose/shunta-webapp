@@ -1,10 +1,5 @@
 <?php
 
-if (env('APP_ENV') === 'prod') {
-    URL::forceScheme('https');
-}
-
-
 Route::group(['prefix' => 'api', 'as' => 'api.', 'namespace' => 'Api'], function() {
   Route::group(['prefix' => 'v1', 'as' => 'v1.', 'namespace' => 'V1'], function() {
 

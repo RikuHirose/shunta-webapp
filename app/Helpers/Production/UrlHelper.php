@@ -36,4 +36,9 @@ class UrlHelper implements UrlHelperInterface
         return $url;
     }
 
+    public function asset($asset_path)
+    {
+        return url('/').$asset_path;
+    }
+
 }

@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-if (env('APP_ENV') === 'production') {
+if (env('APP_ENV') === 'prod') {
     URL::forceScheme('https');
 }
 

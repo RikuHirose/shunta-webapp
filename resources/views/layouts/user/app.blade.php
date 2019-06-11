@@ -15,11 +15,7 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <!-- Styles -->
-    @if($is_production)
-        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    @else
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet" data="local">
-    @endif
+    <link href="{{ \UrlHelper::asset('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

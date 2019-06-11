@@ -1,10 +1,7 @@
 <!-- Scripts -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_rm3M3Ea_44D17eiI3aXuU-vAAACiijQ&libraries=places"></script>
-@if($is_production)
-  <script src="{{ secure_asset('js/app.js') }}" defer></script>
-@else
-  <script src="{{ asset('js/app.js') }}" data="local" defer></script>
-@endif
+
+<script src="{{ \UrlHelper::asset('/js/app.js') }}"></script>
 
 <div id="fb-root"></div>
 <!-- for share -->

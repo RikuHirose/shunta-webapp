@@ -163,4 +163,12 @@
       font-weight: 600;
     }
   }
+
+  &-wink {
+    &::before {
+      font-family: $_fontawesome;
+      content: $_fa-smile-win;
+      font-weight: 600;
+    }
+  }
 }

@@ -35,7 +35,7 @@
                               ①デートにピッタリなお店がすぐ見つかる
                           </div>
                           <p class="">
-                            今までのグルメサイトはお店が多すぎました。{{ Config::get('app.name') }}ではデートにピッタリなお店のみを掲載。さらにシンプルなデザインでサクサクと検索できるので、もうお店選びで迷うことはありません。
+                            今までのグルメサイトはお店が多すぎました。{{ Config::get('app.name') }}ではデートにピッタリなお店のみを掲載しています。
                           </p>
                       </div>
                     </div>
@@ -56,14 +56,18 @@
                     </div>
 
                     <div class="col-md-4 col-sm-6 col-12">
-                        <div class="">
-                            <div class="card-ttl">
-                              ③もう迷わない
-                            </div>
-                            <p class="">
-                              今のお仕事も忙しいあなたに合わせて、週1回からチャレンジできる案件多数。まずキャリアが広がる体験をしてみましょう。
-                            </p>
-                        </div>
+                      <span class="fa-4x fa-style">
+                        <i class="fas fa-circle fa-stack-2x fa-primary"></i>
+                        <i class="fa-wink fa-white"></i>
+                      </span>
+                      <div class="">
+                          <div class="card-ttl">
+                            ③もう迷わない
+                          </div>
+                          <p class="">
+                            シンプルなデザインでサクサクと検索できるので、もうお店選びで迷うことはありません。
+                          </p>
+                      </div>
                     </div>
                 </div>
               </div>

@@ -53,8 +53,8 @@
             <div class="col-md-12 col-sm-12 col-12">
               <div class="mx-auto">
 
-                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" style="top: -7px;">
-                  <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+                <div class="fb-share-button" data-href="{{ url()->full() }}" data-layout="button" data-size="small" style="position: relative; top: -4px">
+                  <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
                 </div>
 
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
@@ -62,7 +62,7 @@
 
                 <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="" style="display: none;"></div>
 
-                <div class="heart-icon--wrap" style="display: inline-block; position: relative; top: -4px; font-size: 21px;">
+                <div class="heart-icon--wrap" style="display: inline-block; position: relative; font-size: 21px;">
                   @isset($currentUser)
                     <favorite-restaurant
                       :restaurant="{{json_encode($restaurant)}}"

@@ -15,9 +15,9 @@
       @include('components.user.restaurants.info_sp', ['restaurant' => $restaurant])
     </div>
     <div class="text-center mt-3">
-      <button type="button" btn-type="primary" class="w-100 m-btn">
-        <a href="{{ route('restaurants.show', [$restaurant->id]) }}">詳しく見る</a>
-      </button>
+      <a href="{{ route('restaurants.show', [$restaurant->id]) }}" btn-type="primary" class="w-100 m-btn">
+        詳しく見る
+      </a>
     </div>
   </div>
 

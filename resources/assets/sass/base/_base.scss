@@ -237,6 +237,7 @@ input[type="button"] {
   -webkit-appearance: button;
   appearance: button;
   border: none;
+  border-radius: 0;
   box-sizing: border-box;
     &::-webkit-search-decoration {
       display: none;
@@ -246,10 +247,11 @@ input[type="button"] {
     }
 }
 
-@include max-screen($breakpoint-mobile) {
-  // input[type=text] {
-  //   font-size: 16px;
-  //   transform: scale(0.8);
-  // }
 
+@include max-screen($breakpoint-mobile) {
+
+  input[type=text] {
+    font-size: 16px;
+    // transform: scale(0.8);
+  }
 }

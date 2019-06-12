@@ -10903,6 +10903,7 @@ input[type=button] {
   -moz-appearance: button;
        appearance: button;
   border: none;
+  border-radius: 0;
   box-sizing: border-box;
 }
 
@@ -10914,6 +10915,12 @@ input[type=button]::-webkit-search-decoration {
 input[type=submit]::focus,
 input[type=button]::focus {
   outline-offset: -2px;
+}
+
+@media screen and (max-width: 640px) {
+  input[type=text] {
+    font-size: 16px;
+  }
 }
 
 /* ============================================================================

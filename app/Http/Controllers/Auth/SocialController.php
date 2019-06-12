@@ -92,7 +92,7 @@ class SocialController extends Controller
 
         auth()->login($user);
 
-        if (URL::previous() === 'https://www.facebook.com/') {
+        if(strpos(URL::previous(),'facebook') !== false)
           return redirect('/');
 
         } else {

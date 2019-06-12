@@ -10920,6 +10920,10 @@ input[type=button]::focus {
 @media screen and (max-width: 640px) {
   input[type=text] {
     font-size: 16px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background: none;
   }
 }
 
@@ -11594,6 +11598,8 @@ a.m-btn {
 .m-frmTextbox label {
   border-bottom: 1px solid #CCCCCC;
   display: block;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
 }
 
 .m-frmTextbox .error-message {

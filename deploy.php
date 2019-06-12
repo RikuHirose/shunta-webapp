@@ -37,7 +37,7 @@ task('build', function () {
 
 // .envをアップロードする
 task('upload:env', function () {
-    upload('.env.prod', '{{deploy_path}}/shared/.env.prod');
+    upload('.env.prod', '{{deploy_path}}/shared/.env');
 })->desc('.envをアップロード');
 
 before('deploy:shared','upload:env');

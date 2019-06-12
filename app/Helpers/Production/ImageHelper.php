@@ -24,7 +24,7 @@ class ImageHelper implements ImageHelperInterface
 
     public function convertFullImageUrl($imageUrl)
     {
-        $fullUrl = 'https://s3-ap-northeast-1.amazonaws.com/farie/'.$imageUrl;
+        $fullUrl = 'https://farie.s3-ap-northeast-1.amazonaws.com/farie/'.$imageUrl;
 
         return $fullUrl;
     }

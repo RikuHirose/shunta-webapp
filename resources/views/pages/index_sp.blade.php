@@ -30,7 +30,7 @@
                 </div>
                 <p class="text-center h2-desc">デートにピッタリなお店がすぐ見つかるサービスです</p>
                 <div class="row mb-3">
-                    <div class="col-md-4 col-sm-6 col-12">
+                    <div class="col-md-4 col-sm-6 col-12 mb-3">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
                         <i class="fa-eat fa-white"></i>
@@ -45,7 +45,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-6 col-12">
+                    <div class="col-md-4 col-sm-6 col-12 mb-3">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
                         <i class="fa-search fa-white"></i>
@@ -60,7 +60,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-6 col-12">
+                    <div class="col-md-4 col-sm-6 col-12 mb-3">
                       <span class="fa-4x fa-style">
                         <i class="fas fa-circle fa-stack-2x fa-primary"></i>
                         <i class="fa-wink fa-white"></i>

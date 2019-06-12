@@ -11284,6 +11284,7 @@ button[type=submit] {
   color: #aaaaaa;
   background: #fff;
   position: relative;
+  border-bottom: 1px solid #d5d5d8;
 }
 
 .m-btn[btn-type=search-obsessed]::after,

@@ -25,11 +25,13 @@
           </span>
         </span>
 
-        <span class="fa-lunch">
-          <span>
-            ~{{ $restaurant->lunch_price_zone }}円
+        @if(!is_null($restaurant->lunch_price_zone))
+          <span class="fa-lunch">
+            <span>
+              ~{{ $restaurant->lunch_price_zone }}円
+            </span>
           </span>
-        </span>
+        @endif
 
         <span class="fa-dinner">
           <span>

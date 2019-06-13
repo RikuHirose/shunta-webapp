@@ -11041,13 +11041,6 @@ input[type=button]::focus {
   position: relative;
 }
 
-.c-res-index-card--desc-p::after {
-  content: "...";
-  position: absolute;
-  top: 16px;
-  left: 352px;
-}
-
 /* ----------------------------------------------------------------------------
  * restaurants recommend card
  * ------------------------------------------------------------------------- */

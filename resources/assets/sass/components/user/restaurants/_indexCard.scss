@@ -49,12 +49,12 @@
       overflow: hidden;
       position: relative;
 
-      &::after {
-        content: "...";
-        position: absolute;
-        top: 16px;
-        left: 352px;
-      }
+      // &::after {
+      //   content: "...";
+      //   position: absolute;
+      //   top: 16px;
+      //   left: 352px;
+      // }
     }
   }
  }

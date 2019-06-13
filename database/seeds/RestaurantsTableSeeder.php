@@ -32,6 +32,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '03-5784-4455',
+          'admin_evaluate'          => 5
         ],
         [
           'category_id'             => 2,
@@ -53,6 +54,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '03-3463-1010',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 3,
@@ -79,6 +81,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '050-5869-4037',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 4,
@@ -100,6 +103,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '050-5593-4662',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 5,
@@ -127,6 +131,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '050-5570-0355',
+          'admin_evaluate'          => 5
         ],
         [
           'category_id'             => 6,
@@ -152,6 +157,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => 'https://www.instagram.com/hemel_dougenzaka/',
           'tw_url'                  => '',
           'tel'                     => '03-5918-6939',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 6,
@@ -173,6 +179,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => 'https://twitter.com/shibuya_belgo',
           'tel'                     => '03-3409-4442',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 6,
@@ -204,6 +211,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '03-3770-5544',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 2,
@@ -233,6 +241,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '050-5571-2182',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 2,
@@ -259,6 +268,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '03-3770-0878',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 7,
@@ -284,6 +294,7 @@ class RestaurantsTableSeeder extends Seeder
           'fb_url'                  => 'https://www.facebook.com/Japanease.Beef.A5/',
           'tw_url'                  => 'https://twitter.com/@JPBFA5ofKONGOEN',
           'tel'                     => '050-5869-3974',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 2,
@@ -310,6 +321,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => 'https://www.instagram.com/team_shokkan/',
           'tw_url'                  => '',
           'tel'                     => '03-3797-1911',
+          'admin_evaluate'          => 5
         ],
         [
           'category_id'             => 8,
@@ -336,6 +348,7 @@ class RestaurantsTableSeeder extends Seeder
           'tw_url'                  => '',
           'fb_url'                  => 'https://www.facebook.com/zariganicafe',
           'tel'                     => '03-5459-0655',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 8,
@@ -357,6 +370,7 @@ class RestaurantsTableSeeder extends Seeder
           'tw_url'                  => '',
           'ig_url'                  => 'https://www.instagram.com/andpeople.insta/',
           'tel'                     => '050-5571-5481',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 5,
@@ -392,6 +406,7 @@ class RestaurantsTableSeeder extends Seeder
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '050-5590-1379',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 5,
@@ -415,6 +430,7 @@ L.O 23:00
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '050-5872-2124',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 1,
@@ -441,6 +457,7 @@ L.O 23:00
           'ig_url'                  => '',
           'tw_url'                  => '',
           'tel'                     => '050-5868-2505',
+          'admin_evaluate'          => 4
         ],
         [
           'category_id'             => 1,
@@ -465,6 +482,7 @@ L.O 23:00
           'ig_url'                  => 'https://www.instagram.com/igupeacepatron/?utm_source=ig_profile_share&igshid=jbfnxdtebzo4',
           'tw_url'                  => '',
           'tel'                     => '050-5890-4341',
+          'admin_evaluate'          => 4
         ],
       ]);
     }

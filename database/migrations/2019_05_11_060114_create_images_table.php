@@ -19,11 +19,11 @@ class CreateImagesTable extends Migration
             $table->string('url')->default('');
             $table->text('title')->nullable();
 
-            $table->string('entity_type')->default('');
+            $table->string('entity_type')->nullable();
             $table->string('s3_key')->default('');
             $table->string('s3_bucket')->default('');
             $table->string('s3_region')->default('');
-            $table->string('s3_extension')->default('');
+            $table->string('s3_extension')->nullable();
             $table->timestamps();
         });
     }

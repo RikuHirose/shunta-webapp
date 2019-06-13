@@ -126,7 +126,11 @@ class RestaurantImageController extends Controller
         if ($tmp->isNotEmpty()) {
             $list = $tmp->all();
             foreach ($list as $v) {
-                $image_id_options[$v->id] = $v->title;
+                if ($v->title == null) {
+                    $image_id_options[$v->id] = $v->id;
+                } else {
+                    $image_id_options[$v->id] = $v->title;
+                }
             }
         }
         $form->select('image_id', 'Image id')->options($image_id_options)->rules('required');

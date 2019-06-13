@@ -130,8 +130,8 @@ class ImageController extends Controller
 
         $form->image('url')->uniqueName();
 
-        $form->text('title', 'Title')->placeholder('Please input image title ex) restaurant_id_1');
-        $form->text('entity_type', 'Entity type');
+        $form->text('title', 'Title')->placeholder('Please input image title ex) ウダガワ 成ル_1');
+        $form->text('entity_type', 'Entity type')->default('');
         $form->text('s3_key', 'S3 key')->default(config('filesystems.disks.s3.key'))->attribute(['readOnly'=>'true']);
         $form->text('s3_bucket', 'S3 bucket')->default(config('filesystems.disks.s3.bucket'))->attribute(['readOnly'=>'true']);
         $form->text('s3_region', 'S3 region')->default(config('filesystems.disks.s3.region'))->attribute(['readOnly'=>'true']);

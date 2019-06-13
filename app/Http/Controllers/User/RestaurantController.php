@@ -46,8 +46,10 @@ class RestaurantController extends Controller
         $restaurants = $this->restaurantService->getRestaurantsByParameter($parameter);
         $restaurants->load('category', 'situation', 'restaurantImages.image');
 
-        if ($restaurants->isEmpty()) { $message = 'まだレストランはありません'; }
-        if (!$restaurants->isEmpty()) { $message = ''; }
+        $message = '';
+        if ($restaurants->isEmpty()) {
+            $message = \FormHelper::returnSearchMessage($parameter, $message);
+        }
 
         \SeoHelper::setRestaurantsIndexSeo();
 

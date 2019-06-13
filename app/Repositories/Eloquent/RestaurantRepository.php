@@ -80,8 +80,10 @@ class RestaurantRepository implements RestaurantRepositoryInterface
         if (is_null($category_id) && is_null($situation_id)) {
           $models = $models->when($word, function ($query) use ($word) {
               return $query
-              ->where('name',$word)
-              ->orWhere('description', 'like', "%{$word}%");
+              // ->where('name',$word)
+              ->orWhere('name', 'like', "%{$word}%")
+              ->orWhere('description', 'like', "%{$word}%")
+              ->orWhere('description_title', 'like', "%{$word}%");
           });
         }
 

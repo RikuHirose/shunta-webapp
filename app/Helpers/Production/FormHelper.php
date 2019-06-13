@@ -52,4 +52,29 @@ class FormHelper implements FormHelperInterface
         return $this->situationRepository->all();
     }
 
+    public function returnSearchMessage($parameter, $message)
+    {
+        foreach ($parameter as $key => $value) {
+            if (is_null($value)) { continue; }
+
+            if ($key == "budget_meal_type") {
+                if ($value == '0') { $message .= 'ディナー / '; }
+                if ($value == '1') { $message .= 'ランチ / '; }
+            }
+
+            if ($key == "budget") {
+                $message .= '~'.$value.'円 / ';
+            }
+
+            if ($key == "nearest_station") {
+                $message .= $value.'駅';
+            }
+
+        }
+
+        $message .= 'の条件にマッチするお店はありません';
+
+        return $message;
+    }
+
 }

@@ -24,7 +24,8 @@ class SituationRepository implements SituationRepositoryInterface
     public function findSituationId($situation_name)
     {
         $situation_id = $this->situation
-        ->where('name', $situation_name)
+        // ->where('name', $situation_name)
+        ->orWhere('name', 'like', "%{$situation_name}%")
         ->pluck('id')
         ->first();
 

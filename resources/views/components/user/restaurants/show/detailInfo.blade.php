@@ -35,7 +35,9 @@
           予算
         </th>
         <td>
-          ランチ: ~{{ $restaurant->lunch_price_zone }}円
+          @if(!is_null($restaurant->lunch_price_zone))
+            ランチ: ~{{ $restaurant->lunch_price_zone }}円
+          @endif
           ディナー: ~{{ $restaurant->dinner_price_zone }}円
         </td>
       </tr>

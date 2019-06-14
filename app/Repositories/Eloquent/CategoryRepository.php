@@ -44,6 +44,7 @@ class CategoryRepository implements CategoryRepositoryInterface
 
         $category_id = $this->category
         ->where('name', $category_name)
+        // ->orWhere('name', 'like', "%{$category_name}%")
         ->pluck('id')
         ->first();
 

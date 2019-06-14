@@ -57,6 +57,8 @@ class FormHelper implements FormHelperInterface
         foreach ($parameter as $key => $value) {
             if (is_null($value)) { continue; }
 
+            $message .= $value.' / ';
+
             if ($key == "budget_meal_type") {
                 if ($value == '0') { $message .= 'ディナー / '; }
                 if ($value == '1') { $message .= 'ランチ / '; }

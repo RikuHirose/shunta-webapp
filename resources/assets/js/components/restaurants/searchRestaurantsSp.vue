@@ -244,9 +244,14 @@ export default {
     this.fetchPopularRestaurants()
   },
   methods: {
+    stopScroll (){
+      document.addEventListener('touchmove', function(e) {e.preventDefault()}, {passive: false})
+    },
     switchSuggestBar (){
       if (this.isOpenSuggestBar === false) {
         this.isOpenSuggestBar = true
+        this.stopScroll()
+
       } else {
         this.isOpenSuggestBar = false
       }
@@ -254,6 +259,8 @@ export default {
     switchObsessedBar (){
       if (this.isOpenObsessedBar === false) {
         this.isOpenObsessedBar = true
+        this.stopScroll()
+
       } else {
         this.isOpenObsessedBar = false
       }

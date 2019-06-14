@@ -3200,9 +3200,17 @@ __webpack_require__.r(__webpack_exports__);
     this.fetchPopularRestaurants();
   },
   methods: {
+    stopScroll: function stopScroll() {
+      document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+      }, {
+        passive: false
+      });
+    },
     switchSuggestBar: function switchSuggestBar() {
       if (this.isOpenSuggestBar === false) {
         this.isOpenSuggestBar = true;
+        this.stopScroll();
       } else {
         this.isOpenSuggestBar = false;
       }
@@ -3210,6 +3218,7 @@ __webpack_require__.r(__webpack_exports__);
     switchObsessedBar: function switchObsessedBar() {
       if (this.isOpenObsessedBar === false) {
         this.isOpenObsessedBar = true;
+        this.stopScroll();
       } else {
         this.isOpenObsessedBar = false;
       }

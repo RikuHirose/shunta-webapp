@@ -3243,6 +3243,7 @@ __webpack_require__.r(__webpack_exports__);
     addInputWord: function addInputWord(name) {
       this.inputWord = name;
       this.isInputed = true;
+      this.closeSuggestBar();
     },
     assigningInitialParameter: function assigningInitialParameter() {
       if (this.parameter['word']) {

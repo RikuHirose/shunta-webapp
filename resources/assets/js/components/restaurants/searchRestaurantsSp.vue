@@ -285,6 +285,8 @@ export default {
     addInputWord (name) {
       this.inputWord = name
       this.isInputed = true
+
+      this.closeSuggestBar()
     },
     assigningInitialParameter () {
       if (this.parameter['word']) {

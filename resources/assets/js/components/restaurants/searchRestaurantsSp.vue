@@ -247,6 +247,9 @@ export default {
     stopScroll (){
       document.addEventListener('touchmove', function(e) {e.preventDefault()}, {passive: false})
     },
+    activeScroll () {
+      document.removeEventListener('touchmove', function(e) {e.preventDefault()}, {passive: false})
+    },
     switchSuggestBar (){
       if (this.isOpenSuggestBar === false) {
         this.isOpenSuggestBar = true
@@ -254,6 +257,7 @@ export default {
 
       } else {
         this.isOpenSuggestBar = false
+        this.activeScroll()
       }
     },
     switchObsessedBar (){
@@ -263,6 +267,7 @@ export default {
 
       } else {
         this.isOpenObsessedBar = false
+        this.activeScroll()
       }
     },
     openSuggestBar (){

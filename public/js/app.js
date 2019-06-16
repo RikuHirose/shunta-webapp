@@ -3207,12 +3207,20 @@ __webpack_require__.r(__webpack_exports__);
         passive: false
       });
     },
+    activeScroll: function activeScroll() {
+      document.removeEventListener('touchmove', function (e) {
+        e.preventDefault();
+      }, {
+        passive: false
+      });
+    },
     switchSuggestBar: function switchSuggestBar() {
       if (this.isOpenSuggestBar === false) {
         this.isOpenSuggestBar = true;
         this.stopScroll();
       } else {
         this.isOpenSuggestBar = false;
+        this.activeScroll();
       }
     },
     switchObsessedBar: function switchObsessedBar() {
@@ -3221,6 +3229,7 @@ __webpack_require__.r(__webpack_exports__);
         this.stopScroll();
       } else {
         this.isOpenObsessedBar = false;
+        this.activeScroll();
       }
     },
     openSuggestBar: function openSuggestBar() {

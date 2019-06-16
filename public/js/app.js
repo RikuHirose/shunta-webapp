@@ -3216,33 +3216,33 @@ __webpack_require__.r(__webpack_exports__);
     },
     switchSuggestBar: function switchSuggestBar() {
       if (this.isOpenSuggestBar === false) {
-        this.isOpenSuggestBar = true;
-        this.stopScroll();
+        this.openSuggestBar();
       } else {
-        this.isOpenSuggestBar = false;
-        this.activeScroll();
+        this.closeSuggestBar();
       }
     },
     switchObsessedBar: function switchObsessedBar() {
       if (this.isOpenObsessedBar === false) {
-        this.isOpenObsessedBar = true;
-        this.stopScroll();
+        this.openObsessedBar();
       } else {
-        this.isOpenObsessedBar = false;
-        this.activeScroll();
+        this.closeObsessedBar();
       }
     },
     openSuggestBar: function openSuggestBar() {
       this.isOpenSuggestBar = true;
+      this.stopScroll();
     },
     closeSuggestBar: function closeSuggestBar() {
       this.isOpenSuggestBar = false;
+      this.activeScroll();
     },
     openObsessedBar: function openObsessedBar() {
       this.isOpenObsessedBar = true;
+      this.stopScroll();
     },
     closeObsessedBar: function closeObsessedBar() {
       this.isOpenObsessedBar = false;
+      this.activeScroll();
     },
     clearObsesed: function clearObsesed() {
       this.budget = '';

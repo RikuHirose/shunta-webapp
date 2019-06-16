@@ -252,35 +252,35 @@ export default {
     },
     switchSuggestBar (){
       if (this.isOpenSuggestBar === false) {
-        this.isOpenSuggestBar = true
-        this.stopScroll()
+        this.openSuggestBar()
 
       } else {
-        this.isOpenSuggestBar = false
-        this.activeScroll()
+        this.closeSuggestBar()
       }
     },
     switchObsessedBar (){
       if (this.isOpenObsessedBar === false) {
-        this.isOpenObsessedBar = true
-        this.stopScroll()
+        this.openObsessedBar()
 
       } else {
-        this.isOpenObsessedBar = false
-        this.activeScroll()
+        this.closeObsessedBar()
       }
     },
     openSuggestBar (){
       this.isOpenSuggestBar = true
+      this.stopScroll()
     },
     closeSuggestBar (){
       this.isOpenSuggestBar = false
+      this.activeScroll()
     },
     openObsessedBar (){
       this.isOpenObsessedBar = true
+      this.stopScroll()
     },
     closeObsessedBar (){
       this.isOpenObsessedBar = false
+      this.activeScroll()
     },
     clearObsesed (){
       this.budget = ''

@@ -268,19 +268,19 @@ export default {
     },
     openSuggestBar (){
       this.isOpenSuggestBar = true
-      this.stopScroll()
+      // this.stopScroll()
     },
     closeSuggestBar (){
       this.isOpenSuggestBar = false
-      this.activeScroll()
+      // this.activeScroll()
     },
     openObsessedBar (){
       this.isOpenObsessedBar = true
-      this.stopScroll()
+      // this.stopScroll()
     },
     closeObsessedBar (){
       this.isOpenObsessedBar = false
-      this.activeScroll()
+      // this.activeScroll()
     },
     clearObsesed (){
       this.budget = ''

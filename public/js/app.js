@@ -3243,7 +3243,7 @@ __webpack_require__.r(__webpack_exports__);
     clearObsesed: function clearObsesed() {
       this.budget = '';
       this.budget_meal_type = '';
-      this.situation_id = '';
+      this.nearest_station = '';
     },
     addInputWord: function addInputWord(name) {
       this.inputWord = name;

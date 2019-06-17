@@ -285,7 +285,7 @@ export default {
     clearObsesed (){
       this.budget = ''
       this.budget_meal_type = ''
-      this.situation_id = ''
+      this.nearest_station = ''
     },
     addInputWord (name) {
       this.inputWord = name

@@ -3229,20 +3229,16 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     openSuggestBar: function openSuggestBar() {
-      this.isOpenSuggestBar = true;
-      this.stopScroll();
+      this.isOpenSuggestBar = true; // this.stopScroll()
     },
     closeSuggestBar: function closeSuggestBar() {
-      this.isOpenSuggestBar = false;
-      this.activeScroll();
+      this.isOpenSuggestBar = false; // this.activeScroll()
     },
     openObsessedBar: function openObsessedBar() {
-      this.isOpenObsessedBar = true;
-      this.stopScroll();
+      this.isOpenObsessedBar = true; // this.stopScroll()
     },
     closeObsessedBar: function closeObsessedBar() {
-      this.isOpenObsessedBar = false;
-      this.activeScroll();
+      this.isOpenObsessedBar = false; // this.activeScroll()
     },
     clearObsesed: function clearObsesed() {
       this.budget = '';

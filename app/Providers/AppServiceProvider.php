@@ -68,7 +68,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('is_production',$is_production);
 
         if (config('app.env') == 'prod' || env('APP_ENV') == 'prod') {
-            \URL::forceScheme('https');
+            // \URL::forceScheme('https');
         }
     }
 }

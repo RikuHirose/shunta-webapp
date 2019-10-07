@@ -1,7 +1,8 @@
 <!-- Scripts -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_rm3M3Ea_44D17eiI3aXuU-vAAACiijQ&libraries=places"></script>
 
-<script src="{{ \UrlHelper::asset('/js/app.js') }}"></script>
+<script src="{{ asset('/js/app.js') }}"></script>
+<!-- <script src="{{ \UrlHelper::asset('/js/app.js') }}"></script> -->
 
 <div id="fb-root"></div>
 <!-- for share -->
